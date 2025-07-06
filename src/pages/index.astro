@@ -1,16 +1,206 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import ContactForm from '../components/ContactForm';
+import { 
+  Target, 
+  Rocket, 
+  Users, 
+  GraduationCap, 
+  BookOpen, 
+  Heart,
+  ArrowRight,
+  ExternalLink,
+  Code
+} from 'lucide-react';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="AutiMind, Inc. - Built with Purpose. Evolving with Vision.">
+  <Header />
+  
+  <Hero />
+  
+  <About />
+  
+  <!-- Present Section -->
+  <section id="present" class="py-20 bg-gradient-to-br from-gray-900 to-gray-800">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-orange-400 bg-clip-text text-transparent">
+          Present Focus: AstroLMS
+        </h2>
+        <p class="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
+          Today, AutiMind is focused on building <strong><a href="https://astrolms.com" target="_blank" class="text-orange-400 hover:text-orange-300 transition-colors">AstroLMS</a></strong>—a next-generation, AI-powered learning management system designed for the modern workforce. Our platform harnesses the power of AI and Web3 to provide organizations with unprecedented control, flexibility, and ownership over their employee training programs.
+        </p>
+        <a href="https://astrolms.com" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full font-semibold text-lg hover:from-orange-600 hover:to-red-600 transition-all transform hover:-translate-y-1 hover:shadow-xl hover:shadow-orange-500/25">
+          Explore AstroLMS
+          <ExternalLink class="w-5 h-5" />
+        </a>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        <div class="relative">
+          <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-teal-400 to-orange-400 rounded-full"></div>
+          
+          <div class="space-y-16">
+            <div class="relative flex items-center">
+              <div class="w-1/2 pr-8 text-right">
+                <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-teal-500/50 transition-all duration-300">
+                  <div class="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-teal-400 rounded-full border-4 border-gray-800"></div>
+                  <h3 class="text-2xl font-semibold text-teal-400 mb-3">MVP Development</h3>
+                  <p class="text-gray-300">Building foundational tools that empower corporate teams to onboard, train, and grow more effectively, without being locked into outdated, bloated systems.</p>
+                </div>
+              </div>
+              <div class="w-1/2"></div>
+            </div>
+            
+            <div class="relative flex items-center">
+              <div class="w-1/2"></div>
+              <div class="w-1/2 pl-8">
+                <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-orange-500/50 transition-all duration-300">
+                  <div class="absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-orange-400 rounded-full border-4 border-gray-800"></div>
+                  <h3 class="text-2xl font-semibold text-orange-400 mb-3">Seed Funding Phase</h3>
+                  <p class="text-gray-300">Currently raising capital to accelerate development and bring our vision to market with the resources needed for success.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="relative flex items-center">
+              <div class="w-1/2 pr-8 text-right">
+                <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-teal-500/50 transition-all duration-300">
+                  <div class="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-teal-400 rounded-full border-4 border-gray-800"></div>
+                  <h3 class="text-2xl font-semibold text-teal-400 mb-3">Corporate Focus</h3>
+                  <p class="text-gray-300">Prioritizing corporate learning and professional development to establish a strong foundation in the enterprise market.</p>
+                </div>
+              </div>
+              <div class="w-1/2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Future Section -->
+  <section id="future" class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-orange-400 bg-clip-text text-transparent">
+          Future Vision
+        </h2>
+        <p class="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+          While our current focus is on corporate learning and professional development, our long-term vision includes expanding into higher education and K-12. As we scale, we remain committed to revisiting features that specifically support the autism spectrum community, bringing our founding values full circle.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+        <div class="group bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-teal-500/50 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <div class="w-12 h-12 bg-gradient-to-br from-teal-400 to-cyan-400 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+            <GraduationCap class="w-6 h-6 text-white" />
+          </div>
+          <h3 class="text-xl font-semibold text-teal-400 mb-3">Higher Education</h3>
+          <p class="text-gray-300">Expanding our AI-powered learning platform to universities and colleges, creating personalized academic experiences for students.</p>
+        </div>
+        
+        <div class="group bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-orange-500/50 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <div class="w-12 h-12 bg-gradient-to-br from-orange-400 to-red-400 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+            <BookOpen class="w-6 h-6 text-white" />
+          </div>
+          <h3 class="text-xl font-semibold text-orange-400 mb-3">K-12 Education</h3>
+          <p class="text-gray-300">Bringing adaptive learning technology to primary and secondary education, supporting diverse learning needs from an early age.</p>
+        </div>
+        
+        <div class="group bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-purple-500/50 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+            <Heart class="w-6 h-6 text-white" />
+          </div>
+          <h3 class="text-xl font-semibold text-purple-400 mb-3">Autism Support</h3>
+          <p class="text-gray-300">Developing specialized features and tools that specifically support learners on the autism spectrum, honoring our founding inspiration.</p>
+        </div>
+      </div>
+      
+      <div class="text-center">
+        <p class="text-lg text-gray-300 mb-8">
+          Ready to see how AI-powered learning can transform your organization?
+        </p>
+        <a href="https://astrolms.com" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-teal-500 to-cyan-500 text-white rounded-full font-semibold text-lg hover:from-teal-600 hover:to-cyan-600 transition-all transform hover:-translate-y-1 hover:shadow-xl hover:shadow-teal-500/25">
+          Start with AstroLMS today
+          <ArrowRight class="w-5 h-5" />
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-gradient-to-br from-gray-900 to-gray-800">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-orange-400 bg-clip-text text-transparent">
+          Get in Touch
+        </h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          Ready to transform your organization's learning experience? Let's discuss how AutiMind can help you create more intelligent, inclusive, and accessible training programs.
+        </p>
+      </div>
+      
+      <ContactForm client:load />
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="py-12 border-t border-gray-800">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col items-center justify-center text-center">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-12 h-12 bg-gradient-to-br from-teal-400 to-cyan-400 rounded-full flex items-center justify-center">
+            <Code class="w-6 h-6 text-white" />
+          </div>
+          <span class="text-2xl font-bold bg-gradient-to-r from-teal-400 to-orange-400 bg-clip-text text-transparent">
+            AutiMind
+          </span>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-8">
+          <div>
+            <h3 class="text-lg font-semibold text-teal-400 mb-3">AutiMind, Inc.</h3>
+            <p class="text-gray-400">Making learning more intelligent, inclusive, and accessible through emerging technologies.</p>
+          </div>
+          
+          <div>
+            <h3 class="text-lg font-semibold text-teal-400 mb-3">Contact</h3>
+            <p class="text-gray-400 mb-2">Ready to transform your organization's learning experience?</p>
+            <a href="mailto:amy@autimind.com" class="text-orange-400 hover:text-orange-300 transition-colors">amy@autimind.com</a>
+          </div>
+          
+          <div>
+            <h3 class="text-lg font-semibold text-teal-400 mb-3">Products</h3>
+            <a href="https://astrolms.com" target="_blank" class="text-orange-400 hover:text-orange-300 transition-colors block mb-2">AstroLMS</a>
+            <p class="text-gray-400 text-sm">Next-generation learning management for the modern workforce</p>
+          </div>
+        </div>
+        
+        <div class="border-t border-gray-800 pt-8 w-full">
+          <p class="text-gray-400 text-center">
+            &copy; 2025 AutiMind, Inc. All rights reserved. Built with purpose. Evolving with vision.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  @media (max-width: 768px) {
+    .timeline-item {
+      width: 100% !important;
+      left: 0 !important;
+      margin-left: 2rem;
+    }
+    
+    .timeline-item::before {
+      left: -2rem !important;
+    }
+  }
+</style>

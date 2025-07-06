@@ -1,0 +1,40 @@
+---
+import { Heart, Brain, Zap } from 'lucide-react';
+import FeatureCard from './FeatureCard';
+---
+
+<section id="about" class="py-20 relative">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-orange-400 bg-clip-text text-transparent">
+        Our Story
+      </h2>
+      <p class="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+        Founded in 2023 with a bold mission, AutiMind began with a heart for neurodiverse learners and a belief that AI could serve as a personalized learning assistant for those who need it most. Inspired by our niece, who is on the autism spectrum, we set out to make learning more intelligent, inclusive, and accessible through emerging technologies.
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <FeatureCard 
+        icon={Heart}
+        title="Purpose-Driven"
+        description="Every decision we make is guided by our commitment to creating inclusive learning experiences that serve diverse needs and learning styles."
+        client:load
+      />
+      
+      <FeatureCard 
+        icon={Brain}
+        title="AI-Powered"
+        description="We leverage cutting-edge artificial intelligence to create personalized learning paths that adapt to individual learners in real-time."
+        client:load
+      />
+      
+      <FeatureCard 
+        icon={Zap}
+        title="Future-Ready"
+        description="Our technology stack embraces Web3 and emerging technologies to give organizations unprecedented control over their learning programs."
+        client:load
+      />
+    </div>
+  </div>
+</section>
