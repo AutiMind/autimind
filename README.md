@@ -6,6 +6,8 @@ A modern, responsive website built with Astro, React, and Tailwind CSS.
 
 Visit the live site at [autimind.com](https://autimind.com)
 
+*Status: Deploying latest fixes...*
+
 ## 🛠️ Tech Stack
 
 - **Framework:** Astro 5.11.0
