@@ -1,6 +1,13 @@
 # AutiMind
 
-A modern, responsive website built with Astro, React, and Tailwind CSS.
+**Empowering learning for everyone through AI-driven education.**
+
+AutiMind began in 2023 with a focused mission: creating a learning management system specifically designed to help people on the autism spectrum. As we've grown, we've expanded our scope to include all humans who could benefit from personalized learning support. With the power of AI, we believe everyone can achieve their learning potential.
+
+🌐 **Main LMS Platform:** [astrolms.com](https://astrolms.com)  
+📚 **Private Repository:** [AstroLMS](https://github.com/cozyartz/AstroLMS)
+
+This repository contains our public-facing website built with Astro, React, and Tailwind CSS.
 
 ## 🚀 Live Site
 

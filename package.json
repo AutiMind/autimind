@@ -1,7 +1,8 @@
 {
-  "name": "far-fireball",
+  "name": "autimind-website",
   "type": "module",
   "version": "0.0.1",
+  "description": "AutiMind public website - Empowering learning for everyone through AI-driven education",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",

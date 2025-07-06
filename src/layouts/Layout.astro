@@ -2,9 +2,23 @@
 export interface Props {
   title: string;
   description?: string;
+  keywords?: string;
+  ogImage?: string;
+  ogType?: string;
+  canonicalUrl?: string;
 }
 
-const { title, description = "Making learning more intelligent, inclusive, and accessible" } = Astro.props;
+const { 
+  title, 
+  description = "AutiMind empowers learning for everyone through AI-driven education. Founded in 2023, we create inclusive, intelligent learning management systems starting with autism spectrum support, now serving all learners with personalized AI-powered education technology.", 
+  keywords = "AI learning management system, autism spectrum education, personalized learning, AI-powered education, inclusive learning technology, AstroLMS, corporate training, neurodiversity, adaptive learning, educational AI",
+  ogImage = "/autimind-logo.png",
+  ogType = "website",
+  canonicalUrl = "https://autimind.com"
+} = Astro.props;
+
+const currentUrl = new URL(Astro.request.url);
+const fullCanonicalUrl = canonicalUrl || currentUrl.href;
 
 import '../styles/global.css';
 ---
@@ -14,8 +28,130 @@ import '../styles/global.css';
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="bingbot" content="index, follow" />
+    <meta name="author" content="AutiMind, Inc." />
+    <meta name="publisher" content="AutiMind, Inc." />
+    <meta name="copyright" content="AutiMind, Inc." />
+    <meta name="theme-color" content="#0d9488" />
+    <meta name="msapplication-TileColor" content="#0d9488" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={fullCanonicalUrl} />
+    
+    <!-- Favicon and Icons -->
     <link rel="icon" type="image/png" href="/autimind-logo.png" />
+    <link rel="apple-touch-icon" href="/autimind-logo.png" />
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={fullCanonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`https://autimind.com${ogImage}`} />
+    <meta property="og:image:alt" content="AutiMind - AI-Powered Learning for Everyone" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="AutiMind" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={fullCanonicalUrl} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={`https://autimind.com${ogImage}`} />
+    <meta property="twitter:image:alt" content="AutiMind - AI-Powered Learning for Everyone" />
+    <meta property="twitter:creator" content="@autimind" />
+    <meta property="twitter:site" content="@autimind" />
+    
+    <!-- LinkedIn -->
+    <meta property="linkedin:owner" content="AutiMind, Inc." />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "AutiMind, Inc.",
+        "alternateName": "AutiMind",
+        "url": "https://autimind.com",
+        "logo": "https://autimind.com/autimind-logo.png",
+        "description": "AutiMind empowers learning for everyone through AI-driven education. Founded in 2023, we create inclusive, intelligent learning management systems.",
+        "foundingDate": "2023",
+        "industry": "Educational Technology",
+        "keywords": "AI learning management system, autism spectrum education, personalized learning, AI-powered education, inclusive learning technology",
+        "sameAs": [
+          "https://astrolms.com",
+          "https://github.com/cozyartz/AstroLMS"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Battle Creek",
+          "addressRegion": "Michigan",
+          "postalCode": "49015",
+          "addressCountry": "US"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+1-269-261-0069",
+          "contactType": "customer service",
+          "availableLanguage": "English"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "AutiMind Learning Solutions",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "SoftwareApplication",
+                "name": "AstroLMS",
+                "applicationCategory": "Learning Management System",
+                "operatingSystem": "Web-based",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "Contact for pricing",
+                  "priceCurrency": "USD"
+                }
+              }
+            }
+          ]
+        }
+      }
+    </script>
+    
+    <!-- Additional Structured Data for Website -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "AutiMind",
+        "url": "https://autimind.com",
+        "description": "AI-powered learning management system for inclusive education",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://autimind.com/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+    
+    <!-- Google Analytics (replace with your tracking ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
     <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
