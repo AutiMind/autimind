@@ -1,0 +1,405 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import { 
+  Rocket, 
+  Users, 
+  GraduationCap, 
+  BookOpen, 
+  Heart,
+  ArrowRight,
+  ExternalLink,
+  Code,
+  Brain,
+  Shield,
+  Zap,
+  Globe,
+  Award,
+  Target,
+  TrendingUp,
+  Building,
+  Lightbulb,
+  CheckCircle
+} from 'lucide-react';
+---
+
+<Layout 
+  title="AstroLMS - Next-Generation Learning Management Platform | AutiMind"
+  description="Discover AstroLMS by AutiMind - AI-powered learning management system with blockchain integration, personalized education, and Web3 capabilities. From autism spectrum support to enterprise solutions."
+  keywords="AstroLMS, AI learning management system, blockchain education, Web3 learning, SCORM compliance, NFT badges, personalized learning, autism spectrum support, enterprise training"
+  canonicalUrl="https://autimind.com/astrolms"
+>
+  <Header />
+  
+  <!-- Hero Section -->
+  <section class="pt-32 pb-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-4xl mx-auto">
+        <div class="flex items-center justify-center gap-3 mb-8">
+          <div class="w-16 h-16 bg-gradient-to-br from-teal-400 to-cyan-400 rounded-full flex items-center justify-center">
+            <Rocket class="w-8 h-8 text-white" />
+          </div>
+          <h1 class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-teal-400 to-orange-400 bg-clip-text text-transparent">
+            AstroLMS
+          </h1>
+        </div>
+        
+        <p class="text-2xl md:text-3xl text-gray-300 mb-8 leading-relaxed">
+          Next-Generation Learning Management Platform
+        </p>
+        
+        <p class="text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
+          Built by AutiMind with AI, blockchain technology, and modern web architecture to deliver personalized, scalable educational experiences for everyone.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="https://astrolms.com" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-teal-500 to-cyan-500 text-white rounded-full font-semibold text-lg hover:from-teal-600 hover:to-cyan-600 transition-all transform hover:-translate-y-1 hover:shadow-xl hover:shadow-teal-500/25">
+            Visit AstroLMS.com
+            <ExternalLink class="w-5 h-5" />
+          </a>
+          <a href="#features" class="inline-flex items-center gap-2 px-8 py-4 bg-gray-800/50 border border-gray-700 text-gray-300 rounded-full font-semibold text-lg hover:bg-gray-700/50 hover:border-gray-600 transition-all transform hover:-translate-y-1">
+            Learn More
+            <ArrowRight class="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company Story Section -->
+  <section class="py-20 bg-gray-900/50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-orange-400 bg-clip-text text-transparent">
+          Our Journey & Mission
+        </h2>
+        <p class="text-xl text-gray-300 leading-relaxed">
+          Founded in 2023, AutiMind began with a heartfelt mission to support learners on the autism spectrum, and has evolved to serve all learners through cutting-edge technology.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-purple-500/50 transition-all duration-300">
+          <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-xl flex items-center justify-center mb-6">
+            <Heart class="w-6 h-6 text-white" />
+          </div>
+          <h3 class="text-2xl font-semibold text-purple-400 mb-4">Our Foundation</h3>
+          <p class="text-gray-300 leading-relaxed">
+            AutiMind was born from a deep commitment to creating inclusive learning environments, initially focused on supporting individuals on the autism spectrum. This founding principle of accessibility and personalization continues to drive everything we build.
+          </p>
+        </div>
+        
+        <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-teal-500/50 transition-all duration-300">
+          <div class="w-12 h-12 bg-gradient-to-br from-teal-400 to-cyan-400 rounded-xl flex items-center justify-center mb-6">
+            <Target class="w-6 h-6 text-white" />
+          </div>
+          <h3 class="text-2xl font-semibold text-teal-400 mb-4">Our Evolution</h3>
+          <p class="text-gray-300 leading-relaxed">
+            Through perseverance and innovation—including navigating significant personal challenges like our co-founder's breast cancer journey—we've expanded our mission to serve enterprise organizations, educational institutions, and diverse learning communities worldwide.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-orange-400 bg-clip-text text-transparent">
+          Platform Features
+        </h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          AstroLMS integrates cutting-edge technologies to deliver personalized, scalable educational experiences.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="group bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-teal-500/50 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <div class="w-12 h-12 bg-gradient-to-br from-teal-400 to-cyan-400 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+            <Brain class="w-6 h-6 text-white" />
+          </div>
+          <h3 class="text-xl font-semibold text-teal-400 mb-3">AI-Powered Learning</h3>
+          <p class="text-gray-300">Personalized learning assistants that adapt to individual learning styles and needs, providing customized educational experiences.</p>
+        </div>
+        
+        <div class="group bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-orange-500/50 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <div class="w-12 h-12 bg-gradient-to-br from-orange-400 to-red-400 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+            <BookOpen class="w-6 h-6 text-white" />
+          </div>
+          <h3 class="text-xl font-semibold text-orange-400 mb-3">SCORM Compliance</h3>
+          <p class="text-gray-300">Full SCORM-compliant course creation and delivery system for seamless integration with existing educational content.</p>
+        </div>
+        
+        <div class="group bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-purple-500/50 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+            <Shield class="w-6 h-6 text-white" />
+          </div>
+          <h3 class="text-xl font-semibold text-purple-400 mb-3">Blockchain Integration</h3>
+          <p class="text-gray-300">Secure credential verification and NFT badges powered by blockchain technology for tamper-proof certification.</p>
+        </div>
+        
+        <div class="group bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-cyan-500/50 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <div class="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-400 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+            <Globe class="w-6 h-6 text-white" />
+          </div>
+          <h3 class="text-xl font-semibold text-cyan-400 mb-3">Web3 Payments</h3>
+          <p class="text-gray-300">Cryptocurrency payment integration for modern, flexible transaction options and global accessibility.</p>
+        </div>
+        
+        <div class="group bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-green-500/50 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-400 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+            <TrendingUp class="w-6 h-6 text-white" />
+          </div>
+          <h3 class="text-xl font-semibold text-green-400 mb-3">Real-Time Analytics</h3>
+          <p class="text-gray-300">Comprehensive performance tracking and analytics to monitor learning progress and optimize outcomes.</p>
+        </div>
+        
+        <div class="group bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-yellow-500/50 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+            <Zap class="w-6 h-6 text-white" />
+          </div>
+          <h3 class="text-xl font-semibold text-yellow-400 mb-3">Enterprise Security</h3>
+          <p class="text-gray-300">Enterprise-grade security and performance built on Next.js, Firebase, and Cloudflare infrastructure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Stack Section -->
+  <section class="py-20 bg-gray-900/50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-orange-400 bg-clip-text text-transparent">
+          Built with Modern Technology
+        </h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          Our comprehensive technology stack ensures scalability, security, and exceptional user experience.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Code class="w-8 h-8 text-white" />
+          </div>
+          <h3 class="text-xl font-semibold text-blue-400 mb-3">Frontend</h3>
+          <p class="text-gray-300">Next.js with modern React architecture for responsive, interactive user interfaces.</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-orange-400 to-red-400 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Building class="w-8 h-8 text-white" />
+          </div>
+          <h3 class="text-xl font-semibold text-orange-400 mb-3">Backend</h3>
+          <p class="text-gray-300">Firebase for real-time data management and comprehensive API ecosystem.</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-teal-400 to-cyan-400 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Shield class="w-8 h-8 text-white" />
+          </div>
+          <h3 class="text-xl font-semibold text-teal-400 mb-3">Infrastructure</h3>
+          <p class="text-gray-300">Cloudflare for global content delivery, security, and enterprise-grade performance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Market Focus Section -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-orange-400 bg-clip-text text-transparent">
+          Who We Serve
+        </h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          From our autism spectrum roots to enterprise solutions, we serve diverse learning communities worldwide.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <div class="text-center bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-teal-500/50 transition-all duration-300">
+          <div class="w-12 h-12 bg-gradient-to-br from-teal-400 to-cyan-400 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <Building class="w-6 h-6 text-white" />
+          </div>
+          <h3 class="text-lg font-semibold text-teal-400 mb-2">Enterprise Organizations</h3>
+          <p class="text-gray-400 text-sm">Corporate training and professional development programs</p>
+        </div>
+        
+        <div class="text-center bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-orange-500/50 transition-all duration-300">
+          <div class="w-12 h-12 bg-gradient-to-br from-orange-400 to-red-400 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <GraduationCap class="w-6 h-6 text-white" />
+          </div>
+          <h3 class="text-lg font-semibold text-orange-400 mb-2">Educational Institutions</h3>
+          <p class="text-gray-400 text-sm">Universities, colleges, and academic programs</p>
+        </div>
+        
+        <div class="text-center bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-purple-500/50 transition-all duration-300">
+          <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <Users class="w-6 h-6 text-white" />
+          </div>
+          <h3 class="text-lg font-semibold text-purple-400 mb-2">Independent Educators</h3>
+          <p class="text-gray-400 text-sm">Individual teachers and training professionals</p>
+        </div>
+        
+        <div class="text-center bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-cyan-500/50 transition-all duration-300">
+          <div class="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-400 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <Globe class="w-6 h-6 text-white" />
+          </div>
+          <h3 class="text-lg font-semibold text-cyan-400 mb-2">Blockchain Communities</h3>
+          <p class="text-gray-400 text-sm">Web3 organizations and cryptocurrency communities</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="py-20 bg-gray-900/50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-orange-400 bg-clip-text text-transparent">
+          Flexible Pricing
+        </h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          Subscription-based pricing designed to scale with your organization's needs.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-teal-500/50 transition-all duration-300">
+          <h3 class="text-2xl font-semibold text-teal-400 mb-4">Starter</h3>
+          <div class="text-4xl font-bold text-white mb-2">$19<span class="text-lg text-gray-400">/month</span></div>
+          <p class="text-gray-300 mb-6">Perfect for individual educators and small teams</p>
+          <ul class="space-y-3 text-gray-400">
+            <li class="flex items-center gap-2">
+              <CheckCircle class="w-4 h-4 text-teal-400" />
+              <span>Up to 50 learners</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <CheckCircle class="w-4 h-4 text-teal-400" />
+              <span>Basic AI features</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <CheckCircle class="w-4 h-4 text-teal-400" />
+              <span>Standard support</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-gray-800/50 backdrop-blur-sm border border-orange-500/50 rounded-2xl p-8 hover:border-orange-600/50 transition-all duration-300 relative">
+          <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-orange-400 to-red-400 text-white px-4 py-1 rounded-full text-sm font-semibold">
+            Most Popular
+          </div>
+          <h3 class="text-2xl font-semibold text-orange-400 mb-4">Professional</h3>
+          <div class="text-4xl font-bold text-white mb-2">$49<span class="text-lg text-gray-400">/month</span></div>
+          <p class="text-gray-300 mb-6">Ideal for growing organizations and institutions</p>
+          <ul class="space-y-3 text-gray-400">
+            <li class="flex items-center gap-2">
+              <CheckCircle class="w-4 h-4 text-orange-400" />
+              <span>Up to 500 learners</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <CheckCircle class="w-4 h-4 text-orange-400" />
+              <span>Advanced AI & Analytics</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <CheckCircle class="w-4 h-4 text-orange-400" />
+              <span>Priority support</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-purple-500/50 transition-all duration-300">
+          <h3 class="text-2xl font-semibold text-purple-400 mb-4">Enterprise</h3>
+          <div class="text-4xl font-bold text-white mb-2">$99+<span class="text-lg text-gray-400">/month</span></div>
+          <p class="text-gray-300 mb-6">For large organizations with custom needs</p>
+          <ul class="space-y-3 text-gray-400">
+            <li class="flex items-center gap-2">
+              <CheckCircle class="w-4 h-4 text-purple-400" />
+              <span>Unlimited learners</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <CheckCircle class="w-4 h-4 text-purple-400" />
+              <span>Custom integrations</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <CheckCircle class="w-4 h-4 text-purple-400" />
+              <span>Dedicated support</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-4xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-orange-400 bg-clip-text text-transparent">
+          Ready to Transform Learning?
+        </h2>
+        <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+          Join the future of education with AstroLMS. Experience personalized, AI-powered learning that adapts to every learner's needs—from our autism spectrum roots to enterprise excellence.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="https://astrolms.com" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-teal-500 to-cyan-500 text-white rounded-full font-semibold text-lg hover:from-teal-600 hover:to-cyan-600 transition-all transform hover:-translate-y-1 hover:shadow-xl hover:shadow-teal-500/25">
+            Start Your Journey
+            <Rocket class="w-5 h-5" />
+          </a>
+          <a href="mailto:amy@autimind.com" class="inline-flex items-center gap-2 px-8 py-4 bg-gray-800/50 border border-gray-700 text-gray-300 rounded-full font-semibold text-lg hover:bg-gray-700/50 hover:border-gray-600 transition-all transform hover:-translate-y-1">
+            Contact Us
+            <ArrowRight class="w-5 h-5" />
+          </a>
+        </div>
+        
+        <p class="text-gray-400 mt-6">
+          Currently in active development • Public marketplace launch coming soon
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-gray-800">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col items-center justify-center text-center">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-12 h-12 bg-gradient-to-br from-teal-400 to-cyan-400 rounded-full flex items-center justify-center">
+            <Code class="w-6 h-6 text-white" />
+          </div>
+          <span class="text-2xl font-bold bg-gradient-to-r from-teal-400 to-orange-400 bg-clip-text text-transparent">
+            AutiMind
+          </span>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-8">
+          <div>
+            <h3 class="text-lg font-semibold text-teal-400 mb-3">AutiMind, Inc.</h3>
+            <p class="text-gray-400">Founded with autism spectrum support in mind, now transforming learning for everyone through AI and emerging technologies.</p>
+          </div>
+          
+          <div>
+            <h3 class="text-lg font-semibold text-teal-400 mb-3">Contact</h3>
+            <p class="text-gray-400 mb-2">Ready to revolutionize your learning experience?</p>
+            <a href="mailto:amy@autimind.com" class="text-orange-400 hover:text-orange-300 transition-colors">amy@autimind.com</a>
+          </div>
+          
+          <div>
+            <h3 class="text-lg font-semibold text-teal-400 mb-3">Products</h3>
+            <a href="https://astrolms.com" target="_blank" class="text-orange-400 hover:text-orange-300 transition-colors block mb-2">AstroLMS Platform</a>
+            <p class="text-gray-400 text-sm">Next-generation learning management for the modern world</p>
+          </div>
+        </div>
+        
+        <div class="border-t border-gray-800 pt-8 w-full">
+          <p class="text-gray-400 text-center">
+            &copy; 2025 AutiMind, Inc. All rights reserved. Built with purpose. Evolving with vision.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</Layout>

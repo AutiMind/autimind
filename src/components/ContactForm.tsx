@@ -22,7 +22,7 @@ const ContactForm = () => {
 
     const emailBody = `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company || 'Not specified'}\nSubject: ${formData.subject}\n\nMessage:\n${formData.message}`;
     
-    window.location.href = `mailto:amy@autimind.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(emailBody)}`;
+    window.location.href = `mailto:hello@autimind.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(emailBody)}`;
     
     toast.success('Opening email client...');
     
