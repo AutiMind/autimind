@@ -131,7 +131,7 @@ All rights reserved - Cozyartz Media Group, Battle Creek, Michigan.
 
 **Ready to transform your business with custom software solutions?**
 
-📧 Email: [hello@autimind.com](mailto:hello@autimind.com)  
+📧 Email: [info@autimind.com](mailto:info@autimind.com)  
 📞 Phone: 269.261.0069  
 🏢 Cozyartz Media Group, Battle Creek, Michigan 49015
 
