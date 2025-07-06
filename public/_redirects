@@ -1,0 +1,5 @@
+# Redirect www to non-www
+https://www.autimind.com/* https://autimind.com/:splat 301!
+
+# SPA fallback for 404s (if needed in the future)
+# /* /index.html 200
