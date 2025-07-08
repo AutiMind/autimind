@@ -1,0 +1,311 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import { 
+  Brain, 
+  Zap, 
+  Database, 
+  Bot, 
+  FileText, 
+  Users, 
+  ShoppingCart, 
+  TrendingUp, 
+  Shield, 
+  MessageCircle,
+  Search,
+  Workflow,
+  BarChart3,
+  Clock,
+  ArrowRight
+} from 'lucide-react';
+---
+
+<Layout 
+  title="AI Platform Services - Multi-Platform AI Solutions | AutiMind"
+  description="Discover AutiMind's multi-platform AI portfolio including ZServed (legal tech), AstroLMS (AI learning management), and emerging creative platforms. Our edge-native AI infrastructure creates scalable solutions across industries."
+  keywords="AI platform services, multi-platform AI solutions, ZServed legal tech, AstroLMS learning management, edge-native AI infrastructure, scalable AI architecture, legal AI, educational AI, creative AI platforms"
+>
+  <Header />
+  
+  <!-- Hero Section -->
+  <section class="pt-32 pb-20 bg-gradient-to-br from-gray-900 to-gray-800">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-orange-400 bg-clip-text text-transparent">
+          AI Services That Transform Your Business
+        </h1>
+        <p class="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
+          Discover how AutiMind's multi-platform AI portfolio creates scalable solutions across industries. Our edge-native AI infrastructure and reusable development framework power proven platforms like ZServed (legal tech) and AstroLMS (AI learning management).
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#services" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-teal-500 to-cyan-500 text-white rounded-full font-semibold text-lg hover:from-teal-600 hover:to-cyan-600 transition-all transform hover:-translate-y-1 hover:shadow-xl hover:shadow-teal-500/25">
+            Explore Services
+            <ArrowRight class="w-5 h-5" />
+          </a>
+          <a href="#contact" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full font-semibold text-lg hover:from-orange-600 hover:to-red-600 transition-all transform hover:-translate-y-1 hover:shadow-xl hover:shadow-orange-500/25">
+            Get Started
+            <MessageCircle class="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Services Section -->
+  <section id="services" class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-orange-400 bg-clip-text text-transparent">
+          Our AI Services
+        </h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          From intelligent chatbots to predictive analytics, we create AI solutions that solve real business challenges and drive measurable results.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <!-- AI Chatbots & Virtual Assistants -->
+        <div class="group bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-teal-500/50 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <div class="w-16 h-16 bg-gradient-to-br from-teal-400 to-cyan-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <Bot class="w-8 h-8 text-white" />
+          </div>
+          <h3 class="text-2xl font-semibold text-teal-400 mb-4">AI Chatbots & Virtual Assistants</h3>
+          <p class="text-gray-300 mb-6">Build intelligent conversational AI that handles customer support, lead qualification, and internal processes 24/7.</p>
+          <ul class="text-sm text-gray-400 space-y-2">
+            <li>• Customer service automation</li>
+            <li>• Lead qualification & conversion</li>
+            <li>• Internal knowledge bases</li>
+            <li>• Multi-platform integration</li>
+          </ul>
+        </div>
+
+        <!-- Document Processing & Analysis -->
+        <div class="group bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-orange-500/50 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <div class="w-16 h-16 bg-gradient-to-br from-orange-400 to-red-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <FileText class="w-8 h-8 text-white" />
+          </div>
+          <h3 class="text-2xl font-semibold text-orange-400 mb-4">Document Processing & Analysis</h3>
+          <p class="text-gray-300 mb-6">Automate document workflows with AI that can read, understand, and process any type of business document.</p>
+          <ul class="text-sm text-gray-400 space-y-2">
+            <li>• Contract analysis & extraction</li>
+            <li>• Invoice processing automation</li>
+            <li>• Compliance document review</li>
+            <li>• Data extraction & validation</li>
+          </ul>
+        </div>
+
+        <!-- Predictive Analytics -->
+        <div class="group bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-purple-500/50 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <TrendingUp class="w-8 h-8 text-white" />
+          </div>
+          <h3 class="text-2xl font-semibold text-purple-400 mb-4">Predictive Analytics</h3>
+          <p class="text-gray-300 mb-6">Leverage AI to forecast trends, predict customer behavior, and make data-driven decisions that drive growth.</p>
+          <ul class="text-sm text-gray-400 space-y-2">
+            <li>• Sales forecasting</li>
+            <li>• Customer churn prediction</li>
+            <li>• Demand planning</li>
+            <li>• Risk assessment</li>
+          </ul>
+        </div>
+
+        <!-- Intelligent Search & Recommendation -->
+        <div class="group bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-cyan-500/50 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <div class="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <Search class="w-8 h-8 text-white" />
+          </div>
+          <h3 class="text-2xl font-semibold text-cyan-400 mb-4">Intelligent Search & Recommendations</h3>
+          <p class="text-gray-300 mb-6">Create smart search experiences and personalized recommendation systems that increase engagement and conversions.</p>
+          <ul class="text-sm text-gray-400 space-y-2">
+            <li>• Semantic search systems</li>
+            <li>• Product recommendations</li>
+            <li>• Content personalization</li>
+            <li>• Knowledge base search</li>
+          </ul>
+        </div>
+
+        <!-- Process Automation -->
+        <div class="group bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-indigo-500/50 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <div class="w-16 h-16 bg-gradient-to-br from-indigo-400 to-purple-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <Workflow class="w-8 h-8 text-white" />
+          </div>
+          <h3 class="text-2xl font-semibold text-indigo-400 mb-4">Process Automation</h3>
+          <p class="text-gray-300 mb-6">Streamline operations with AI-powered workflows that handle repetitive tasks and complex decision-making processes.</p>
+          <ul class="text-sm text-gray-400 space-y-2">
+            <li>• Workflow optimization</li>
+            <li>• Decision automation</li>
+            <li>• Quality control systems</li>
+            <li>• Resource allocation</li>
+          </ul>
+        </div>
+
+        <!-- Data Analysis & Insights -->
+        <div class="group bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-emerald-500/50 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <div class="w-16 h-16 bg-gradient-to-br from-emerald-400 to-teal-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <BarChart3 class="w-8 h-8 text-white" />
+          </div>
+          <h3 class="text-2xl font-semibold text-emerald-400 mb-4">Data Analysis & Insights</h3>
+          <p class="text-gray-300 mb-6">Transform raw data into actionable insights with AI that identifies patterns, trends, and opportunities in your business data.</p>
+          <ul class="text-sm text-gray-400 space-y-2">
+            <li>• Business intelligence dashboards</li>
+            <li>• Anomaly detection</li>
+            <li>• Performance optimization</li>
+            <li>• Market analysis</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industry Applications -->
+  <section class="py-20 bg-gradient-to-br from-gray-900 to-gray-800">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-orange-400 bg-clip-text text-transparent">
+          Industry Applications
+        </h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          See how our AI services can be applied across different industries to solve specific business challenges.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-teal-500/50 transition-all duration-300">
+          <Shield class="w-12 h-12 text-teal-400 mb-4" />
+          <h3 class="text-xl font-semibold text-teal-400 mb-3">Healthcare</h3>
+          <p class="text-gray-300 text-sm">Patient data analysis, appointment scheduling, medical document processing, and diagnostic assistance.</p>
+        </div>
+        
+        <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-orange-500/50 transition-all duration-300">
+          <ShoppingCart class="w-12 h-12 text-orange-400 mb-4" />
+          <h3 class="text-xl font-semibold text-orange-400 mb-3">E-commerce</h3>
+          <p class="text-gray-300 text-sm">Product recommendations, inventory management, price optimization, and customer service automation.</p>
+        </div>
+        
+        <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-purple-500/50 transition-all duration-300">
+          <Users class="w-12 h-12 text-purple-400 mb-4" />
+          <h3 class="text-xl font-semibold text-purple-400 mb-3">Education</h3>
+          <p class="text-gray-300 text-sm">Personalized learning paths, automated grading, content generation, and student performance analytics.</p>
+        </div>
+        
+        <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-cyan-500/50 transition-all duration-300">
+          <Database class="w-12 h-12 text-cyan-400 mb-4" />
+          <h3 class="text-xl font-semibold text-cyan-400 mb-3">Finance</h3>
+          <p class="text-gray-300 text-sm">Fraud detection, risk assessment, automated compliance, and investment analysis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-orange-400 bg-clip-text text-transparent">
+          Our AI Development Process
+        </h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          We follow a proven methodology to deliver AI solutions that actually work for your business.
+        </p>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        <div class="relative">
+          <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-teal-400 to-orange-400 rounded-full"></div>
+          
+          <div class="space-y-16">
+            <div class="relative flex items-center">
+              <div class="w-1/2 pr-8 text-right">
+                <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-teal-500/50 transition-all duration-300">
+                  <div class="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-teal-400 rounded-full border-4 border-gray-900 flex items-center justify-center">
+                    <span class="text-gray-900 font-bold text-sm">1</span>
+                  </div>
+                  <h3 class="text-xl font-semibold text-teal-400 mb-3">Discovery & Analysis</h3>
+                  <p class="text-gray-300 text-sm">We analyze your business processes, identify AI opportunities, and define clear objectives for your project.</p>
+                </div>
+              </div>
+              <div class="w-1/2"></div>
+            </div>
+            
+            <div class="relative flex items-center">
+              <div class="w-1/2"></div>
+              <div class="w-1/2 pl-8">
+                <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-orange-500/50 transition-all duration-300">
+                  <div class="absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-orange-400 rounded-full border-4 border-gray-900 flex items-center justify-center">
+                    <span class="text-gray-900 font-bold text-sm">2</span>
+                  </div>
+                  <h3 class="text-xl font-semibold text-orange-400 mb-3">Design & Planning</h3>
+                  <p class="text-gray-300 text-sm">We create detailed technical specifications, user experience designs, and project timelines.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="relative flex items-center">
+              <div class="w-1/2 pr-8 text-right">
+                <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-purple-500/50 transition-all duration-300">
+                  <div class="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-purple-400 rounded-full border-4 border-gray-900 flex items-center justify-center">
+                    <span class="text-gray-900 font-bold text-sm">3</span>
+                  </div>
+                  <h3 class="text-xl font-semibold text-purple-400 mb-3">Development & Training</h3>
+                  <p class="text-gray-300 text-sm">Our team builds, trains, and fine-tunes your AI models using the latest technologies and best practices.</p>
+                </div>
+              </div>
+              <div class="w-1/2"></div>
+            </div>
+            
+            <div class="relative flex items-center">
+              <div class="w-1/2"></div>
+              <div class="w-1/2 pl-8">
+                <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-cyan-500/50 transition-all duration-300">
+                  <div class="absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-cyan-400 rounded-full border-4 border-gray-900 flex items-center justify-center">
+                    <span class="text-gray-900 font-bold text-sm">4</span>
+                  </div>
+                  <h3 class="text-xl font-semibold text-cyan-400 mb-3">Testing & Deployment</h3>
+                  <p class="text-gray-300 text-sm">We rigorously test your AI solution and deploy it to your production environment with full support.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="contact" class="py-20 bg-gradient-to-br from-gray-900 to-gray-800">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-orange-400 bg-clip-text text-transparent">
+          Ready to Transform Your Business?
+        </h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
+          Let's discuss how our AI services can solve your specific business challenges and drive measurable results.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="mailto:info@autimind.com?subject=AI Services Inquiry&body=Hi, I'm interested in learning more about your AI services. Please provide me with more information about how you can help my business." class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-teal-500 to-cyan-500 text-white rounded-full font-semibold text-lg hover:from-teal-600 hover:to-cyan-600 transition-all transform hover:-translate-y-1 hover:shadow-xl hover:shadow-teal-500/25">
+            Contact Us Today
+            <MessageCircle class="w-5 h-5" />
+          </a>
+          <a href="/products" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full font-semibold text-lg hover:from-orange-600 hover:to-red-600 transition-all transform hover:-translate-y-1 hover:shadow-xl hover:shadow-orange-500/25">
+            View Our Work
+            <ArrowRight class="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @media (max-width: 768px) {
+    .timeline-item {
+      width: 100% !important;
+      left: 0 !important;
+      margin-left: 2rem;
+    }
+    
+    .timeline-item::before {
+      left: -2rem !important;
+    }
+  }
+</style>
