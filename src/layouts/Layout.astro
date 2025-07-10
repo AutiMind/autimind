@@ -10,8 +10,8 @@ export interface Props {
 
 const { 
   title, 
-  description = "AutiMind Inc. is a Michigan-based AI software company with a multi-platform portfolio including ZServed (legal tech), AstroLMS (AI learning management), and emerging creative platforms. Our edge-native AI infrastructure and reusable development framework create scalable solutions across industries.", 
-  keywords = "AI software company, multi-platform AI solutions, ZServed legal tech, AstroLMS learning management, edge-native AI infrastructure, AI platform development, scalable AI architecture, legal AI, educational AI, creative AI platforms, Michigan AI company",
+  description = "AutiMind Inc. is the leading AI software development company building intelligent automation solutions, custom AI applications, and edge-native AI infrastructure. Specializing in AI software engineering, machine learning development, and intelligent business automation for enterprises. Transform your business with our proven AI development expertise.", 
+  keywords = "AI software development, AI software company, custom AI development, AI application development, intelligent automation, AI software engineering, machine learning development, AI business solutions, enterprise AI development, AI platform development, edge AI infrastructure, AI automation software, custom AI solutions, AI development services, intelligent software development, AI integration services, business process automation AI, AI-powered software, machine learning software development, AI consulting services, AI system architecture, scalable AI solutions, AI MVP development, AI product development, artificial intelligence software, AI technology stack, AI framework development, AI SaaS development, AI startup, Michigan AI company",
   ogImage = "/autimind_logo_sq300.png",
   ogType = "website",
   canonicalUrl = "https://autimind.com"
@@ -31,7 +31,7 @@ import '../styles/global.css';
     <meta name="keywords" content={keywords} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta name="googlebot" content="index, follow" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="bingbot" content="index, follow" />
     <meta name="author" content="AutiMind, Inc." />
     <meta name="publisher" content="AutiMind, Inc." />
@@ -40,6 +40,23 @@ import '../styles/global.css';
     <meta name="msapplication-TileColor" content="#0d9488" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <!-- Enhanced SEO Meta Tags -->
+    <meta name="classification" content="AI Software Development, Technology, Business Services" />
+    <meta name="category" content="AI Software Development" />
+    <meta name="coverage" content="Worldwide" />
+    <meta name="distribution" content="Global" />
+    <meta name="rating" content="General" />
+    <meta name="subject" content="AI Software Development, Custom AI Solutions, Intelligent Automation" />
+    <meta name="target" content="Enterprise, Businesses, Startups, Developers" />
+    <meta name="audience" content="Business Decision Makers, CTOs, Developers, AI Enthusiasts" />
+    <meta name="geo.region" content="US-MI" />
+    <meta name="geo.placename" content="Battle Creek, Michigan" />
+    <meta name="geo.position" content="42.3211;-85.1797" />
+    <meta name="ICBM" content="42.3211, -85.1797" />
+    <meta name="language" content="English" />
+    <meta name="reply-to" content="info@autimind.com" />
+    <meta name="owner" content="AutiMind, Inc." />
     
     <!-- Canonical URL -->
     <link rel="canonical" href={fullCanonicalUrl} />
@@ -74,22 +91,26 @@ import '../styles/global.css';
     <!-- LinkedIn -->
     <meta property="linkedin:owner" content="AutiMind, Inc." />
     
-    <!-- Structured Data -->
+    <!-- Enhanced Structured Data for AI Software Development Leadership -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "AutiMind, Inc.",
-        "alternateName": "AutiMind",
+        "alternateName": ["AutiMind", "AutiMind AI", "AutiMind Software"],
         "url": "https://autimind.com",
         "logo": "https://autimind.com/autimind_logo_sq300.png",
-        "description": "AutiMind Inc. is a Michigan-based AI software company with a multi-platform portfolio valued at $20M+. Our edge-native AI infrastructure powers ZServed (legal tech), AstroLMS (AI learning management), and emerging creative platforms, creating scalable solutions across industries.",
+        "slogan": "Leading AI Software Development Company",
+        "description": "AutiMind Inc. is the premier AI software development company specializing in custom AI applications, intelligent automation, and edge-native AI infrastructure. We build enterprise-grade AI solutions that transform businesses through intelligent software engineering and machine learning development.",
         "foundingDate": "2023",
         "foundingLocation": "Michigan, United States",
-        "industry": "Software Development",
-        "keywords": "AI software company, multi-platform AI solutions, ZServed legal tech, AstroLMS learning management, edge-native AI infrastructure, AI platform development, scalable AI architecture, legal AI, educational AI, creative AI platforms",
+        "industry": ["Software Development", "Artificial Intelligence", "Machine Learning", "Enterprise Software"],
+        "expertise": ["AI Software Development", "Custom AI Solutions", "Intelligent Automation", "Machine Learning Engineering", "AI System Architecture", "Enterprise AI Integration"],
+        "keywords": "AI software development, custom AI development, intelligent automation, AI software engineering, machine learning development, enterprise AI solutions, AI application development, AI consulting services",
         "sameAs": [
-          "https://github.com/autimind-inc"
+          "https://github.com/autimind-inc",
+          "https://astrolms.com",
+          "https://zserved.com"
         ],
         "address": {
           "@type": "PostalAddress",
@@ -98,61 +119,153 @@ import '../styles/global.css';
           "postalCode": "49015",
           "addressCountry": "US"
         },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+1-269-261-0069",
-          "contactType": "customer service",
-          "availableLanguage": "English"
-        },
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "AutiMind Multi-Platform AI Solutions",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "SoftwareApplication",
-                "name": "AstroLMS",
-                "applicationCategory": "Educational Software",
-                "operatingSystem": "Web-based",
-                "description": "AI-powered educational software with blockchain integration and personalized learning paths",
-                "offers": {
-                  "@type": "Offer",
-                  "price": "$19-99+",
-                  "priceCurrency": "USD"
-                }
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "SoftwareApplication",
-                "name": "ZServed",
-                "applicationCategory": "Legal Technology",
-                "operatingSystem": "Web-based",
-                "description": "AI-powered legal document processing platform with GPS tracking and blockchain verification for the $65B+ legal tech market",
-                "offers": {
-                  "@type": "Offer",
-                  "price": "$45-150",
-                  "priceCurrency": "USD"
-                }
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Edge-Native AI Infrastructure",
-                "serviceType": "AI Platform Development",
-                "description": "Scalable AI architecture and reusable development framework for multi-platform AI solutions",
-                "provider": {
-                  "@type": "Organization",
-                  "name": "AutiMind, Inc."
-                }
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+1-269-261-0069",
+            "contactType": "customer service",
+            "availableLanguage": "English",
+            "areaServed": "Worldwide"
+          },
+          {
+            "@type": "ContactPoint",
+            "email": "info@autimind.com",
+            "contactType": "sales",
+            "availableLanguage": "English",
+            "areaServed": "Worldwide"
+          }
+        ],
+        "makesOffer": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom AI Software Development",
+              "serviceType": "AI Development Services",
+              "description": "End-to-end AI software development services including custom AI applications, machine learning models, and intelligent automation systems for enterprises",
+              "provider": {
+                "@type": "Organization",
+                "name": "AutiMind, Inc."
+              },
+              "areaServed": "Worldwide",
+              "category": "AI Software Development"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI Consulting and Strategy",
+              "serviceType": "AI Consulting",
+              "description": "Strategic AI consulting services to help businesses identify AI opportunities, develop AI roadmaps, and implement AI transformation initiatives",
+              "provider": {
+                "@type": "Organization",
+                "name": "AutiMind, Inc."
               }
             }
-          ]
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "SoftwareApplication",
+              "name": "AstroLMS",
+              "applicationCategory": "Educational Technology",
+              "operatingSystem": "Web-based",
+              "description": "AI-powered learning management system with intelligent content delivery, adaptive learning paths, and blockchain-verified credentials",
+              "url": "https://astrolms.com",
+              "offers": {
+                "@type": "Offer",
+                "price": "$19-99+",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "SoftwareApplication",
+              "name": "ZServed",
+              "applicationCategory": "Legal Technology",
+              "operatingSystem": "Web-based",
+              "description": "AI-powered legal document processing and service tracking platform with GPS verification and blockchain security for the legal services industry",
+              "url": "https://zserved.com",
+              "offers": {
+                "@type": "Offer",
+                "price": "$45-150",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock"
+              }
+            }
+          }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "AI Software Development Services",
+          "description": "Comprehensive AI software development and consulting services for enterprises and startups"
         }
+      }
+    </script>
+    
+    <!-- Software Company Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "AutiMind AI Development Platform",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Cross-platform",
+        "description": "Enterprise AI development platform providing custom AI software development, machine learning solutions, and intelligent automation services",
+        "offers": {
+          "@type": "Offer",
+          "price": "Custom",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "AutiMind, Inc."
+        }
+      }
+    </script>
+    
+    <!-- Professional Service Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "AutiMind AI Software Development",
+        "description": "Premier AI software development company offering custom AI solutions, machine learning development, and intelligent automation services for enterprises worldwide",
+        "url": "https://autimind.com",
+        "telephone": "+1-269-261-0069",
+        "email": "info@autimind.com",
+        "priceRange": "$$$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Battle Creek",
+          "addressRegion": "Michigan",
+          "postalCode": "49015",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "42.3211",
+          "longitude": "-85.1797"
+        },
+        "areaServed": "Worldwide",
+        "serviceType": "AI Software Development",
+        "knowsAbout": [
+          "Artificial Intelligence",
+          "Machine Learning",
+          "Custom Software Development",
+          "Enterprise Software",
+          "Intelligent Automation",
+          "AI System Architecture",
+          "Deep Learning",
+          "Natural Language Processing",
+          "Computer Vision",
+          "Edge AI"
+        ]
       }
     </script>
     
@@ -182,13 +295,28 @@ import '../styles/global.css';
     </script>
     
     <title>{title}</title>
+    
+    <!-- Performance Optimizations -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/autimind_logo_sq300.png" as="image" type="image/png" />
+    
     <style>
       html {
         scroll-behavior: smooth;
       }
+      /* Critical CSS for above-the-fold content */
+      body { font-family: Inter, sans-serif; }
+      .bg-gradient-to-r { background-image: linear-gradient(to right, var(--tw-gradient-stops)); }
+      .from-teal-400 { --tw-gradient-from: #2dd4bf; }
+      .to-orange-400 { --tw-gradient-to: #fb923c; }
+      .bg-clip-text { background-clip: text; }
+      .text-transparent { color: transparent; }
     </style>
   </head>
   <body class="bg-gray-900 text-white overflow-x-hidden">

@@ -43,3 +43,13 @@ Disallow: /*.json$
 Disallow: /*_buildManifest.js$
 Disallow: /*_ssgManifest.js$
 Disallow: /*.js.map$
+
+# Enhanced SEO directives
+Allow: /privacy
+Allow: /autimind_logo_sq300.png
+Allow: /favicon.svg
+Allow: /manifest.json
+
+# Crawl optimization for AI software development content
+User-agent: *
+Crawl-delay: 0.5
