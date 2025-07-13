@@ -1,0 +1,99 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="Accessibility Statement - AutiMind Inc."
+  description="AutiMind Inc. accessibility statement outlining our commitment to making our website and services accessible to all users."
+  keywords="accessibility, WCAG compliance, inclusive design, AutiMind accessibility"
+>
+  <Header />
+  
+  <main class="py-20 min-h-screen">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-orange-400 bg-clip-text text-transparent">
+          Accessibility Statement
+        </h1>
+        <p class="text-xl text-gray-300">
+          Last updated: January 1, 2025
+        </p>
+      </div>
+      
+      <div class="prose prose-lg max-w-none text-gray-300">
+        <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 mb-8">
+          <h2 class="text-2xl font-semibold text-teal-400 mb-4">Our Commitment</h2>
+          <p class="mb-4">
+            AutiMind, Inc. is committed to ensuring digital accessibility for people with disabilities. We continually improve the user experience for everyone and apply relevant accessibility standards.
+          </p>
+        </div>
+
+        <div class="space-y-8">
+          <section class="bg-gray-800/30 backdrop-blur-sm border border-gray-700/30 rounded-xl p-6">
+            <h2 class="text-xl font-semibold text-orange-400 mb-3">1. Accessibility Standards</h2>
+            <div class="space-y-3 text-gray-300">
+              <p>We strive to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 at the AA level. These guidelines help make web content more accessible to people with disabilities.</p>
+            </div>
+          </section>
+
+          <section class="bg-gray-800/30 backdrop-blur-sm border border-gray-700/30 rounded-xl p-6">
+            <h2 class="text-xl font-semibold text-orange-400 mb-3">2. Accessibility Features</h2>
+            <div class="space-y-3 text-gray-300">
+              <p>Our website includes the following accessibility features:</p>
+              <ul class="list-disc ml-6 space-y-1">
+                <li>Semantic HTML structure for screen reader compatibility</li>
+                <li>Keyboard navigation support</li>
+                <li>High contrast color schemes</li>
+                <li>Descriptive alt text for images</li>
+                <li>Clear heading structure and content organization</li>
+                <li>Focus indicators for interactive elements</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="bg-gray-800/30 backdrop-blur-sm border border-gray-700/30 rounded-xl p-6">
+            <h2 class="text-xl font-semibold text-orange-400 mb-3">3. Ongoing Efforts</h2>
+            <div class="space-y-3 text-gray-300">
+              <p>We continuously work to improve accessibility through:</p>
+              <ul class="list-disc ml-6 space-y-1">
+                <li>Regular accessibility audits and testing</li>
+                <li>User feedback incorporation</li>
+                <li>Team training on accessibility best practices</li>
+                <li>Implementation of new accessibility technologies</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="bg-gray-800/30 backdrop-blur-sm border border-gray-700/30 rounded-xl p-6">
+            <h2 class="text-xl font-semibold text-orange-400 mb-3">4. Known Limitations</h2>
+            <div class="space-y-3 text-gray-300">
+              <p>While we strive for full accessibility, some areas may still have limitations. We are actively working to address these issues and welcome feedback to help us improve.</p>
+            </div>
+          </section>
+
+          <section class="bg-gray-800/30 backdrop-blur-sm border border-gray-700/30 rounded-xl p-6">
+            <h2 class="text-xl font-semibold text-orange-400 mb-3">5. Feedback and Support</h2>
+            <div class="space-y-3 text-gray-300">
+              <p>We welcome feedback about the accessibility of our website and services. If you encounter accessibility barriers or have suggestions for improvement, please contact us.</p>
+            </div>
+          </section>
+
+          <div class="bg-teal-500/10 border border-teal-500/30 rounded-xl p-6 mt-8">
+            <h2 class="text-xl font-semibold text-teal-400 mb-3">Contact Us</h2>
+            <div class="space-y-2 text-gray-300">
+              <p>For accessibility-related questions or feedback:</p>
+              <p><strong>AutiMind, Inc.</strong></p>
+              <p>Email: <a href="mailto:accessibility@autimind.com" class="text-orange-400 hover:text-orange-300">accessibility@autimind.com</a></p>
+              <p>Address: Battle Creek, Michigan 49015</p>
+              <p>Phone: 269.261.0069</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <Footer />
+</Layout>
