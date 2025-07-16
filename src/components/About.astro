@@ -1,6 +1,7 @@
 ---
 import { Heart, Brain, Zap } from 'lucide-react';
 import FeatureCard from './FeatureCard';
+import LinkedInProfile from './LinkedInProfile';
 ---
 
 <section id="about" class="py-20 relative">
@@ -35,6 +36,59 @@ import FeatureCard from './FeatureCard';
         description="Our autism-inspired foundation ensures we build AI solutions that are not only powerful but also accessible and inclusive by design."
         client:load
       />
+    </div>
+    
+    <!-- Team Section -->
+    <div class="mt-20">
+      <div class="text-center mb-16">
+        <h3 class="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-orange-400 bg-clip-text text-transparent">
+          Our Team
+        </h3>
+        <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+          Meet the passionate team behind AutiMind's AI innovations
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-teal-500/50 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <LinkedInProfile 
+            name="Amy Cozart-Lundin"
+            linkedinUrl="https://linkedin.com/in/amy-cozart-lundin"
+            initials="AC"
+            borderColor="border-teal-400"
+            client:load
+          />
+          <h4 class="text-xl font-semibold text-teal-400 mb-2 text-center">Amy Cozart-Lundin</h4>
+          <p class="text-orange-400 text-center mb-3">CEO & Chief Learning Technology Developer</p>
+          <p class="text-gray-300 text-center">EdD in Learning & Technology with 20+ years transforming education through AI. Expert in neurodiversity research and accessible learning design.</p>
+        </div>
+        
+        <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-orange-500/50 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <LinkedInProfile 
+            name="Andrea Cozart-Lundin"
+            linkedinUrl="https://linkedin.com/in/andrea-cozart-lundin"
+            initials="AC"
+            borderColor="border-orange-400"
+            client:load
+          />
+          <h4 class="text-xl font-semibold text-orange-400 mb-2 text-center">Andrea Cozart-Lundin</h4>
+          <p class="text-teal-400 text-center mb-3">Full Stack CTO & Chief Imagineer</p>
+          <p class="text-gray-300 text-center">Full-stack engineer with 15+ years building scalable AI systems. Architect of AstroLMS and ZServed, specializing in modern web technologies and AI integration.</p>
+        </div>
+        
+        <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-purple-500/50 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <LinkedInProfile 
+            name="Amy Perry Tipton"
+            linkedinUrl="https://linkedin.com/in/amy-perry-tipton"
+            initials="APT"
+            borderColor="border-purple-400"
+            client:load
+          />
+          <h4 class="text-xl font-semibold text-purple-400 mb-2 text-center">Amy Perry Tipton</h4>
+          <p class="text-cyan-400 text-center mb-3">Board Member & Strategic Advisor</p>
+          <p class="text-gray-300 text-center">MS, CCC-SLP with 25+ years in healthcare leadership and speech-language pathology. Expert in accessibility standards and clinical excellence driving strategic growth.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>

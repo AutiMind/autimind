@@ -3,7 +3,16 @@
   "type": "module",
   "version": "0.0.1",
   "description": "AutiMind - Professional software development services specializing in AI-driven educational technology and custom software solutions",
-  "keywords": ["software-development", "ai", "education-technology", "web-development", "learning-management-system", "custom-software", "react", "astro"],
+  "keywords": [
+    "software-development",
+    "ai",
+    "education-technology",
+    "web-development",
+    "learning-management-system",
+    "custom-software",
+    "react",
+    "astro"
+  ],
   "homepage": "https://autimind.com",
   "repository": {
     "type": "git",
