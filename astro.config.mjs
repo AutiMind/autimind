@@ -9,5 +9,11 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  integrations: [react()]
+  integrations: [react()],
+  // Handle 404 pages properly
+  build: {
+    format: 'directory'
+  },
+  // Generate sitemap
+  site: 'https://autimind.com'
 });
