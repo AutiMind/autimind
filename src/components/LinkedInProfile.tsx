@@ -39,6 +39,14 @@ const LinkedInProfile: React.FC<LinkedInProfileProps> = ({
   };
 
   const linkedinImageUrl = getLinkedInProfileImage(linkedinUrl, name);
+  
+  // Debug logging
+  console.log('LinkedIn Profile Debug:', {
+    name,
+    linkedinUrl,
+    extractedUsername: username,
+    resolvedImageUrl: linkedinImageUrl
+  });
   const fallbackImage = `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=0f172a&color=64748b&size=200&font-size=0.33`;
 
   return (
@@ -49,6 +57,7 @@ const LinkedInProfile: React.FC<LinkedInProfileProps> = ({
           alt={name}
           className="w-full h-full object-cover"
           onError={(e) => {
+            console.log('Image load error for:', name, 'URL:', linkedinImageUrl);
             const target = e.target as HTMLImageElement;
             target.src = fallbackImage;
           }}
