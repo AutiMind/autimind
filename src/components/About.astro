@@ -1,6 +1,10 @@
 ---
 import { Heart, Brain, Zap, Linkedin } from 'lucide-react';
+import { Image } from 'astro:assets';
 import FeatureCard from './FeatureCard';
+import amyImage from '/public/images/team/amy1.png';
+import cozyImage from '/public/images/team/Cozy1.png';
+import amyTImage from '/public/images/team/AmyT1.png';
 ---
 
 <section id="about" class="py-20 relative">
@@ -52,10 +56,12 @@ import FeatureCard from './FeatureCard';
         <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-teal-500/50 transition-all duration-300 hover:transform hover:-translate-y-2">
           <div class="relative mb-4">
             <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-teal-400">
-              <img 
-                src="/images/team/amy1.png"
+              <Image 
+                src={amyImage}
                 alt="Amy Cozart-Lundin"
                 class="w-full h-full object-cover"
+                width={96}
+                height={96}
               />
             </div>
             <a 
@@ -75,10 +81,12 @@ import FeatureCard from './FeatureCard';
         <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-orange-500/50 transition-all duration-300 hover:transform hover:-translate-y-2">
           <div class="relative mb-4">
             <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-400">
-              <img 
-                src="/images/team/Cozy1.png"
+              <Image 
+                src={cozyImage}
                 alt="Andrea Cozart-Lundin"
                 class="w-full h-full object-cover"
+                width={96}
+                height={96}
               />
             </div>
             <a 
@@ -98,10 +106,12 @@ import FeatureCard from './FeatureCard';
         <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-purple-500/50 transition-all duration-300 hover:transform hover:-translate-y-2">
           <div class="relative mb-4">
             <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-purple-400">
-              <img 
-                src="/images/team/AmyT1.png"
+              <Image 
+                src={amyTImage}
                 alt="Amy Perry Tipton"
                 class="w-full h-full object-cover"
+                width={96}
+                height={96}
               />
             </div>
             <a 
