@@ -24,14 +24,14 @@ const LinkedInProfile: React.FC<LinkedInProfileProps> = ({
 
   const username = getLinkedInUsername(linkedinUrl);
   
-  // Use direct LinkedIn profile image URLs from their actual profiles
+  // Use local profile images from public/images/team/ directory
   
   const getLinkedInProfileImage = (linkedinUrl: string, name: string) => {
-    // Direct LinkedIn profile image URLs
+    // Use local image files stored in public/images/team/
     const profileImages: { [key: string]: string } = {
-      'amy-cozart-lundin': 'https://media.licdn.com/dms/image/v2/D5603AQFzmDTXUVVzXg/profile-displayphoto-scale_400_400/B56ZgLiOYaG4Ak-/0/1752540180467?e=1755734400&v=beta&t=UlLdt2DiMyDBdASyozhZ_5tiAqLYp67nUCFqGnbZnuY',
-      'andrea-cozart-lundin': 'https://media.licdn.com/dms/image/v2/D5603AQFWpqSzJ6oC2g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1698279390839?e=1755734400&v=beta&t=-uzEZZrkTguLuH1zZ9qxjYzNdZLdwnei_9g0VeUj4xg',
-      'amy-perry-tipton': 'https://media.licdn.com/dms/image/v2/D4E03AQGcXjZ1SsSBog/profile-displayphoto-shrink_400_400/B4EZW6LVgBH0Ag-/0/1742585289642?e=1755734400&v=beta&t=VoikbV_NvIyvcdlOqyt5C7TyOVpClHIMiO8C3WkcVlY'
+      'amy-cozart-lundin': '/images/team/amy1.png',
+      'andrea-cozart-lundin': '/images/team/Cozy1.png',
+      'amy-perry-tipton': '/images/team/AmyT1.png'
     };
     
     const username = getLinkedInUsername(linkedinUrl);
