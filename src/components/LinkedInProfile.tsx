@@ -16,36 +16,27 @@ const LinkedInProfile: React.FC<LinkedInProfileProps> = ({
   borderColor,
   children 
 }) => {
-  // Extract LinkedIn username from URL
-  const getLinkedInUsername = (url: string) => {
-    const match = url.match(/linkedin\.com\/in\/([^\/]+)/);
-    return match ? match[1] : null;
+  // Direct mapping based on name to avoid any URL parsing issues
+  const getProfileImage = (name: string) => {
+    switch (name) {
+      case 'Amy Cozart-Lundin':
+        return '/images/team/amy1.png';
+      case 'Andrea Cozart-Lundin':
+        return '/images/team/Cozy1.png';
+      case 'Amy Perry Tipton':
+        return '/images/team/AmyT1.png';
+      default:
+        return null;
+    }
   };
 
-  const username = getLinkedInUsername(linkedinUrl);
-  
-  // Use local profile images from public/images/team/ directory
-  
-  const getLinkedInProfileImage = (linkedinUrl: string, name: string) => {
-    // Use local image files stored in public/images/team/
-    const profileImages: { [key: string]: string } = {
-      'amy-cozart-lundin': '/images/team/amy1.png',
-      'andrea-cozart-lundin': '/images/team/Cozy1.png',
-      'amy-perry-tipton': '/images/team/AmyT1.png'
-    };
-    
-    const username = getLinkedInUsername(linkedinUrl);
-    return username ? profileImages[username] : null;
-  };
-
-  const linkedinImageUrl = getLinkedInProfileImage(linkedinUrl, name);
+  const profileImageUrl = getProfileImage(name);
   
   // Debug logging
   console.log('LinkedIn Profile Debug:', {
     name,
-    linkedinUrl,
-    extractedUsername: username,
-    resolvedImageUrl: linkedinImageUrl
+    profileImageUrl,
+    willUseFallback: !profileImageUrl
   });
   const fallbackImage = `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=0f172a&color=64748b&size=200&font-size=0.33`;
 
@@ -53,11 +44,11 @@ const LinkedInProfile: React.FC<LinkedInProfileProps> = ({
     <div className="relative mb-4">
       <div className={`w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 ${borderColor}`}>
         <img 
-          src={linkedinImageUrl || fallbackImage}
+          src={profileImageUrl || fallbackImage}
           alt={name}
           className="w-full h-full object-cover"
           onError={(e) => {
-            console.log('Image load error for:', name, 'URL:', linkedinImageUrl);
+            console.log('Image load error for:', name, 'URL:', profileImageUrl);
             const target = e.target as HTMLImageElement;
             target.src = fallbackImage;
           }}
