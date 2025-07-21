@@ -6,6 +6,7 @@ export interface Props {
   ogImage?: string;
   ogType?: string;
   canonicalUrl?: string;
+  structuredData?: object;
 }
 
 const { 
@@ -14,7 +15,8 @@ const {
   keywords = "AI software development, AI software company, custom AI development, AI application development, intelligent automation, AI software engineering, machine learning development, AI business solutions, enterprise AI development, AI platform development, edge AI infrastructure, AI automation software, custom AI solutions, AI development services, intelligent software development, AI integration services, business process automation AI, AI-powered software, machine learning software development, AI consulting services, AI system architecture, scalable AI solutions, AI MVP development, AI product development, artificial intelligence software, AI technology stack, AI framework development, AI SaaS development, AI startup, Michigan AI company",
   ogImage = "/autimind_logo_sq300.png",
   ogType = "website",
-  canonicalUrl = "https://autimind.com"
+  canonicalUrl = "https://autimind.com",
+  structuredData
 } = Astro.props;
 
 const currentUrl = new URL(Astro.request.url);
@@ -295,6 +297,11 @@ import '../styles/global.css';
     </script>
     
     <title>{title}</title>
+    
+    <!-- Page-specific structured data -->
+    {structuredData && (
+      <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    )}
     
     <!-- Performance Optimizations -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
