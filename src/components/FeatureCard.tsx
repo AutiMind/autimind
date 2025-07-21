@@ -18,7 +18,7 @@ const FeatureCard = ({ icon: Icon, title, description }: FeatureCardProps) => {
       ref={ref}
       className="group relative"
       initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      animate={Boolean(isInView) ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="absolute inset-0 bg-gradient-to-r from-teal-500/10 to-orange-500/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>

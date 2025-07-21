@@ -36,7 +36,7 @@ const AnimatedText = () => {
       className="mb-8"
       variants={containerVariants}
       initial="hidden"
-      animate={isVisible ? "visible" : "hidden"}
+      animate={Boolean(isVisible) ? "visible" : "hidden"}
     >
       <motion.h1 
         className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
