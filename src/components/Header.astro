@@ -12,6 +12,7 @@ import { Menu, X } from 'lucide-react';
         </span>
       </a>
       
+      <!-- Desktop Menu -->
       <div class="hidden md:flex items-center gap-6">
         <a href="#about" class="text-gray-300 hover:text-teal-400 transition-colors relative group text-sm">
           About
@@ -33,272 +34,364 @@ import { Menu, X } from 'lucide-react';
           AstroLMS
           <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-400 transition-all group-hover:w-full"></span>
         </a>
-        <a href="/autimind-investors" class="text-gray-300 hover:text-orange-400 transition-colors relative group text-sm">
-          Investors
+        <a href="/dao" class="text-gray-300 hover:text-orange-400 transition-colors relative group text-sm">
+          DAO
           <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-400 transition-all group-hover:w-full"></span>
         </a>
-        <a href="#contact" class="text-gray-300 hover:text-teal-400 transition-colors relative group text-sm">
-          Contact
+        <a href="/autimind-investors" class="text-gray-300 hover:text-teal-400 transition-colors relative group text-sm">
+          Investors
           <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-400 transition-all group-hover:w-full"></span>
+        </a>
+        <a href="#contact" class="text-gray-300 hover:text-orange-400 transition-colors relative group text-sm">
+          Contact
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-400 transition-all group-hover:w-full"></span>
         </a>
       </div>
       
+      <!-- Mobile Menu Button -->
       <button 
-        class="md:hidden text-gray-300 hover:text-teal-400 transition-colors p-2 rounded-lg hover:bg-gray-800/50 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-gray-900" 
-        id="mobile-menu-toggle"
-        aria-label="Toggle mobile menu"
+        class="md:hidden relative z-50 text-gray-300 hover:text-teal-400 transition-colors p-2 rounded-lg hover:bg-gray-800/50 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-gray-900" 
+        id="mobile-menu-button"
+        aria-label="Open mobile menu"
         aria-expanded="false"
         aria-controls="mobile-menu"
+        type="button"
       >
-        <Menu className="w-6 h-6" id="menu-icon" style={{display: "block"}} />
-        <X className="w-6 h-6" id="close-icon" style={{display: "none"}} />
+        <span class="sr-only">Open main menu</span>
+        <div class="w-6 h-6 relative">
+          <!-- Hamburger icon -->
+          <span class="absolute left-1/2 top-1/2 block h-0.5 w-5 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-current transition-transform duration-200 ease-in-out" id="hamburger-line-1"></span>
+          <span class="absolute left-1/2 top-1/2 block h-0.5 w-5 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-current transition-opacity duration-200 ease-in-out" id="hamburger-line-2"></span>
+          <span class="absolute left-1/2 top-1/2 block h-0.5 w-5 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-current transition-transform duration-200 ease-in-out" id="hamburger-line-3"></span>
+        </div>
       </button>
     </div>
     
-    <!-- Mobile Menu -->
+    <!-- Mobile Menu Overlay -->
     <div 
-      class="md:hidden fixed inset-0 bg-black z-40 opacity-0 invisible transition-all duration-300 ease-out" 
-      id="mobile-menu"
+      class="md:hidden fixed inset-0 bg-gray-900/95 backdrop-blur-lg z-40 transition-all duration-300 ease-in-out invisible opacity-0" 
+      id="mobile-menu-overlay"
+      aria-hidden="true"
     >
-      <!-- Menu Container -->
-      <div class="flex flex-col h-full bg-gray-900 shadow-2xl">
-        
-        <!-- Header with close button -->
+      <!-- Mobile Menu Panel -->
+      <div 
+        class="absolute right-0 top-0 h-full w-full max-w-sm bg-gray-900 shadow-2xl border-l border-gray-700 transform transition-transform duration-300 ease-in-out translate-x-full"
+        id="mobile-menu-panel"
+      >
+        <!-- Menu Header -->
         <div class="flex items-center justify-between p-6 border-b border-gray-700">
           <div class="flex items-center gap-3">
-            <img src="/autimind_logo_sq300.png" alt="AutiMind Logo" class="w-10 h-10 rounded-full" />
-            <span class="text-xl font-bold text-white">AutiMind</span>
+            <img src="/autimind_logo_sq300.png" alt="AutiMind Logo" class="w-8 h-8 rounded-full" />
+            <span class="text-lg font-bold text-white">AutiMind</span>
           </div>
           <button 
-            class="text-gray-300 hover:text-white p-2 rounded-lg hover:bg-gray-800 transition-colors" 
+            class="text-gray-400 hover:text-white p-2 rounded-lg hover:bg-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-400" 
             id="mobile-menu-close"
             aria-label="Close mobile menu"
+            type="button"
           >
-            <X className="w-6 h-6" />
+            <span class="sr-only">Close menu</span>
+            <X class="w-5 h-5" />
           </button>
         </div>
         
         <!-- Navigation Links -->
-        <div class="flex-1 px-6 py-8 space-y-4 overflow-y-auto">
-          
-          <a 
-            href="#about" 
-            class="flex items-center gap-4 text-white text-lg font-medium py-4 px-4 rounded-xl hover:bg-teal-600 transition-all duration-200 mobile-menu-link border-l-4 border-transparent hover:border-teal-400"
-          >
-            <span class="w-2 h-2 bg-teal-400 rounded-full"></span>
-            About
-          </a>
-          
-          <a 
-            href="/services" 
-            class="flex items-center gap-4 text-white text-lg font-medium py-4 px-4 rounded-xl hover:bg-orange-600 transition-all duration-200 mobile-menu-link border-l-4 border-transparent hover:border-orange-400"
-          >
-            <span class="w-2 h-2 bg-orange-400 rounded-full"></span>
-            AI Services
-          </a>
-          
-          <a 
-            href="/industries" 
-            class="flex items-center gap-4 text-white text-lg font-medium py-4 px-4 rounded-xl hover:bg-teal-600 transition-all duration-200 mobile-menu-link border-l-4 border-transparent hover:border-teal-400"
-          >
-            <span class="w-2 h-2 bg-teal-400 rounded-full"></span>
-            Industries
-          </a>
-          
-          <a 
-            href="/our-work" 
-            class="flex items-center gap-4 text-white text-lg font-medium py-4 px-4 rounded-xl hover:bg-orange-600 transition-all duration-200 mobile-menu-link border-l-4 border-transparent hover:border-orange-400"
-          >
-            <span class="w-2 h-2 bg-orange-400 rounded-full"></span>
-            Our Work
-          </a>
-          
-          <a 
-            href="/astrolms" 
-            class="flex items-center gap-4 text-white text-lg font-medium py-4 px-4 rounded-xl hover:bg-teal-600 transition-all duration-200 mobile-menu-link border-l-4 border-transparent hover:border-teal-400"
-          >
-            <span class="w-2 h-2 bg-teal-400 rounded-full"></span>
-            AstroLMS
-          </a>
-          
-          <a 
-            href="/dao" 
-            class="flex items-center gap-4 text-white text-lg font-medium py-4 px-4 rounded-xl hover:bg-orange-600 transition-all duration-200 mobile-menu-link border-l-4 border-transparent hover:border-orange-400"
-          >
-            <span class="w-2 h-2 bg-orange-400 rounded-full"></span>
-            DAO
-          </a>
-          
-          <a 
-            href="/autimind-investors" 
-            class="flex items-center gap-4 text-white text-lg font-medium py-4 px-4 rounded-xl hover:bg-teal-600 transition-all duration-200 mobile-menu-link border-l-4 border-transparent hover:border-teal-400"
-          >
-            <span class="w-2 h-2 bg-teal-400 rounded-full"></span>
-            Investors
-          </a>
-          
-        </div>
+        <nav class="flex-1 p-6" role="navigation" aria-label="Mobile navigation">
+          <ul class="space-y-2">
+            <li>
+              <a 
+                href="#about" 
+                class="flex items-center px-4 py-3 text-gray-300 hover:text-white hover:bg-teal-600/20 rounded-lg transition-all duration-200 border-l-4 border-transparent hover:border-teal-400 mobile-link"
+              >
+                About
+              </a>
+            </li>
+            <li>
+              <a 
+                href="/services" 
+                class="flex items-center px-4 py-3 text-gray-300 hover:text-white hover:bg-orange-600/20 rounded-lg transition-all duration-200 border-l-4 border-transparent hover:border-orange-400 mobile-link"
+              >
+                AI Services
+              </a>
+            </li>
+            <li>
+              <a 
+                href="/industries" 
+                class="flex items-center px-4 py-3 text-gray-300 hover:text-white hover:bg-teal-600/20 rounded-lg transition-all duration-200 border-l-4 border-transparent hover:border-teal-400 mobile-link"
+              >
+                Industries
+              </a>
+            </li>
+            <li>
+              <a 
+                href="/our-work" 
+                class="flex items-center px-4 py-3 text-gray-300 hover:text-white hover:bg-orange-600/20 rounded-lg transition-all duration-200 border-l-4 border-transparent hover:border-orange-400 mobile-link"
+              >
+                Our Work
+              </a>
+            </li>
+            <li>
+              <a 
+                href="/astrolms" 
+                class="flex items-center px-4 py-3 text-gray-300 hover:text-white hover:bg-teal-600/20 rounded-lg transition-all duration-200 border-l-4 border-transparent hover:border-teal-400 mobile-link"
+              >
+                AstroLMS
+              </a>
+            </li>
+            <li>
+              <a 
+                href="/dao" 
+                class="flex items-center px-4 py-3 text-gray-300 hover:text-white hover:bg-orange-600/20 rounded-lg transition-all duration-200 border-l-4 border-transparent hover:border-orange-400 mobile-link"
+              >
+                DAO
+              </a>
+            </li>
+            <li>
+              <a 
+                href="/autimind-investors" 
+                class="flex items-center px-4 py-3 text-gray-300 hover:text-white hover:bg-teal-600/20 rounded-lg transition-all duration-200 border-l-4 border-transparent hover:border-teal-400 mobile-link"
+              >
+                Investors
+              </a>
+            </li>
+            <li>
+              <a 
+                href="#contact" 
+                class="flex items-center px-4 py-3 text-white bg-gradient-to-r from-teal-500 to-orange-500 hover:from-teal-600 hover:to-orange-600 rounded-lg transition-all duration-200 font-medium mobile-link"
+              >
+                Contact Us
+              </a>
+            </li>
+          </ul>
+        </nav>
         
-        <!-- Footer Section -->
-        <div class="p-6 border-t border-gray-700 space-y-4">
-          
-          <!-- Contact Button -->
-          <a 
-            href="#contact" 
-            class="flex items-center justify-center gap-3 w-full bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white py-4 px-6 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 mobile-menu-link"
-          >
-            <span>Contact Us</span>
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-            </svg>
-          </a>
-          
-          <!-- Social Links -->
-          <div class="flex items-center justify-center gap-4">
-            <span class="text-gray-400 text-sm">Follow us:</span>
-            <a 
-              href="https://linkedin.com/company/autimind" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              class="flex items-center justify-center w-12 h-12 bg-blue-600 rounded-full hover:bg-blue-700 transition-colors"
-              aria-label="Follow us on LinkedIn"
-            >
-              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"/>
-              </svg>
-            </a>
-          </div>
-          
-          <!-- Copyright -->
-          <div class="text-center text-gray-500 text-sm">
+        <!-- Menu Footer -->
+        <div class="p-6 border-t border-gray-700">
+          <div class="text-center text-gray-400 text-sm">
             © 2025 AutiMind. All rights reserved.
           </div>
-          
         </div>
-        
       </div>
     </div>
   </nav>
 </header>
 
 <script>
-  // Simple, bulletproof mobile menu script
-  const menuToggle = document.getElementById('mobile-menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const mobileMenuClose = document.getElementById('mobile-menu-close');
-  const menuIcon = document.getElementById('menu-icon');
-  const closeIcon = document.getElementById('close-icon');
-  const body = document.body;
-  
-  let isMenuOpen = false;
-  
-  // Simple function to open menu
-  function openMenu() {
-    console.log('Opening menu');
-    isMenuOpen = true;
+  // Mobile menu implementation with best practices
+  class MobileMenu {
+    constructor() {
+      this.menuButton = document.getElementById('mobile-menu-button');
+      this.menuOverlay = document.getElementById('mobile-menu-overlay');
+      this.menuPanel = document.getElementById('mobile-menu-panel');
+      this.menuClose = document.getElementById('mobile-menu-close');
+      this.mobileLinks = document.querySelectorAll('.mobile-link');
+      this.hamburgerLines = [
+        document.getElementById('hamburger-line-1'),
+        document.getElementById('hamburger-line-2'),
+        document.getElementById('hamburger-line-3')
+      ];
+      
+      this.isOpen = false;
+      this.focusableElements = [];
+      this.firstFocusable = null;
+      this.lastFocusable = null;
+      
+      this.init();
+    }
     
-    // Show the menu
-    mobileMenu.classList.remove('opacity-0', 'invisible');
-    mobileMenu.classList.add('opacity-100', 'visible');
+    init() {
+      if (!this.menuButton || !this.menuOverlay || !this.menuPanel) {
+        return;
+      }
+      
+      // Event listeners
+      this.menuButton.addEventListener('click', () => this.toggle());
+      this.menuClose.addEventListener('click', () => this.close());
+      this.menuOverlay.addEventListener('click', (e) => {
+        if (e.target === this.menuOverlay) {
+          this.close();
+        }
+      });
+      
+      // Close menu when clicking any mobile link
+      this.mobileLinks.forEach(link => {
+        link.addEventListener('click', () => this.close());
+      });
+      
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => this.handleKeydown(e));
+      
+      // Close menu on window resize to desktop
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768 && this.isOpen) {
+          this.close();
+        }
+      });
+      
+      // Update focusable elements
+      this.updateFocusableElements();
+    }
     
-    // Update icons
-    menuIcon.style.display = 'none';
-    closeIcon.style.display = 'block';
+    updateFocusableElements() {
+      if (!this.menuPanel) return;
+      
+      this.focusableElements = this.menuPanel.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      
+      this.firstFocusable = this.focusableElements[0];
+      this.lastFocusable = this.focusableElements[this.focusableElements.length - 1];
+    }
     
-    // Prevent body scroll
-    body.style.overflow = 'hidden';
+    toggle() {
+      if (this.isOpen) {
+        this.close();
+      } else {
+        this.open();
+      }
+    }
     
-    // Update ARIA
-    menuToggle.setAttribute('aria-expanded', 'true');
+    open() {
+      this.isOpen = true;
+      
+      // Update button state
+      this.menuButton.setAttribute('aria-expanded', 'true');
+      this.menuButton.setAttribute('aria-label', 'Close mobile menu');
+      
+      // Show overlay
+      this.menuOverlay.classList.remove('invisible', 'opacity-0');
+      this.menuOverlay.classList.add('visible', 'opacity-100');
+      this.menuOverlay.setAttribute('aria-hidden', 'false');
+      
+      // Animate hamburger to X
+      this.animateHamburgerToX();
+      
+      // Slide in panel
+      this.menuPanel.classList.remove('translate-x-full');
+      this.menuPanel.classList.add('translate-x-0');
+      
+      // Prevent body scroll
+      document.body.style.overflow = 'hidden';
+      
+      // Focus management
+      this.trapFocus();
+      
+      // Focus the close button after animation
+      setTimeout(() => {
+        if (this.menuClose) {
+          this.menuClose.focus();
+        }
+      }, 300);
+    }
+    
+    close() {
+      this.isOpen = false;
+      
+      // Update button state
+      this.menuButton.setAttribute('aria-expanded', 'false');
+      this.menuButton.setAttribute('aria-label', 'Open mobile menu');
+      
+      // Animate hamburger back
+      this.animateXToHamburger();
+      
+      // Slide out panel
+      this.menuPanel.classList.remove('translate-x-0');
+      this.menuPanel.classList.add('translate-x-full');
+      
+      // Hide overlay after panel animation
+      setTimeout(() => {
+        this.menuOverlay.classList.remove('visible', 'opacity-100');
+        this.menuOverlay.classList.add('invisible', 'opacity-0');
+        this.menuOverlay.setAttribute('aria-hidden', 'true');
+      }, 300);
+      
+      // Restore body scroll
+      document.body.style.overflow = '';
+      
+      // Return focus to menu button
+      this.menuButton.focus();
+    }
+    
+    animateHamburgerToX() {
+      if (!this.hamburgerLines[0] || !this.hamburgerLines[1] || !this.hamburgerLines[2]) return;
+      
+      // Top line rotates to form top part of X
+      this.hamburgerLines[0].style.transform = 'translate(-50%, -50%) rotate(45deg)';
+      
+      // Middle line disappears
+      this.hamburgerLines[1].style.opacity = '0';
+      
+      // Bottom line rotates to form bottom part of X
+      this.hamburgerLines[2].style.transform = 'translate(-50%, -50%) rotate(-45deg)';
+    }
+    
+    animateXToHamburger() {
+      if (!this.hamburgerLines[0] || !this.hamburgerLines[1] || !this.hamburgerLines[2]) return;
+      
+      // Reset all lines to hamburger position
+      this.hamburgerLines[0].style.transform = 'translate(-50%, -50%) rotate(0deg) translateY(-5px)';
+      this.hamburgerLines[1].style.opacity = '1';
+      this.hamburgerLines[1].style.transform = 'translate(-50%, -50%) rotate(0deg)';
+      this.hamburgerLines[2].style.transform = 'translate(-50%, -50%) rotate(0deg) translateY(5px)';
+    }
+    
+    trapFocus() {
+      if (!this.firstFocusable || !this.lastFocusable) return;
+      
+      // Set initial focus
+      this.firstFocusable.focus();
+    }
+    
+    handleKeydown(e) {
+      if (!this.isOpen) return;
+      
+      // Close on Escape
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        this.close();
+        return;
+      }
+      
+      // Tab navigation
+      if (e.key === 'Tab') {
+        if (e.shiftKey) {
+          // Shift + Tab
+          if (document.activeElement === this.firstFocusable) {
+            e.preventDefault();
+            this.lastFocusable.focus();
+          }
+        } else {
+          // Tab
+          if (document.activeElement === this.lastFocusable) {
+            e.preventDefault();
+            this.firstFocusable.focus();
+          }
+        }
+      }
+    }
   }
   
-  // Simple function to close menu
-  function closeMenu() {
-    console.log('Closing menu');
-    isMenuOpen = false;
-    
-    // Hide the menu
-    mobileMenu.classList.remove('opacity-100', 'visible');
-    mobileMenu.classList.add('opacity-0', 'invisible');
-    
-    // Update icons
-    menuIcon.style.display = 'block';
-    closeIcon.style.display = 'none';
-    
-    // Restore body scroll
-    body.style.overflow = 'auto';
-    
-    // Update ARIA
-    menuToggle.setAttribute('aria-expanded', 'false');
-  }
-  
-  // Toggle menu when hamburger button is clicked
-  menuToggle?.addEventListener('click', function(e) {
-    e.preventDefault();
-    console.log('Menu toggle clicked, isMenuOpen:', isMenuOpen);
-    
-    if (isMenuOpen) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
+  // Initialize mobile menu when DOM is ready
+  document.addEventListener('DOMContentLoaded', () => {
+    new MobileMenu();
   });
   
-  // Close menu when close button is clicked
-  mobileMenuClose?.addEventListener('click', function(e) {
-    e.preventDefault();
-    console.log('Close button clicked');
-    closeMenu();
-  });
-  
-  // Close menu when clicking outside (on the black background)
-  mobileMenu?.addEventListener('click', function(e) {
-    if (e.target === mobileMenu) {
-      console.log('Clicked outside menu');
-      closeMenu();
-    }
-  });
-  
-  // Close menu when any menu link is clicked
-  const menuLinks = document.querySelectorAll('.mobile-menu-link');
-  menuLinks.forEach(link => {
-    link.addEventListener('click', function() {
-      console.log('Menu link clicked');
-      closeMenu();
-    });
-  });
-  
-  // Close menu on escape key
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && isMenuOpen) {
-      console.log('Escape key pressed');
-      closeMenu();
-    }
-  });
-  
-  // Close menu when window is resized to desktop size
-  window.addEventListener('resize', function() {
-    if (window.innerWidth >= 768 && isMenuOpen) {
-      console.log('Window resized to desktop, closing menu');
-      closeMenu();
-    }
-  });
-  
-  // Initialize menu as closed
-  document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM loaded, initializing menu');
-    closeMenu();
-  });
-  
-  // Header background change on scroll
+  // Header scroll effect
   const header = document.querySelector('header');
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 100) {
-      header?.classList.add('bg-gray-900/98');
-      header?.classList.remove('bg-gray-900/95');
-    } else {
-      header?.classList.add('bg-gray-900/95');
-      header?.classList.remove('bg-gray-900/98');
+  let scrolled = false;
+  
+  window.addEventListener('scroll', () => {
+    const isScrolled = window.scrollY > 100;
+    
+    if (isScrolled !== scrolled) {
+      scrolled = isScrolled;
+      if (scrolled) {
+        header?.classList.add('bg-gray-900/98');
+        header?.classList.remove('bg-gray-900/95');
+      } else {
+        header?.classList.add('bg-gray-900/95');
+        header?.classList.remove('bg-gray-900/98');
+      }
     }
   });
   
