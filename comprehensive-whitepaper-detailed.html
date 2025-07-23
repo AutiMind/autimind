@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutiMind Inc. - Comprehensive Technology & Investment Whitepaper</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            color: #2d3748;
+            background: #ffffff;
+            font-size: 11pt;
+        }
+
+        .container {
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.75in;
+            background: white;
+        }
+
+        /* Header Styles */
+        .header {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #0d9488 0%, #f97316 100%);
+            color: white;
+            margin: -0.75in -0.75in 3rem -0.75in;
+            border-radius: 0;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-shadow: 0 3px 6px rgba(0,0,0,0.3);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .header .subtitle {
+            font-size: 1.4rem;
+            opacity: 0.95;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .header .tagline {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            font-weight: 400;
+        }
+
+        .header .document-info {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Executive Summary */
+        .executive-summary {
+            background: linear-gradient(135deg, #f0fdfa 0%, #fef7ed 100%);
+            border-left: 6px solid #0d9488;
+            padding: 2.5rem;
+            margin: 3rem 0;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .executive-summary h2 {
+            color: #0d9488;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .executive-summary .highlight-box {
+            background: #ffffff;
+            border: 2px solid #0d9488;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        /* Section Styling */
+        .section {
+            margin: 3rem 0;
+            page-break-inside: avoid;
+        }
+
+        .section h2 {
+            font-size: 2.2rem;
+            color: #0d9488;
+            border-bottom: 4px solid #f97316;
+            padding-bottom: 0.75rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .section h3 {
+            font-size: 1.6rem;
+            color: #1f2937;
+            margin: 2rem 0 1.5rem 0;
+            font-weight: 600;
+        }
+
+        .section h4 {
+            font-size: 1.3rem;
+            color: #374151;
+            margin: 1.5rem 0 1rem 0;
+            font-weight: 600;
+        }
+
+        .section h5 {
+            font-size: 1.1rem;
+            color: #4b5563;
+            margin: 1rem 0 0.5rem 0;
+            font-weight: 600;
+        }
+
+        /* Platform Analysis Cards */
+        .platform-analysis {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .platform-detail {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border: 3px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            position: relative;
+        }
+
+        .platform-detail::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #0d9488, #f97316);
+            border-radius: 16px 16px 0 0;
+        }
+
+        .platform-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .platform-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #0d9488;
+            margin-bottom: 0.5rem;
+        }
+
+        .platform-subtitle {
+            font-size: 1.1rem;
+            color: #6b7280;
+            font-weight: 500;
+        }
+
+        .platform-value {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #f97316;
+            background: #fef7ed;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            border: 2px solid #fed7aa;
+        }
+
+        /* Financial Tables */
+        .financial-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .financial-table th {
+            background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+            color: white;
+            padding: 1.2rem;
+            text-align: left;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .financial-table td {
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid #e5e7eb;
+            vertical-align: top;
+        }
+
+        .financial-table tr:nth-child(even) {
+            background: #f9fafb;
+        }
+
+        .financial-table tr:hover {
+            background: #f0fdfa;
+        }
+
+        /* Metrics Grid */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(13, 148, 136, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .metric-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .metric-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        /* Valuation Breakdown */
+        .valuation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .valuation-card {
+            background: #ffffff;
+            border: 2px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .valuation-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .valuation-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .valuation-details {
+            flex: 1;
+        }
+
+        .valuation-breakdown {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .breakdown-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            background: #f9fafb;
+            border-radius: 8px;
+            border-left: 4px solid #0d9488;
+        }
+
+        /* Market Analysis */
+        .market-analysis {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            border: 2px solid #cbd5e0;
+        }
+
+        .competitive-landscape {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .competitor-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 2px solid #e5e7eb;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        /* Technical Architecture */
+        .tech-stack {
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin: 2rem 0;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .tech-category {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Growth Projections */
+        .projections-timeline {
+            position: relative;
+            margin: 3rem 0;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #0d9488, #f97316);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 3rem;
+            align-items: center;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: auto;
+            margin-left: 0;
+            text-align: right;
+            padding-right: 2rem;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: auto;
+            margin-right: 0;
+            text-align: left;
+            padding-left: 2rem;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border: 2px solid #e5e7eb;
+            position: relative;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 24px;
+            height: 24px;
+            background: #0d9488;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px #0d9488;
+            z-index: 10;
+        }
+
+        /* Risk Assessment */
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .risk-category {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            border-left: 6px solid #dc2626;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .risk-category.low { border-left-color: #10b981; }
+        .risk-category.medium { border-left-color: #f59e0b; }
+        .risk-category.high { border-left-color: #dc2626; }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 16px;
+            margin: 3rem -0.75in;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item h4 {
+            color: #10b981;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Print Optimizations */
+        @media print {
+            body { font-size: 10pt; }
+            .container { max-width: none; padding: 0.5in; }
+            .header { margin: -0.5in -0.5in 2rem -0.5in; padding: 2rem; }
+            .contact-section { margin: 3rem -0.5in; }
+            .section { page-break-inside: avoid; }
+            .platform-detail { page-break-inside: avoid; }
+            .timeline-item { page-break-inside: avoid; }
+        }
+
+        /* Utility Classes */
+        .highlight {
+            background: linear-gradient(120deg, #fef7ed 0%, #fef7ed 100%);
+            padding: 0.25rem 0.5rem;
+            border-radius: 6px;
+            color: #ea580c;
+            font-weight: 700;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #6b7280;
+            border-left: 4px solid #d1d5db;
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-size: 1.1rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .text-center { text-align: center; }
+        .text-right { text-align: right; }
+        .mb-large { margin-bottom: 3rem; }
+        .mt-large { margin-top: 3rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>AutiMind, Inc.</h1>
+            <div class="subtitle">Comprehensive Technology & Investment Whitepaper</div>
+            <div class="tagline">AI Software Development Company | $23M-$40M Multi-Platform Portfolio</div>
+            <div class="document-info">
+                <strong>Document Classification:</strong> Investment & Partnership Development<br>
+                <strong>Version:</strong> 2025.1 | <strong>Date:</strong> January 2025 | <strong>Pages:</strong> 25+
+            </div>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="section">
+            <h2>Table of Contents</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; font-size: 0.95rem;">
+                <div>
+                    <p><strong>1. Executive Summary</strong> ........................... 3</p>
+                    <p><strong>2. Company Overview & Mission</strong> .............. 4</p>
+                    <p><strong>3. Production Platform Portfolio</strong> ............. 6</p>
+                    <p><strong>4. Comprehensive Financial Analysis</strong> ....... 10</p>
+                    <p><strong>5. Valuation Methodology</strong> ...................... 12</p>
+                    <p><strong>6. Market Analysis & Positioning</strong> ............ 14</p>
+                    <p><strong>7. Technical Architecture</strong> ...................... 16</p>
+                    <p><strong>8. Competitive Landscape</strong> ..................... 18</p>
+                </div>
+                <div>
+                    <p><strong>9. Growth Strategy & Projections</strong> ............ 19</p>
+                    <p><strong>10. Risk Assessment</strong> ........................... 21</p>
+                    <p><strong>11. Investment Opportunities</strong> ................. 22</p>
+                    <p><strong>12. Leadership & Team</strong> ........................ 23</p>
+                    <p><strong>13. Partnership Framework</strong> ................... 24</p>
+                    <p><strong>14. Contact & Next Steps</strong> ..................... 25</p>
+                    <p><strong>Appendices & References</strong> .................... 26</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Executive Summary -->
+        <div class="executive-summary">
+            <h2>Executive Summary</h2>
+            
+            <div class="highlight-box">
+                <h3 style="color: #0d9488; margin-bottom: 1rem;">Investment Thesis</h3>
+                <p><strong>AutiMind, Inc.</strong> represents a unique investment opportunity in the AI software development sector, with a proven production portfolio valued at <span class="highlight">$23M-$40M</span> (conservative risk-adjusted from $111-192M individual platform sum). Founded in 2023 with deep roots in accessibility technology, we have evolved into a comprehensive AI solutions provider with demonstrated revenue generation across education, legal, Web3, and emerging technology markets.</p>
+            </div>
+
+            <h3>Key Investment Highlights</h3>
+            <ul class="feature-list">
+                <li><strong>Proven Portfolio Value:</strong> $23M-$40M conservative valuation across 4 major production platforms</li>
+                <li><strong>First-Mover Advantages:</strong> World's first AI learning disability detection system (AstroLMS), first legal DAO governance platform (ZServed)</li>
+                <li><strong>Revenue Diversification:</strong> Multiple revenue streams across education ($25-50M), legal tech ($75-125M), Web3 ($8-12M), and cannabis AI ($3-5M)</li>
+                <li><strong>Technical Excellence:</strong> Edge-native architecture, enterprise-grade security, blockchain integration capabilities</li>
+                <li><strong>Market Validation:</strong> NSF invitation for pitch submission, production platforms serving active user bases</li>
+                <li><strong>Accessibility Leadership:</strong> Unique competitive advantage through inclusive design principles benefiting all users</li>
+            </ul>
+
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 2rem 0; text-align: center;">
+                <div style="background: #f0fdfa; padding: 1.5rem; border-radius: 12px; border: 2px solid #0d9488;">
+                    <div style="font-size: 1.8rem; font-weight: 900; color: #0d9488;">$40M</div>
+                    <div style="color: #4b5563; font-weight: 600;">Portfolio Value</div>
+                </div>
+                <div style="background: #fef7ed; padding: 1.5rem; border-radius: 12px; border: 2px solid #f97316;">
+                    <div style="font-size: 1.8rem; font-weight: 900; color: #f97316;">$327.6B</div>
+                    <div style="color: #4b5563; font-weight: 600;">Combined TAM</div>
+                </div>
+                <div style="background: #f3e8ff; padding: 1.5rem; border-radius: 12px; border: 2px solid #8b5cf6;">
+                    <div style="font-size: 1.8rem; font-weight: 900; color: #8b5cf6;">4+</div>
+                    <div style="color: #4b5563; font-weight: 600;">Production Platforms</div>
+                </div>
+                <div style="background: #ecfdf5; padding: 1.5rem; border-radius: 12px; border: 2px solid #10b981;">
+                    <div style="font-size: 1.8rem; font-weight: 900; color: #10b981;">Zero</div>
+                    <div style="color: #4b5563; font-weight: 600;">Direct Competitors</div>
+                </div>
+            </div>
+
+            <h3>Company Contact Information</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem;">
+                <div>
+                    <p><strong>Headquarters:</strong> Battle Creek, Michigan 49015</p>
+                    <p><strong>Phone:</strong> 269.261.0069</p>
+                    <p><strong>Email:</strong> info@autimind.com</p>
+                </div>
+                <div>
+                    <p><strong>Website:</strong> https://autimind.com</p>
+                    <p><strong>Established:</strong> 2023</p>
+                    <p><strong>Status:</strong> Revenue-Generating Production Platforms</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Company Overview & Mission -->
+        <div class="section">
+            <h2>Company Overview & Mission</h2>
+
+            <h3>Founding Story & Evolution</h3>
+            <p>AutiMind was founded in 2023 with a deeply personal mission: creating inclusive technology solutions initially focused on supporting learners on the autism spectrum. This foundational commitment to accessibility has evolved into our core competitive advantage, driving the development of AI systems that are inherently inclusive and adaptable to diverse user needs.</p>
+
+            <p>Through determination and innovation—including navigating significant personal challenges such as our co-founder's breast cancer journey—we have expanded from our autism-focused origins to serve a broad spectrum of industries. Today, AutiMind operates as a comprehensive AI software development company with production platforms serving thousands of users across multiple verticals.</p>
+
+            <div class="quote">
+                "Our autism-focused origins provide unique insights into diverse user needs, resulting in more intuitive and inclusive AI systems that benefit all users. This isn't just social responsibility—it's a fundamental competitive advantage in an increasingly diverse world."
+                <br><br><em>— AutiMind Leadership Team</em>
+            </div>
+
+            <h3>Current Mission Statement</h3>
+            <div style="background: linear-gradient(135deg, #f0fdfa 0%, #fef7ed 100%); padding: 2rem; border-radius: 12px; border-left: 6px solid #0d9488; margin: 2rem 0;">
+                <p style="font-size: 1.2rem; font-weight: 600; color: #0d9488;">To develop intelligent, accessible AI solutions that create real business value while maintaining our commitment to inclusion and universal design principles.</p>
+            </div>
+
+            <h3>Core Values & Competitive Differentiators</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+                <div>
+                    <h4>Accessibility First</h4>
+                    <p>Every solution is designed with diverse needs in mind, creating technology that is not only compliant but genuinely inclusive. This approach results in more intuitive interfaces and better user experiences for all users.</p>
+                    
+                    <h4>Production Excellence</h4>
+                    <p>We build enterprise-grade platforms, not prototypes. Our production systems serve real users and generate actual revenue, proving our ability to scale and maintain complex AI systems.</p>
+                </div>
+                <div>
+                    <h4>Technical Innovation</h4>
+                    <p>Leveraging cutting-edge AI, blockchain technology, and edge-native architectures to deliver superior performance and capabilities that establish significant competitive moats.</p>
+                    
+                    <h4>Business Impact</h4>
+                    <p>Focusing on measurable value creation for our clients through demonstrated ROI, efficiency gains, and competitive advantages delivered by our AI solutions.</p>
+                </div>
+            </div>
+
+            <h3>Market Position & Recognition</h3>
+            <p>AutiMind's technical innovation and market potential earned recognition from the National Science Foundation (NSF), receiving an invitation to submit a full pitch for their prestigious funding program. While our co-founder's medical journey prevented completion of the submission, this validation demonstrates the caliber of our technical approach and market opportunity assessment.</p>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-number">2023</div>
+                    <div class="metric-label">Founded</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">$40M</div>
+                    <div class="metric-label">Portfolio Value</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">4+</div>
+                    <div class="metric-label">Production Platforms</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">Multiple</div>
+                    <div class="metric-label">Industries Served</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Production Platform Portfolio -->
+        <div class="section">
+            <h2>Production Platform Portfolio</h2>
+            <p>AutiMind's portfolio demonstrates our technical capabilities across multiple industries with production platforms generating real revenue and serving active user bases. Each platform represents a strategic entry point into high-growth markets with significant barriers to entry.</p>
+
+            <div class="platform-analysis">
+                <!-- AstroLMS -->
+                <div class="platform-detail">
+                    <div class="platform-header">
+                        <div>
+                            <div class="platform-title">AstroLMS</div>
+                            <div class="platform-subtitle">AI-Powered Learning Management System</div>
+                        </div>
+                        <div class="platform-value">$25M - $50M</div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                        <div>
+                            <h4>Platform Overview</h4>
+                            <p><strong>Website:</strong> <a href="https://astrolms.com" style="color: #0d9488;">https://astrolms.com</a></p>
+                            <p><strong>Market:</strong> Education Technology, Corporate Training</p>
+                            <p><strong>Primary Innovation:</strong> World's first AI learning disability detection system</p>
+                            
+                            <h5>Revenue Model</h5>
+                            <p>SaaS subscriptions ranging from $19/month for individual educators to $99+/month for enterprise deployments. Tiered pricing based on learner count and feature access.</p>
+                        </div>
+                        <div>
+                            <h4>Market Position</h4>
+                            <ul class="feature-list">
+                                <li><strong>TAM:</strong> $15B+ assistive technology market</li>
+                                <li><strong>Competition:</strong> Zero direct competitors for AI disability detection</li>
+                                <li><strong>Differentiation:</strong> PhD-trained ML models</li>
+                                <li><strong>Compliance:</strong> HIPAA, FERPA, COPPA ready</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h4>Technical Capabilities</h4>
+                    <ul class="feature-list">
+                        <li><strong>Revolutionary AI Learning Disability Detection:</strong> Five distinct ML model types trained to identify dyslexia, ADHD, autism spectrum indicators, and dyscalculia before learners know they need help</li>
+                        <li><strong>Personalized Adaptive Learning:</strong> Real-time algorithm optimization based on individual learning patterns and cognitive profiles</li>
+                        <li><strong>SCORM Compliance:</strong> Full enterprise compatibility for seamless integration with existing educational infrastructure</li>
+                        <li><strong>Blockchain Integration:</strong> Secure, tamper-proof credential verification and NFT-based achievement systems</li>
+                        <li><strong>Web3 Payment Processing:</strong> Cryptocurrency payment acceptance for global accessibility</li>
+                        <li><strong>Real-time Analytics:</strong> Comprehensive performance tracking with predictive insights</li>
+                        <li><strong>Enterprise Security:</strong> Built on Next.js, Firebase, and Cloudflare for scalable, secure deployment</li>
+                    </ul>
+
+                    <h4>Valuation Rationale</h4>
+                    <table class="financial-table">
+                        <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th>Value</th>
+                                <th>Justification</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Market Size (TAM)</td>
+                                <td>$15B+</td>
+                                <td>Assistive technology market with growing accessibility requirements</td>
+                            </tr>
+                            <tr>
+                                <td>Competitive Position</td>
+                                <td>Zero Direct Competitors</td>
+                                <td>First-mover advantage in AI-powered learning disability detection</td>
+                            </tr>
+                            <tr>
+                                <td>Revenue Multiple</td>
+                                <td>15-40x</td>
+                                <td>Educational AI platforms command premium multiples</td>
+                            </tr>
+                            <tr>
+                                <td>Technology Moat</td>
+                                <td>PhD-Trained Models</td>
+                                <td>Significant barrier to entry requiring specialized expertise</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ZServed -->
+                <div class="platform-detail">
+                    <div class="platform-header">
+                        <div>
+                            <div class="platform-title">ZServed</div>
+                            <div class="platform-subtitle">Legal Technology Platform + DAO Governance</div>
+                        </div>
+                        <div class="platform-value">$75M - $125M</div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                        <div>
+                            <h4>Platform Overview</h4>
+                            <p><strong>Website:</strong> <a href="https://zserved.com" style="color: #0d9488;">https://zserved.com</a></p>
+                            <p><strong>Market:</strong> Legal Technology, Process Serving</p>
+                            <p><strong>Primary Innovation:</strong> First compliant DAO governance system for legal industry</p>
+                            
+                            <h5>Market Comparables</h5>
+                            <p><strong>Harvey AI:</strong> $5B valuation (legal tech AI)<br>
+                            <strong>Clio:</strong> $3B valuation (legal practice management)</p>
+                        </div>
+                        <div>
+                            <h4>DAO Treasury Innovation</h4>
+                            <ul class="feature-list">
+                                <li><strong>Contract Address:</strong> 0x742d35Cc6635C0532925a3b8D421C8F82e92B9e8</li>
+                                <li><strong>Governance Token:</strong> $ZSERVED on Ethereum Mainnet</li>
+                                <li><strong>Technology:</strong> Coinbase AgentKit Integration</li>
+                                <li><strong>Innovation:</strong> First legal platform DAO governance</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h4>Technical Capabilities</h4>
+                    <ul class="feature-list">
+                        <li><strong>AI-Powered Legal Document Processing:</strong> 95% accuracy in automated legal document analysis and processing</li>
+                        <li><strong>Revolutionary Process Serving:</strong> GPS-verified service with blockchain-verified proof of service</li>
+                        <li><strong>Multi-Tenant Architecture:</strong> Complete tenant isolation serving multiple law firms with enterprise-grade security</li>
+                        <li><strong>Smart Contract Escrow:</strong> Automated payment processing and dispute resolution</li>
+                        <li><strong>Comprehensive Audit Trails:</strong> Full compliance with legal industry requirements</li>
+                        <li><strong>Photographic Documentation:</strong> Time-stamped, location-verified evidence systems</li>
+                        <li><strong>SOC 2 Compliance Ready:</strong> Enterprise security standards for legal industry</li>
+                    </ul>
+
+                    <h4>Market Analysis</h4>
+                    <table class="financial-table">
+                        <thead>
+                            <tr>
+                                <th>Market Segment</th>
+                                <th>Size</th>
+                                <th>Growth Rate</th>
+                                <th>ZServed Position</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Process Serving Market</td>
+                                <td>$2.1B</td>
+                                <td>8.5% CAGR</td>
+                                <td>First-mover with AI automation</td>
+                            </tr>
+                            <tr>
+                                <td>Legal Technology</td>
+                                <td>$47.5B</td>
+                                <td>12.4% CAGR</td>
+                                <td>Unique DAO governance model</td>
+                            </tr>
+                            <tr>
+                                <td>Document Automation</td>
+                                <td>$8.9B</td>
+                                <td>15.3% CAGR</td>
+                                <td>95% accuracy AI processing</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- EtchNFT -->
+                <div class="platform-detail">
+                    <div class="platform-header">
+                        <div>
+                            <div class="platform-title">EtchNFT</div>
+                            <div class="platform-subtitle">Physical-Digital NFT Marketplace</div>
+                        </div>
+                        <div class="platform-value">$8M - $12M</div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                        <div>
+                            <h4>Platform Overview</h4>
+                            <p><strong>Market:</strong> Web3, Digital Collectibles, Physical Assets</p>
+                            <p><strong>Primary Innovation:</strong> Comprehensive bridge between physical and digital assets</p>
+                            
+                            <h5>Business Model</h5>
+                            <p><strong>Base Price:</strong> $45 for basic NFT + physical etching<br>
+                            <strong>Premium Services:</strong> Custom manufacturing, rare materials, enhanced verification</p>
+                        </div>
+                        <div>
+                            <h4>Market Opportunity</h4>
+                            <ul class="feature-list">
+                                <li><strong>Collectibles Market (2035):</strong> $902B @ 30.41% CAGR</li>
+                                <li><strong>Multi-Chain Support:</strong> 5+ blockchains (Ethereum, Solana, Base, Polygon)</li>
+                                <li><strong>Positioning:</strong> Democratized vs. luxury NFT market</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h4>Technical Innovation</h4>
+                    <ul class="feature-list">
+                        <li><strong>Multi-Chain NFT Support:</strong> Comprehensive blockchain compatibility including Ethereum, Solana, Base, and Polygon</li>
+                        <li><strong>Smart Contract Escrow:</strong> Automated buyer protection and transaction security</li>
+                        <li><strong>Advanced RBAC System:</strong> Five-tier role-based access control for complex marketplace operations</li>
+                        <li><strong>Custom Manufacturing Integration:</strong> Direct connection to laser engraving and physical production facilities</li>
+                        <li><strong>Non-Custodial Wallet Security:</strong> Users maintain control of assets throughout the transaction process</li>
+                        <li><strong>Global Edge Architecture:</strong> Cloudflare-powered global deployment for optimal performance</li>
+                    </ul>
+                </div>
+
+                <!-- Highspot -->
+                <div class="platform-detail">
+                    <div class="platform-header">
+                        <div>
+                            <div class="platform-title">Highspot</div>
+                            <div class="platform-subtitle">AI Cannabis Recommendation Platform</div>
+                        </div>
+                        <div class="platform-value">$3M - $5M</div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                        <div>
+                            <h4>Platform Overview</h4>
+                            <p><strong>Market:</strong> Cannabis Technology, AI Recommendations</p>
+                            <p><strong>Status:</strong> In Development</p>
+                            <p><strong>Primary Innovation:</strong> AI-powered strain recommendation with edge computing</p>
+                        </div>
+                        <div>
+                            <h4>Market Opportunity</h4>
+                            <ul class="feature-list">
+                                <li><strong>Cannabis Tech Market:</strong> $8.9B+ TAM</li>
+                                <li><strong>Legalization Trend:</strong> Growing state-by-state adoption</li>
+                                <li><strong>Technology Gap:</strong> Limited AI-powered recommendation platforms</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h4>Technical Architecture</h4>
+                    <ul class="feature-list">
+                        <li><strong>AI Recommendation Engine:</strong> Vectorize embeddings for sophisticated strain matching</li>
+                        <li><strong>Real-Time Dispensary Integration:</strong> Live inventory and location mapping</li>
+                        <li><strong>User Preference Learning:</strong> Adaptive algorithms improving recommendations over time</li>
+                        <li><strong>Microservices Architecture:</strong> Cloudflare edge network deployment</li>
+                        <li><strong>Communication Integration:</strong> SMS/email notifications via Twilio/SendGrid</li>
+                        <li><strong>Multi-Modal AI:</strong> Text, image, and preference-based recommendation systems</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Portfolio Summary</h3>
+            <div style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 2rem; border-radius: 16px; border: 2px solid #cbd5e0;">
+                <h4>Additional Portfolio Platforms</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
+                    <div style="background: #10b981; color: white; padding: 1rem; border-radius: 8px; text-align: center; font-weight: 600;">Cartx - Multi-tenant Landing Pages</div>
+                    <div style="background: #3b82f6; color: white; padding: 1rem; border-radius: 8px; text-align: center; font-weight: 600;">Astro-CRM - Customer Management</div>
+                    <div style="background: #8b5cf6; color: white; padding: 1rem; border-radius: 8px; text-align: center; font-weight: 600;">ServerOS - Legal Document Management</div>
+                    <div style="background: #f59e0b; color: white; padding: 1rem; border-radius: 8px; text-align: center; font-weight: 600;">Autonimo - AI Image Generation</div>
+                </div>
+                
+                <div class="text-center mt-large">
+                    <h4>Total Portfolio Value</h4>
+                    <div style="font-size: 2.5rem; font-weight: 900; color: #0d9488; margin: 1rem 0;">$23M - $40M</div>
+                    <p style="color: #6b7280; font-weight: 600;">Conservative risk-adjusted valuation from $111-192M individual platform sum across major production platforms</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comprehensive Financial Analysis -->
+        <div class="section">
+            <h2>Comprehensive Financial Analysis</h2>
+
+            <h3>Portfolio Valuation Methodology</h3>
+            <p>Our $23M-$40M portfolio valuation is based on rigorous comparable company analysis, total addressable market sizing, technical complexity assessment, and first-mover advantage premiums. Each platform's valuation reflects industry-standard multiples while accounting for breakthrough technology differentiators.</p>
+
+            <div class="valuation-grid">
+                <div class="valuation-card">
+                    <div class="valuation-header">
+                        <div class="valuation-icon" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">📚</div>
+                        <div class="valuation-details">
+                            <h4 style="color: #3b82f6; font-size: 1.4rem; margin-bottom: 0.5rem;">AstroLMS: $25-50M</h4>
+                            <p style="color: #6b7280;">Learning Disability Detection AI</p>
+                        </div>
+                    </div>
+                    <div class="valuation-breakdown">
+                        <div class="breakdown-item">
+                            <span>Market Size (Assistive Technology)</span>
+                            <strong style="color: #3b82f6;">$15B+ TAM</strong>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Competitive Position</span>
+                            <strong style="color: #10b981;">Zero Direct Competitors</strong>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Technology Differentiation</span>
+                            <strong style="color: #8b5cf6;">PhD-Trained AI Models</strong>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Compliance Framework</span>
+                            <strong style="color: #f59e0b;">HIPAA/FERPA/COPPA Ready</strong>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Valuation Multiple</span>
+                            <strong style="color: #06b6d4;">15-40x Revenue (EdTech AI)</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="valuation-card">
+                    <div class="valuation-header">
+                        <div class="valuation-icon" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);">⚖️</div>
+                        <div class="valuation-details">
+                            <h4 style="color: #8b5cf6; font-size: 1.4rem; margin-bottom: 0.5rem;">ZServed: $75-125M</h4>
+                            <p style="color: #6b7280;">Legal Tech + DAO Governance</p>
+                        </div>
+                    </div>
+                    <div class="valuation-breakdown">
+                        <div class="breakdown-item">
+                            <span>Market Comparables</span>
+                            <strong style="color: #3b82f6;">Harvey AI ($5B), Clio ($3B)</strong>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Process Serving Market</span>
+                            <strong style="color: #10b981;">$2.1B Addressable</strong>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Innovation Factor</span>
+                            <strong style="color: #8b5cf6;">First Legal DAO Platform</strong>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Revenue Model</span>
+                            <strong style="color: #f59e0b;">High-Margin SaaS</strong>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Enterprise Architecture</span>
+                            <strong style="color: #06b6d4;">Multi-Tenant Isolation</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="valuation-card">
+                    <div class="valuation-header">
+                        <div class="valuation-icon" style="background: linear-gradient(135df, #f59e0b, #d97706);">🎨</div>
+                        <div class="valuation-details">
+                            <h4 style="color: #f59e0b; font-size: 1.4rem; margin-bottom: 0.5rem;">EtchNFT: $8-12M</h4>
+                            <p style="color: #6b7280;">Phygital NFT Marketplace</p>
+                        </div>
+                    </div>
+                    <div class="valuation-breakdown">
+                        <div class="breakdown-item">
+                            <span>Collectibles Market (2035)</span>
+                            <strong style="color: #3b82f6;">$902B @ 30.41% CAGR</strong>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Multi-Chain Support</span>
+                            <strong style="color: #10b981;">5+ Blockchains</strong>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Business Model</span>
+                            <strong style="color: #8b5cf6;">$45 Base + Premium</strong>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Technical Stack</span>
+                            <strong style="color: #f59e0b;">Serverless Edge Computing</strong>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Market Position</span>
+                            <strong style="color: #06b6d4;">Democratized vs. Luxury</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="valuation-card">
+                    <div class="valuation-header">
+                        <div class="valuation-icon" style="background: linear-gradient(135deg, #10b981, #059669);">🌿</div>
+                        <div class="valuation-details">
+                            <h4 style="color: #10b981; font-size: 1.4rem; margin-bottom: 0.5rem;">Highspot: $3-5M</h4>
+                            <p style="color: #6b7280;">Cannabis AI Platform</p>
+                        </div>
+                    </div>
+                    <div class="valuation-breakdown">
+                        <div class="breakdown-item">
+                            <span>Cannabis Tech Market</span>
+                            <strong style="color: #3b82f6;">$8.9B+ TAM</strong>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>AI Recommendation Engine</span>
+                            <strong style="color: #10b981;">Vectorize Embeddings</strong>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Architecture</span>
+                            <strong style="color: #8b5cf6;">Microservices Edge</strong>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Development Stage</span>
+                            <strong style="color: #f59e0b;">Early Stage Premium</strong>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Legalization Trend</span>
+                            <strong style="color: #06b6d4;">Growing Demand</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Portfolio Valuation Summary</h3>
+            <div style="background: linear-gradient(135deg, #374151, #1f2937); color: white; padding: 3rem; border-radius: 16px; margin: 2rem 0;">
+                <h4 style="color: white; text-align: center; margin-bottom: 2rem; font-size: 1.8rem;">Financial Valuation Breakdown</h4>
+                
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 2rem;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 1.2rem; margin-bottom: 0.5rem; color: #d1d5db;">Individual Platform Sum</div>
+                        <div style="font-size: 3rem; font-weight: 900; color: #3b82f6; margin-bottom: 0.5rem;">$111-192M</div>
+                        <div style="font-size: 0.9rem; color: #9ca3af;">Pre-Holding Company Discount</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 1.2rem; margin-bottom: 0.5rem; color: #d1d5db;">Portfolio Discount</div>
+                        <div style="font-size: 3rem; font-weight: 900; color: #f59e0b; margin-bottom: 0.5rem;">20-30%</div>
+                        <div style="font-size: 0.9rem; color: #9ca3af;">Execution & Concentration Risk</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 1.2rem; margin-bottom: 0.5rem; color: #d1d5db;">Conservative Valuation</div>
+                        <div style="font-size: 3rem; font-weight: 900; color: #10b981; margin-bottom: 0.5rem;">$23-40M</div>
+                        <div style="font-size: 0.9rem; color: #9ca3af;">Risk-Adjusted Portfolio Value</div>
+                    </div>
+                </div>
+
+                <div style="background: rgba(59, 130, 246, 0.1); border: 2px solid #3b82f6; border-radius: 12px; padding: 2rem;">
+                    <h5 style="color: white; text-align: center; margin-bottom: 1.5rem; font-size: 1.3rem;">Valuation Methodology Standards</h5>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                        <div>
+                            <h6 style="color: #60a5fa; margin-bottom: 1rem; font-size: 1.1rem;">Comparable Company Analysis</h6>
+                            <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 1.6;">
+                                <li>• Harvey AI: $5B valuation (legal tech)</li>
+                                <li>• Clio: $3B valuation (legal practice management)</li>
+                                <li>• Educational AI platforms: 15-40x revenue multiples</li>
+                                <li>• NFT marketplace platforms: 8-15x revenue multiples</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h6 style="color: #a78bfa; margin-bottom: 1rem; font-size: 1.1rem;">First-Mover Premiums</h6>
+                            <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 1.6;">
+                                <li>• World's first learning disability detection AI</li>
+                                <li>• First compliant legal DAO governance system</li>
+                                <li>• Comprehensive multi-chain phygital NFT platform</li>
+                                <li>• AI-powered cannabis recommendation with edge computing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Revenue Model Analysis</h3>
+            <table class="financial-table">
+                <thead>
+                    <tr>
+                        <th>Revenue Stream</th>
+                        <th>Model Type</th>
+                        <th>Current Status</th>
+                        <th>Growth Potential</th>
+                        <th>Margin Profile</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>AstroLMS Subscriptions</strong></td>
+                        <td>SaaS ($19-$99+/month)</td>
+                        <td>Active Revenue Generation</td>
+                        <td>High - Enterprise Expansion</td>
+                        <td>80%+ Gross Margin</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ZServed Platform Revenue</strong></td>
+                        <td>Usage-Based + SaaS</td>
+                        <td>Production Platform</td>
+                        <td>Very High - Legal Market</td>
+                        <td>85%+ Gross Margin</td>
+                    </tr>
+                    <tr>
+                        <td><strong>EtchNFT Marketplace</strong></td>
+                        <td>Transaction Fees + Base Price</td>
+                        <td>Active Marketplace</td>
+                        <td>High - Growing NFT Market</td>
+                        <td>60%+ Gross Margin</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Custom AI Development</strong></td>
+                        <td>Project-Based Consulting</td>
+                        <td>Active Client Services</td>
+                        <td>Medium - Service Scalability</td>
+                        <td>70%+ Gross Margin</td>
+                    </tr>
+                    <tr>
+                        <td><strong>AI Consulting & Strategy</strong></td>
+                        <td>Hourly + Retainer</td>
+                        <td>Growing Demand</td>
+                        <td>High - Market Education</td>
+                        <td>75%+ Gross Margin</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="page-break-before: always;"></div>
+
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <h2 style="color: white; border-bottom: 3px solid #10b981; margin-bottom: 2rem; padding-bottom: 1rem;">Contact & Partnership Information</h2>
+            
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; color: #d1d5db;">
+                Ready to explore partnership and investment opportunities with AutiMind's $23M-$40M AI platform portfolio? 
+                Contact us to discuss strategic collaborations, growth capital opportunities, or custom AI development projects.
+            </p>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h4>Business Development</h4>
+                    <p><strong>Email:</strong> info@autimind.com<br>
+                    <strong>Phone:</strong> 269.261.0069<br>
+                    <strong>Address:</strong> Battle Creek, Michigan 49015</p>
+                </div>
+                
+                <div class="contact-item">
+                    <h4>Platform Access</h4>
+                    <p><strong>AstroLMS:</strong> <a href="https://astrolms.com" style="color: #60a5fa;">astrolms.com</a><br>
+                    <strong>ZServed:</strong> <a href="https://zserved.com" style="color: #60a5fa;">zserved.com</a><br>
+                    <strong>Portfolio:</strong> <a href="https://autimind.com/our-work" style="color: #60a5fa;">autimind.com/our-work</a></p>
+                </div>
+                
+                <div class="contact-item">
+                    <h4>Investment Opportunities</h4>
+                    <p><strong>Strategic Partnerships:</strong> Growth capital and market expansion<br>
+                    <strong>Technology Integration:</strong> Enterprise AI solutions<br>
+                    <strong>Acquisition Discussions:</strong> Platform and portfolio opportunities</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Document Footer -->
+        <div style="margin-top: 4rem; padding-top: 2rem; border-top: 2px solid #e5e7eb; text-align: center; color: #6b7280; font-size: 0.9rem;">
+            <p><strong>About This Document</strong><br>
+            This comprehensive whitepaper represents the current state of AutiMind, Inc. as of January 2025. All platform valuations are conservative estimates based on rigorous comparable company analysis, market sizing, and actual revenue performance data.</p>
+            
+            <p style="margin-top: 2rem;">
+                <em>© 2025 AutiMind, Inc. All rights reserved. Built with intelligence. Powered by AI.</em><br>
+                <strong>Document Version:</strong> 2025.1 | <strong>Classification:</strong> Investment & Partnership Development<br>
+                <strong>Total Pages:</strong> Comprehensive Analysis | <strong>Last Updated:</strong> January 2025
+            </p>
+        </div>
+    </div>
+</body>
+</html>
