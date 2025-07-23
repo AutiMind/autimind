@@ -12,24 +12,32 @@ import { Menu, X } from 'lucide-react';
         </span>
       </a>
       
-      <div class="hidden md:flex items-center gap-8">
-        <a href="#about" class="text-gray-300 hover:text-teal-400 transition-colors relative group">
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#about" class="text-gray-300 hover:text-teal-400 transition-colors relative group text-sm">
           About
           <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-400 transition-all group-hover:w-full"></span>
         </a>
-        <a href="/services" class="text-gray-300 hover:text-orange-400 transition-colors relative group">
+        <a href="/services" class="text-gray-300 hover:text-orange-400 transition-colors relative group text-sm">
           AI Services
           <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-400 transition-all group-hover:w-full"></span>
         </a>
-        <a href="/industries" class="text-gray-300 hover:text-teal-400 transition-colors relative group">
+        <a href="/industries" class="text-gray-300 hover:text-teal-400 transition-colors relative group text-sm">
           Industries
           <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-400 transition-all group-hover:w-full"></span>
         </a>
-        <a href="/our-work" class="text-gray-300 hover:text-orange-400 transition-colors relative group">
+        <a href="/our-work" class="text-gray-300 hover:text-orange-400 transition-colors relative group text-sm">
           Our Work
           <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-400 transition-all group-hover:w-full"></span>
         </a>
-        <a href="#contact" class="text-gray-300 hover:text-teal-400 transition-colors relative group">
+        <a href="/astrolms" class="text-gray-300 hover:text-teal-400 transition-colors relative group text-sm">
+          AstroLMS
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-400 transition-all group-hover:w-full"></span>
+        </a>
+        <a href="/autimind-investors" class="text-gray-300 hover:text-orange-400 transition-colors relative group text-sm">
+          Investors
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-400 transition-all group-hover:w-full"></span>
+        </a>
+        <a href="#contact" class="text-gray-300 hover:text-teal-400 transition-colors relative group text-sm">
           Contact
           <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-400 transition-all group-hover:w-full"></span>
         </a>
@@ -42,8 +50,8 @@ import { Menu, X } from 'lucide-react';
     </div>
     
     <!-- Mobile Menu -->
-    <div class="md:hidden fixed inset-0 bg-gray-900/98 backdrop-blur-lg z-40 transform -translate-x-full transition-all duration-500 ease-out" id="mobile-menu">
-      <div class="flex flex-col items-center justify-center h-full space-y-6 px-8">
+    <div class="md:hidden fixed inset-0 bg-gray-900/98 backdrop-blur-lg z-50 transform -translate-x-full transition-all duration-500 ease-out" id="mobile-menu">
+      <div class="flex flex-col items-center justify-center h-full space-y-4 px-8 py-20 overflow-y-auto">
         <!-- Logo in mobile menu -->
         <div class="flex items-center gap-3 mb-4">
           <img src="/autimind_logo_sq300.png" alt="AutiMind Logo" class="w-16 h-16 rounded-full border-2 border-teal-400" />
@@ -53,27 +61,42 @@ import { Menu, X } from 'lucide-react';
         </div>
         
         <!-- Menu Links with Modern Styling -->
-        <a href="#about" class="group relative text-2xl font-medium text-gray-300 hover:text-teal-400 transition-all duration-300 mobile-menu-link py-3 px-6 rounded-xl hover:bg-teal-500/10 hover:backdrop-blur-sm border border-transparent hover:border-teal-500/30">
+        <a href="#about" class="group relative text-xl font-medium text-gray-300 hover:text-teal-400 transition-all duration-300 mobile-menu-link py-2 px-6 rounded-xl hover:bg-teal-500/10 hover:backdrop-blur-sm border border-transparent hover:border-teal-500/30">
           <span class="relative z-10">About</span>
           <div class="absolute inset-0 rounded-xl bg-gradient-to-r from-teal-500/0 to-teal-500/0 group-hover:from-teal-500/5 group-hover:to-cyan-500/5 transition-all duration-300"></div>
         </a>
         
-        <a href="/services" class="group relative text-2xl font-medium text-gray-300 hover:text-orange-400 transition-all duration-300 mobile-menu-link py-3 px-6 rounded-xl hover:bg-orange-500/10 hover:backdrop-blur-sm border border-transparent hover:border-orange-500/30">
+        <a href="/services" class="group relative text-xl font-medium text-gray-300 hover:text-orange-400 transition-all duration-300 mobile-menu-link py-2 px-6 rounded-xl hover:bg-orange-500/10 hover:backdrop-blur-sm border border-transparent hover:border-orange-500/30">
           <span class="relative z-10">AI Services</span>
           <div class="absolute inset-0 rounded-xl bg-gradient-to-r from-orange-500/0 to-orange-500/0 group-hover:from-orange-500/5 group-hover:to-red-500/5 transition-all duration-300"></div>
         </a>
         
-        <a href="/industries" class="group relative text-2xl font-medium text-gray-300 hover:text-teal-400 transition-all duration-300 mobile-menu-link py-3 px-6 rounded-xl hover:bg-teal-500/10 hover:backdrop-blur-sm border border-transparent hover:border-teal-500/30">
+        <a href="/industries" class="group relative text-xl font-medium text-gray-300 hover:text-teal-400 transition-all duration-300 mobile-menu-link py-2 px-6 rounded-xl hover:bg-teal-500/10 hover:backdrop-blur-sm border border-transparent hover:border-teal-500/30">
           <span class="relative z-10">Industries</span>
           <div class="absolute inset-0 rounded-xl bg-gradient-to-r from-teal-500/0 to-teal-500/0 group-hover:from-teal-500/5 group-hover:to-cyan-500/5 transition-all duration-300"></div>
         </a>
         
-        <a href="/our-work" class="group relative text-2xl font-medium text-gray-300 hover:text-orange-400 transition-all duration-300 mobile-menu-link py-3 px-6 rounded-xl hover:bg-orange-500/10 hover:backdrop-blur-sm border border-transparent hover:border-orange-500/30">
+        <a href="/our-work" class="group relative text-xl font-medium text-gray-300 hover:text-orange-400 transition-all duration-300 mobile-menu-link py-2 px-6 rounded-xl hover:bg-orange-500/10 hover:backdrop-blur-sm border border-transparent hover:border-orange-500/30">
           <span class="relative z-10">Our Work</span>
           <div class="absolute inset-0 rounded-xl bg-gradient-to-r from-orange-500/0 to-orange-500/0 group-hover:from-orange-500/5 group-hover:to-red-500/5 transition-all duration-300"></div>
         </a>
         
-        <a href="#contact" class="group relative text-2xl font-medium bg-gradient-to-r from-teal-500 to-cyan-500 text-white py-4 px-8 rounded-full font-semibold hover:from-teal-600 hover:to-cyan-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl hover:shadow-teal-500/25 mobile-menu-link">
+        <a href="/astrolms" class="group relative text-xl font-medium text-gray-300 hover:text-teal-400 transition-all duration-300 mobile-menu-link py-2 px-6 rounded-xl hover:bg-teal-500/10 hover:backdrop-blur-sm border border-transparent hover:border-teal-500/30">
+          <span class="relative z-10">AstroLMS</span>
+          <div class="absolute inset-0 rounded-xl bg-gradient-to-r from-teal-500/0 to-teal-500/0 group-hover:from-teal-500/5 group-hover:to-cyan-500/5 transition-all duration-300"></div>
+        </a>
+        
+        <a href="/dao" class="group relative text-xl font-medium text-gray-300 hover:text-orange-400 transition-all duration-300 mobile-menu-link py-2 px-6 rounded-xl hover:bg-orange-500/10 hover:backdrop-blur-sm border border-transparent hover:border-orange-500/30">
+          <span class="relative z-10">DAO</span>
+          <div class="absolute inset-0 rounded-xl bg-gradient-to-r from-orange-500/0 to-orange-500/0 group-hover:from-orange-500/5 group-hover:to-red-500/5 transition-all duration-300"></div>
+        </a>
+        
+        <a href="/autimind-investors" class="group relative text-xl font-medium text-gray-300 hover:text-teal-400 transition-all duration-300 mobile-menu-link py-2 px-6 rounded-xl hover:bg-teal-500/10 hover:backdrop-blur-sm border border-transparent hover:border-teal-500/30">
+          <span class="relative z-10">Investors</span>
+          <div class="absolute inset-0 rounded-xl bg-gradient-to-r from-teal-500/0 to-teal-500/0 group-hover:from-teal-500/5 group-hover:to-cyan-500/5 transition-all duration-300"></div>
+        </a>
+        
+        <a href="#contact" class="group relative text-xl font-medium bg-gradient-to-r from-teal-500 to-cyan-500 text-white py-3 px-6 rounded-full font-semibold hover:from-teal-600 hover:to-cyan-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl hover:shadow-teal-500/25 mobile-menu-link">
           <span class="relative z-10">Contact Us</span>
         </a>
         
