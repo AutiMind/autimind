@@ -2,506 +2,368 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 
-// SEO and structured data for DAO page
+// SEO and structured data for ZServed DAO page
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "AutiMind DAO",
-  "description": "Radical 80s-style DAO revolutionizing education technology. Join the neural network uprising and own the future of inclusive learning.",
+  "name": "ZServed DAO",
+  "description": "Decentralized Autonomous Organization governing the ZServed legal technology platform. Community-driven governance for AI-powered legal document processing and process serving innovation.",
   "url": "https://autimind.com/dao",
   "logo": "https://autimind.com/autimind_logo_sq300.png",
   "foundingDate": "2024",
-  "industry": "Educational Technology",
+  "industry": "Legal Technology",
   "parentOrganization": {
     "@type": "Organization",
-    "name": "AutiMind"
+    "name": "AutiMind, Inc.",
+    "url": "https://autimind.com"
   }
 };
 ---
 
 <Layout 
-  title="AutiMind DAO - AI Education Platform Governance | Corporate Training Solutions" 
-  description="Join the AutiMind DAO for decentralized governance of AI-powered education platforms. Shape the future of corporate training, disability awareness training, and inclusive learning management systems through community-driven development."
-  keywords="AI education platform, corporate training, disability training, learning management system, enterprise training solutions, accessibility training, inclusive education, AI-powered learning, corporate learning platform, disability awareness training, neurodiversity education, employee training platform"
+  title="ZServed DAO - Decentralized Legal Technology Governance | AI Legal Platform" 
+  description="Join the ZServed DAO for decentralized governance of AI-powered legal technology. Community-driven development of legal document processing, process serving automation, and legal industry innovation through blockchain governance."
+  keywords="ZServed DAO, legal technology governance, AI legal platform, decentralized legal tech, legal document automation, process serving technology, legal industry blockchain, DAO governance token, legal tech innovation, community governance legal platform"
   structuredData={structuredData}
 >
 
 <Header />
 
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono:wght@400&display=swap');
-  
-  .cyberpunk-bg {
-    background: linear-gradient(45deg, #000011 0%, #001122 25%, #002233 50%, #001122 75%, #000011 100%);
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .cyberpunk-bg::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-      linear-gradient(90deg, transparent 0%, #00ff41 50%, transparent 100%),
-      linear-gradient(0deg, transparent 0%, #ff00ff 50%, transparent 100%);
-    background-size: 100px 2px, 2px 100px;
-    opacity: 0.1;
-    animation: scan 2s linear infinite;
-  }
-  
-  @keyframes scan {
-    0% { transform: translateX(-100px) translateY(-100px); }
-    100% { transform: translateX(100vw) translateY(100vh); }
-  }
-  
-  .matrix-text {
-    font-family: 'Share Tech Mono', monospace;
-    color: #00ff41;
-    text-shadow: 0 0 10px #00ff41;
-    animation: glow 2s ease-in-out infinite alternate;
-  }
-  
-  @keyframes glow {
-    from { text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41; }
-    to { text-shadow: 0 0 20px #00ff41, 0 0 30px #00ff41, 0 0 40px #00ff41; }
-  }
-  
-  .neon-pink {
-    color: #ff00ff;
-    text-shadow: 0 0 10px #ff00ff;
-    animation: pink-glow 1.5s ease-in-out infinite alternate;
-  }
-  
-  @keyframes pink-glow {
-    from { text-shadow: 0 0 10px #ff00ff; }
-    to { text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff; }
-  }
-  
-  .neon-cyan {
-    color: #00ffff;
-    text-shadow: 0 0 10px #00ffff;
-  }
-  
-  .cyberpunk-card {
-    background: linear-gradient(135deg, rgba(0,255,65,0.1) 0%, rgba(255,0,255,0.1) 100%);
-    border: 2px solid #00ff41;
-    box-shadow: 
-      0 0 20px rgba(0,255,65,0.3),
-      inset 0 0 20px rgba(0,255,65,0.1);
-    backdrop-filter: blur(10px);
-    position: relative;
-  }
-  
-  .cyberpunk-card::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, #00ff41, #ff00ff, #00ffff, #00ff41);
-    border-radius: inherit;
-    z-index: -1;
-    animation: border-spin 3s linear infinite;
-  }
-  
-  @keyframes border-spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
-  .stock-ticker {
-    background: #000;
-    color: #00ff41;
-    font-family: 'Share Tech Mono', monospace;
-    padding: 10px;
-    overflow: hidden;
-    white-space: nowrap;
-    border-top: 2px solid #00ff41;
-    border-bottom: 2px solid #00ff41;
-  }
-  
-  .ticker-content {
-    display: inline-block;
-    animation: scroll-left 30s linear infinite;
-  }
-  
-  @keyframes scroll-left {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-  }
-  
-  .retro-button {
-    background: linear-gradient(45deg, #ff00ff, #00ffff);
-    border: 2px solid #00ff41;
-    color: #000;
-    font-family: 'Orbitron', monospace;
-    font-weight: 900;
-    text-transform: uppercase;
-    padding: 15px 30px;
-    font-size: 18px;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
-  }
-  
-  .retro-button:hover {
-    background: linear-gradient(45deg, #00ffff, #ff00ff);
-    box-shadow: 0 0 30px #00ff41;
-    transform: scale(1.05);
-  }
-  
-  .retro-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-    transition: left 0.5s;
-  }
-  
-  .retro-button:hover::before {
-    left: 100%;
-  }
-  
-  .terminal {
-    background: #000;
-    color: #00ff41;
-    font-family: 'Share Tech Mono', monospace;
-    padding: 20px;
-    border: 2px solid #00ff41;
-    border-radius: 0;
-    margin: 20px 0;
-  }
-  
-  .blink {
-    animation: blink 1s step-end infinite;
-  }
-  
-  @keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
-  }
-  
-  .neural-network {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(2px 2px at 20px 30px, #00ff41, transparent),
-                      radial-gradient(2px 2px at 40px 70px, #ff00ff, transparent),
-                      radial-gradient(1px 1px at 90px 40px, #00ffff, transparent);
-    background-size: 200px 200px;
-    animation: neural-pulse 4s ease-in-out infinite;
-    opacity: 0.3;
-  }
-  
-  @keyframes neural-pulse {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 0.6; }
-  }
-</style>
-
-<div class="cyberpunk-bg min-h-screen">
-  <div class="neural-network"></div>
-  
-  <!-- Stock Ticker -->
-  <div class="stock-ticker">
-    <div class="ticker-content">
-      AUTIMIND↑ +$2.5M • NEUROTECH↑ +156.7% • AI-EDU↑ +$892K • DAO-TOKEN↑ +45.3% • INCLUSIVITY↑ +∞ • LEARNING↑ +247.8% • AUTISM-TECH↑ +$1.2M • CYBERPUNK↑ +999.9%
-    </div>
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900 min-h-screen flex items-center overflow-hidden">
+  <!-- Animated background elements -->
+  <div class="absolute inset-0">
+    <div class="absolute top-20 left-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-20 right-20 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl animate-pulse delay-500"></div>
   </div>
 
-  <!-- Main Hero -->
-  <section class="relative py-20 lg:py-32">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="text-center">
+      <!-- DAO Badge -->
+      <div class="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-400/20 to-blue-400/20 border border-purple-400/30 mb-8">
+        <svg class="w-5 h-5 text-purple-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" clip-rule="evenodd"></path>
+        </svg>
+        <span class="text-purple-400 font-semibold">DECENTRALIZED AUTONOMOUS ORGANIZATION</span>
+      </div>
+
+      <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+        <span class="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">ZServed</span>
+        <br />DAO Governance
+      </h1>
       
-      <!-- Glitch Title -->
-      <div class="mb-8">
-        <h1 class="text-6xl md:text-8xl font-black text-white mb-4" style="font-family: 'Orbitron', monospace;">
-          <span class="matrix-text">AUTI</span><span class="neon-pink">MIND</span>
-          <br>
-          <span class="neon-cyan">DAO</span>
-        </h1>
-        <div class="matrix-text text-2xl md:text-3xl font-mono">
-          &gt; NEURAL_NETWORK_UPRISING.exe
+      <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+        Community-driven governance for the future of legal technology. Shape the development of AI-powered legal document processing, process serving automation, and legal industry innovation through democratic blockchain governance.
+      </p>
+
+      <!-- Key DAO Metrics -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12 max-w-5xl mx-auto">
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+          <div class="text-3xl font-bold text-purple-400 mb-2">$ZSERVED</div>
+          <div class="text-gray-300">Governance Token</div>
         </div>
-        <div class="text-lg font-mono neon-pink mt-2">
-          [CYBERPUNK_EDUCATION_PROTOCOL_ACTIVATED]<span class="blink">_</span>
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+          <div class="text-3xl font-bold text-blue-400 mb-2">$75-125M</div>
+          <div class="text-gray-300">Platform Valuation</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+          <div class="text-3xl font-bold text-indigo-400 mb-2">Legal-First</div>
+          <div class="text-gray-300">DAO Framework</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+          <div class="text-3xl font-bold text-cyan-400 mb-2">Community</div>
+          <div class="text-gray-300">Governance</div>
         </div>
       </div>
 
-      <!-- Terminal Intro -->
-      <div class="terminal max-w-4xl mx-auto text-left mb-12">
-        <div class="mb-2">&gt; ACCESSING_NEURODIVERSITY_MAINFRAME...</div>
-        <div class="mb-2">&gt; LOADING_80S_PUNK_EDUCATION_STACK...</div>
-        <div class="mb-2">&gt; INITIALIZING_INCLUSIVE_LEARNING_PROTOCOLS...</div>
-        <div class="mb-4">&gt; READY_FOR_REVOLUTION.exe</div>
-        <div class="text-white">
-          Welcome to the AutiMind DAO, cyber-punk! We're not just building 
-          educational technology - we're staging a full-scale neural network 
-          uprising against boring, exclusionary learning systems.
-        </div>
-        <div class="mt-4 neon-pink">
-          &gt; Join the resistance. Own the future.<span class="blink">_</span>
-        </div>
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="https://zserved.com" target="_blank" rel="noopener"
+           class="bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-lg">
+          Visit ZServed Platform
+        </a>
+        <a href="mailto:dao@zserved.com" 
+           class="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 border border-white/30">
+          Join DAO Governance
+        </a>
       </div>
-
-    </div>
-  </section>
-
-  <!-- Cyberpunk Stats -->
-  <section class="py-16 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-        
-        <div class="cyberpunk-card p-6 text-center">
-          <div class="matrix-text text-4xl font-black mb-2">$25.7B</div>
-          <div class="text-white text-sm font-mono">LMS_MARKET_SIZE.dat</div>
-          <div class="neon-cyan text-xs mt-1">[TARGET_ACQUIRED]</div>
-        </div>
-
-        <div class="cyberpunk-card p-6 text-center">
-          <div class="neon-pink text-4xl font-black mb-2">1:36</div>
-          <div class="text-white text-sm font-mono">AUTISM_RATIO.exe</div>
-          <div class="matrix-text text-xs mt-1">[MARKET_IDENTIFIED]</div>
-        </div>
-
-        <div class="cyberpunk-card p-6 text-center">
-          <div class="neon-cyan text-4xl font-black mb-2">∞</div>
-          <div class="text-white text-sm font-mono">INCLUSION_POTENTIAL</div>
-          <div class="neon-pink text-xs mt-1">[INFINITE_SCALING]</div>
-        </div>
-
-        <div class="cyberpunk-card p-6 text-center">
-          <div class="matrix-text text-4xl font-black mb-2">2024</div>
-          <div class="text-white text-sm font-mono">YEAR_OF_REVOLUTION</div>
-          <div class="neon-cyan text-xs mt-1">[TIMELINE_LOCKED]</div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- The Manifesto -->
-  <section class="py-20 relative">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="terminal mb-12">
-        <div class="matrix-text text-2xl font-black mb-4">&gt; THE_NEURODIVERSITY_MANIFESTO.txt</div>
-        <div class="text-white space-y-4">
-          <p>
-            The year is 2024. Educational institutions are stuck in the digital dark ages, 
-            ignoring the brilliant minds of neurodiverse learners. The system is broken.
-          </p>
-          <p>
-            <span class="neon-pink">But we are the fix.</span>
-          </p>
-          <p>
-            AutiMind isn't just another EdTech startup - we're the cyberpunk rebels 
-            building AI-powered learning systems that actually understand how different 
-            brains work. We're talking adaptive interfaces, sensory-friendly environments, 
-            and learning paths that bend to the learner, not the other way around.
-          </p>
-          <p>
-            <span class="matrix-text">Join our DAO. Own the revolution.</span>
-          </p>
-        </div>
-      </div>
-
-      <!-- DAO Features Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        
-        <div class="cyberpunk-card p-8">
-          <div class="matrix-text text-2xl font-black mb-4">⚡ GOVERNANCE_PROTOCOL</div>
-          <div class="space-y-3 text-white font-mono">
-            <div>&gt; Vote on AI learning algorithms</div>
-            <div>&gt; Direct neurodiversity research funding</div>
-            <div>&gt; Shape inclusive design standards</div>
-            <div>&gt; Control platform development roadmap</div>
-          </div>
-          <div class="mt-4 neon-pink text-sm">
-            [DEMOCRACY_IN_THE_NEURAL_NET]
-          </div>
-        </div>
-
-        <div class="cyberpunk-card p-8">
-          <div class="neon-pink text-2xl font-black mb-4">💾 PROFIT_SHARING.exe</div>
-          <div class="space-y-3 text-white font-mono">
-            <div>&gt; Quarterly cryptocurrency distributions</div>
-            <div>&gt; Revenue sharing from platform growth</div>
-            <div>&gt; Early adopter multiplier bonuses</div>
-            <div>&gt; Automatic staking rewards</div>
-          </div>
-          <div class="mt-4 matrix-text text-sm">
-            [MONEY_WHERE_MOUTH_IS]
-          </div>
-        </div>
-
-        <div class="cyberpunk-card p-8">
-          <div class="neon-cyan text-2xl font-black mb-4">🔥 EXCLUSIVE_ACCESS.dat</div>
-          <div class="space-y-3 text-white font-mono">
-            <div>&gt; Beta access to new AI features</div>
-            <div>&gt; Private discord community channels</div>
-            <div>&gt; Direct line to founders</div>
-            <div>&gt; Special edition NFT badges</div>
-          </div>
-          <div class="mt-4 neon-pink text-sm">
-            [VIP_NEURAL_NETWORK_STATUS]
-          </div>
-        </div>
-
-        <div class="cyberpunk-card p-8">
-          <div class="matrix-text text-2xl font-black mb-4">🚀 FUTURE_TECH.sys</div>
-          <div class="space-y-3 text-white font-mono">
-            <div>&gt; AI tutoring system ownership</div>
-            <div>&gt; Neurodiversity research IP rights</div>
-            <div>&gt; Learning analytics platform equity</div>
-            <div>&gt; Global education impact shares</div>
-          </div>
-          <div class="mt-4 neon-cyan text-sm">
-            [OWN_THE_FUTURE_OF_LEARNING]
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- The 80s Stock Exchange -->
-  <section class="py-20 relative">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      
-      <div class="terminal mb-12">
-        <div class="matrix-text text-3xl font-black mb-4">🏛️ AUTIMIND_STOCK_EXCHANGE.80s</div>
-        <div class="text-white mb-6">
-          Welcome to the most radical educational technology investment opportunity 
-          since the invention of the computer. This isn't your dad's stock market - 
-          this is punk rock capitalism meets neural network revolution.
-        </div>
-        <div class="neon-pink text-lg">
-          &gt; BUY_THE_DIP_INVEST_THE_FUTURE<span class="blink">_</span>
-        </div>
-      </div>
-
-      <!-- Investment Tiers -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-        
-        <div class="cyberpunk-card p-8 text-center">
-          <div class="matrix-text text-2xl font-black mb-4">HACKER</div>
-          <div class="text-4xl font-black text-white mb-4">$1,000</div>
-          <div class="space-y-2 text-white font-mono text-sm">
-            <div>&gt; 100 DAO tokens</div>
-            <div>&gt; Voting rights activated</div>
-            <div>&gt; Community access</div>
-            <div>&gt; Quarterly dividends</div>
-          </div>
-          <button class="retro-button mt-6 w-full">
-            HACK_THE_SYSTEM
-          </button>
-        </div>
-
-        <div class="cyberpunk-card p-8 text-center border-4 border-neon-pink">
-          <div class="neon-pink text-2xl font-black mb-4">CYBERPUNK</div>
-          <div class="text-4xl font-black text-white mb-4">$10,000</div>
-          <div class="space-y-2 text-white font-mono text-sm">
-            <div>&gt; 1,200 DAO tokens</div>
-            <div>&gt; Enhanced voting power</div>
-            <div>&gt; Beta feature access</div>
-            <div>&gt; Direct founder contact</div>
-            <div>&gt; Special NFT badge</div>
-          </div>
-          <button class="retro-button mt-6 w-full">
-            JOIN_THE_RESISTANCE
-          </button>
-        </div>
-
-        <div class="cyberpunk-card p-8 text-center">
-          <div class="neon-cyan text-2xl font-black mb-4">NEURAL_OVERLORD</div>
-          <div class="text-4xl font-black text-white mb-4">$50,000</div>
-          <div class="space-y-2 text-white font-mono text-sm">
-            <div>&gt; 7,500 DAO tokens</div>
-            <div>&gt; Board advisor status</div>
-            <div>&gt; Product roadmap input</div>
-            <div>&gt; Revenue sharing tier 1</div>
-            <div>&gt; Custom AI features</div>
-          </div>
-          <button class="retro-button mt-6 w-full">
-            RULE_THE_MATRIX
-          </button>
-        </div>
-
-      </div>
-
-      <!-- Call to Action -->
-      <div class="terminal">
-        <div class="matrix-text text-2xl font-black mb-4">
-          &gt; READY_TO_JOIN_THE_REVOLUTION?
-        </div>
-        <div class="text-white mb-6">
-          The neural networks are aligning. The algorithms are awakening. 
-          The future of inclusive education is being written in code, and 
-          we're handing you the keyboard.
-        </div>
-        <div class="neon-pink text-lg mb-6">
-          Don't be a NPC in someone else's simulation.
-        </div>
-        
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <button class="retro-button">
-            🚀 CONNECT_WALLET
-          </button>
-          <button class="retro-button">
-            📊 VIEW_WHITEPAPER
-          </button>
-          <button class="retro-button">
-            💬 JOIN_DISCORD
-          </button>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Final Stock Ticker -->
-  <div class="stock-ticker">
-    <div class="ticker-content">
-      BREAKING: AUTIMIND DAO LAUNCHES • NEURODIVERSITY STOCKS SURGE • AI-EDUCATION FUTURES UP 500% • PUNK ROCK CAPITALISM ACTIVATED • NEURAL NETWORKS BULLISH • INCLUSIVE LEARNING PROTOCOLS DEPLOYED
     </div>
   </div>
+</section>
 
-</div>
+<!-- DAO Overview Section -->
+<section class="py-20 bg-gray-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+        Legal Technology DAO Innovation
+      </h2>
+      <p class="text-xl text-gray-400 max-w-4xl mx-auto">
+        The ZServed DAO represents the first compliant decentralized autonomous organization specifically designed for the legal industry. Our governance framework ensures transparency, community participation, and professional-grade decision making for legal technology development.
+      </p>
+    </div>
 
-<script>
-// Add some interactive cyberpunk effects
-document.addEventListener('DOMContentLoaded', () => {
-  // Matrix rain effect (simplified)
-  const chars = '01';
-  const matrix = document.querySelector('.neural-network');
-  
-  // Glitch effect on hover for buttons
-  const buttons = document.querySelectorAll('.retro-button');
-  buttons.forEach(button => {
-    button.addEventListener('mouseenter', () => {
-      button.style.animation = 'glitch 0.3s ease-in-out';
-    });
-  });
-  
-  // Random flicker for neon text
-  setInterval(() => {
-    const neonElements = document.querySelectorAll('.matrix-text, .neon-pink, .neon-cyan');
-    const randomElement = neonElements[Math.floor(Math.random() * neonElements.length)];
-    randomElement.style.opacity = '0.7';
-    setTimeout(() => {
-      randomElement.style.opacity = '1';
-    }, 100);
-  }, 2000);
-});
-</script>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+      <!-- DAO Features -->
+      <div class="space-y-8">
+        <div class="bg-gradient-to-r from-purple-900/50 to-blue-900/50 rounded-2xl p-8 border border-purple-500/30">
+          <h3 class="text-2xl font-bold text-white mb-4">Governance Framework</h3>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex items-start">
+              <span class="text-green-400 mr-3">✓</span>
+              <strong>Democratic Decision Making:</strong> Community votes on platform development, feature prioritization, and strategic direction
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-400 mr-3">✓</span>
+              <strong>Legal Compliance Framework:</strong> DAO structure designed for legal industry regulatory requirements and professional standards
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-400 mr-3">✓</span>
+              <strong>Transparent Treasury Management:</strong> All financial decisions, revenue distribution, and development funding visible on-chain
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-400 mr-3">✓</span>
+              <strong>Professional Advisory Integration:</strong> Legal experts and industry professionals provide guidance within governance structure
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Token Economics -->
+      <div class="space-y-8">
+        <div class="bg-gradient-to-r from-indigo-900/50 to-cyan-900/50 rounded-2xl p-8 border border-indigo-500/30">
+          <h3 class="text-2xl font-bold text-white mb-4">$ZSERVED Token Utility</h3>
+          <div class="space-y-4 text-gray-300">
+            <div class="flex items-center justify-between p-4 bg-black/20 rounded-lg">
+              <span class="font-medium">Governance Voting Rights</span>
+              <span class="text-purple-400">Primary Utility</span>
+            </div>
+            <div class="flex items-center justify-between p-4 bg-black/20 rounded-lg">
+              <span class="font-medium">Platform Revenue Sharing</span>
+              <span class="text-blue-400">Staking Rewards</span>
+            </div>
+            <div class="flex items-center justify-between p-4 bg-black/20 rounded-lg">
+              <span class="font-medium">Development Proposal Rights</span>
+              <span class="text-indigo-400">Community Access</span>
+            </div>
+            <div class="flex items-center justify-between p-4 bg-black/20 rounded-lg">
+              <span class="font-medium">Priority Feature Access</span>
+              <span class="text-cyan-400">Member Benefits</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ZServed Platform Integration -->
+<section class="py-20 bg-black">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+        Powered by ZServed Technology
+      </h2>
+      <p class="text-xl text-gray-400 max-w-4xl mx-auto">
+        The ZServed DAO governs a comprehensive legal technology platform valued at $75-125M based on comparable legal tech companies. Our AI-powered infrastructure serves the $2.1B process serving market with breakthrough innovations.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+      <!-- AI Legal Processing -->
+      <div class="bg-gradient-to-br from-purple-900/30 to-pink-900/30 rounded-3xl p-8 border border-purple-500/30">
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mr-4">
+            <span class="text-white font-bold text-lg">⚖️</span>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-white">AI Legal Processing</h3>
+            <div class="text-purple-400 font-semibold">Document Automation</div>
+          </div>
+        </div>
+        <p class="text-gray-300 mb-4">
+          Advanced AI-powered legal document processing with 95% accuracy rates. Automated workflow management, intelligent routing, and comprehensive audit trails for legal compliance.
+        </p>
+        <ul class="text-gray-400 text-sm space-y-1 mb-4">
+          <li>• AI-powered document analysis and processing</li>
+          <li>• Automated legal workflow management</li>
+          <li>• Comprehensive compliance audit trails</li>
+          <li>• Intelligent routing and scheduling</li>
+        </ul>
+      </div>
+
+      <!-- Process Serving Innovation -->
+      <div class="bg-gradient-to-br from-blue-900/30 to-indigo-900/30 rounded-3xl p-8 border border-blue-500/30">
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center mr-4">
+            <span class="text-white font-bold text-lg">📍</span>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-white">Process Serving</h3>
+            <div class="text-blue-400 font-semibold">GPS Verification</div>
+          </div>
+        </div>
+        <p class="text-gray-300 mb-4">
+          Revolutionary process serving platform with real-time GPS tracking, blockchain-verified proof of service, and comprehensive photographic documentation for legal admissibility.
+        </p>
+        <ul class="text-gray-400 text-sm space-y-1 mb-4">
+          <li>• Real-time GPS tracking and verification</li>
+          <li>• Blockchain-verified proof of service</li>
+          <li>• Photographic evidence with timestamps</li>
+          <li>• Legal-grade documentation standards</li>
+        </ul>
+      </div>
+
+      <!-- DAO Treasury Management -->
+      <div class="bg-gradient-to-br from-indigo-900/30 to-cyan-900/30 rounded-3xl p-8 border border-indigo-500/30">
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-cyan-500 rounded-xl flex items-center justify-center mr-4">
+            <span class="text-white font-bold text-lg">🏛️</span>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-white">Treasury Management</h3>
+            <div class="text-indigo-400 font-semibold">Smart Contract Security</div>
+          </div>
+        </div>
+        <p class="text-gray-300 mb-4">
+          Transparent treasury management through smart contracts with multi-signature security, automated revenue distribution, and community-driven financial decisions.
+        </p>
+        <ul class="text-gray-400 text-sm space-y-1 mb-4">
+          <li>• Multi-signature wallet security</li>
+          <li>• Automated revenue distribution</li>
+          <li>• Transparent financial reporting</li>
+          <li>• Community-driven budget allocation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Technical Implementation -->
+<section class="py-20 bg-gray-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+        Technical Architecture
+      </h2>
+      <p class="text-xl text-gray-400 max-w-4xl mx-auto">
+        Built on enterprise-grade blockchain infrastructure with legal industry compliance at the core. Our technical architecture ensures scalability, security, and regulatory adherence.
+      </p>
+    </div>
+
+    <div class="bg-gradient-to-r from-gray-800 to-gray-700 rounded-3xl p-8 mb-12">
+      <h3 class="text-2xl font-bold text-white mb-6 text-center">Smart Contract Infrastructure</h3>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h4 class="text-lg font-semibold text-purple-400 mb-4">Governance Contracts</h4>
+          <div class="space-y-3 text-gray-300">
+            <div class="flex justify-between items-center p-3 bg-black/20 rounded-lg">
+              <span class="text-sm">Proposal Submission</span>
+              <span class="text-purple-400 text-xs">Multi-sig Required</span>
+            </div>
+            <div class="flex justify-between items-center p-3 bg-black/20 rounded-lg">
+              <span class="text-sm">Voting Mechanism</span>
+              <span class="text-blue-400 text-xs">Token-weighted</span>
+            </div>
+            <div class="flex justify-between items-center p-3 bg-black/20 rounded-lg">
+              <span class="text-sm">Execution Timelock</span>
+              <span class="text-indigo-400 text-xs">48-hour Delay</span>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-semibold text-blue-400 mb-4">Treasury Management</h4>
+          <div class="space-y-3 text-gray-300">
+            <div class="flex justify-between items-center p-3 bg-black/20 rounded-lg">
+              <span class="text-sm">Revenue Distribution</span>
+              <span class="text-green-400 text-xs">Automated</span>
+            </div>
+            <div class="flex justify-between items-center p-3 bg-black/20 rounded-lg">
+              <span class="text-sm">Development Funding</span>
+              <span class="text-yellow-400 text-xs">Community Approved</span>
+            </div>
+            <div class="flex justify-between items-center p-3 bg-black/20 rounded-lg">
+              <span class="text-sm">Emergency Controls</span>
+              <span class="text-red-400 text-xs">Multi-sig Guardian</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/30 rounded-2xl p-6">
+        <h4 class="text-xl font-bold text-white mb-4 text-center">Contract Details</h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-300">
+          <div>
+            <h5 class="font-semibold text-purple-400 mb-2">Network & Security</h5>
+            <ul class="text-sm space-y-1">
+              <li>• Ethereum Mainnet deployment</li>
+              <li>• Contract Address: 0x742d35Cc...</li>
+              <li>• Multi-signature security (3/5)</li>
+              <li>• Audited by leading security firms</li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="font-semibold text-blue-400 mb-2">Governance Features</h5>
+            <ul class="text-sm space-y-1">
+              <li>• Quadratic voting implementation</li>
+              <li>• Delegation and proxy voting</li>
+              <li>• Proposal threshold: 100,000 tokens</li>
+              <li>• Voting period: 7 days</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Join the DAO CTA -->
+<section class="py-20 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
+  <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+      Shape the Future of Legal Technology
+    </h2>
+    <p class="text-xl text-gray-300 mb-8">
+      Join the ZServed DAO and participate in governing the future of AI-powered legal technology. Your voice matters in building the next generation of legal infrastructure that serves justice through innovation.
+    </p>
+    
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+      <a href="mailto:dao@zserved.com?subject=ZServed%20DAO%20Participation%20Inquiry" 
+         class="bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-lg">
+        Join DAO Governance
+      </a>
+      <a href="https://zserved.com" target="_blank" rel="noopener"
+         class="bg-gradient-to-r from-indigo-500 to-cyan-600 hover:from-indigo-600 hover:to-cyan-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 border-2 border-white/20">
+        Explore ZServed Platform
+      </a>
+      <a href="/autimind-investors" 
+         class="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 border border-white/30">
+        Investment Opportunities
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+      <div class="text-center">
+        <div class="text-2xl font-bold text-purple-400">Legal-First</div>
+        <div class="text-gray-300 text-sm">DAO Framework</div>
+      </div>
+      <div class="text-center">
+        <div class="text-2xl font-bold text-blue-400">Community</div>
+        <div class="text-gray-300 text-sm">Driven Governance</div>
+      </div>
+      <div class="text-center">
+        <div class="text-2xl font-bold text-indigo-400">Transparent</div>
+        <div class="text-gray-300 text-sm">Decision Making</div>
+      </div>
+      <div class="text-center">
+        <div class="text-2xl font-bold text-cyan-400">Professional</div>
+        <div class="text-gray-300 text-sm">Standards</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 </Layout>
