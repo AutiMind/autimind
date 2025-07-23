@@ -1,0 +1,11 @@
+
+To generate the PDF:
+1. Open whitepaper-styled.html in a browser
+2. Press Ctrl+P (or Cmd+P on Mac)
+3. Choose "Save as PDF"
+4. Set margins to 0.5 inches
+5. Enable "Background graphics"
+6. Save as autimind-whitepaper.pdf in the public folder
+
+The HTML file is ready for professional PDF conversion.
+            
