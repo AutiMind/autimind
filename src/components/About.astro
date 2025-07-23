@@ -5,6 +5,7 @@ import FeatureCard from './FeatureCard';
 import amyImage from '/public/images/team/amy1.png';
 import cozyImage from '/public/images/team/Cozy1.png';
 import amyTImage from '/public/images/team/AmyT1.png';
+import bethImage from '/public/images/team/beth.png';
 ---
 
 <section id="about" class="py-20 relative">
@@ -131,6 +132,31 @@ import amyTImage from '/public/images/team/AmyT1.png';
           <h4 class="text-xl font-semibold text-purple-400 mb-2 text-center">Amy Perry Tipton</h4>
           <p class="text-cyan-400 text-center mb-3">Board Member & Strategic Advisor</p>
           <p class="text-gray-300 text-center">MS, CCC-SLP with 25+ years in healthcare leadership and speech-language pathology. Expert in accessibility standards and clinical excellence driving strategic growth.</p>
+        </div>
+        
+        <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <div class="relative mb-4">
+            <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-400">
+              <Image 
+                src={bethImage}
+                alt="Beth Rochefort"
+                class="w-full h-full object-cover"
+                width={96}
+                height={96}
+              />
+            </div>
+            <a 
+              href="https://www.linkedin.com/in/bethrochefort" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
+            >
+              <Linkedin className="w-4 h-4 text-white" />
+            </a>
+          </div>
+          <h4 class="text-xl font-semibold text-blue-400 mb-2 text-center">Beth Rochefort</h4>
+          <p class="text-pink-400 text-center mb-3">Strategic Advisor</p>
+          <p class="text-gray-300 text-center">Transformational leader in educational technology with 15+ years bridging academics, technology, and operations. <strong class="text-blue-400">Former Director of Digital Transformation at Northeastern University</strong>, specializing in educational technology adoption, innovation in learning, and digital credentialing impacting thousands globally.</p>
         </div>
       </div>
     </div>
