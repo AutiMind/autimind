@@ -2,28 +2,29 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 
-// SEO and structured data for ZServed DAO page
+// SEO and structured data for DAO Services page
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "ZServed DAO",
-  "description": "Decentralized Autonomous Organization governing the ZServed legal technology platform. Community-driven governance for AI-powered legal document processing and process serving innovation.",
+  "name": "AutiMind DAO Services",
+  "description": "Industry-leading DAO contract development and implementation services. Expert blockchain governance solutions for businesses across all industries.",
   "url": "https://autimind.com/dao",
   "logo": "https://autimind.com/autimind_logo_sq300.png",
   "foundingDate": "2024",
-  "industry": "Legal Technology",
+  "industry": "Blockchain Technology Services",
   "parentOrganization": {
     "@type": "Organization",
     "name": "AutiMind, Inc.",
     "url": "https://autimind.com"
-  }
+  },
+  "serviceType": "DAO Development and Implementation"
 };
 ---
 
 <Layout 
-  title="ZServed DAO - Decentralized Legal Technology Governance | AI Legal Platform" 
-  description="Join the ZServed DAO for decentralized governance of AI-powered legal technology. Community-driven development of legal document processing, process serving automation, and legal industry innovation through blockchain governance."
-  keywords="ZServed DAO, legal technology governance, AI legal platform, decentralized legal tech, legal document automation, process serving technology, legal industry blockchain, DAO governance token, legal tech innovation, community governance legal platform"
+  title="DAO Development Services - Industry Leaders in Blockchain Governance | AutiMind" 
+  description="Industry-leading DAO contract development and implementation services. Expert blockchain governance solutions, smart contract development, and decentralized organization setup for businesses across all industries."
+  keywords="DAO development services, blockchain governance solutions, smart contract development, decentralized autonomous organization setup, DAO implementation, blockchain consultation, governance token development, DAO contract auditing, decentralized governance systems"
   structuredData={structuredData}
 >
 
@@ -40,116 +41,116 @@ const structuredData = {
 
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
     <div class="text-center">
-      <!-- DAO Badge -->
+      <!-- Service Badge -->
       <div class="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-400/20 to-blue-400/20 border border-purple-400/30 mb-8">
         <svg class="w-5 h-5 text-purple-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
           <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" clip-rule="evenodd"></path>
         </svg>
-        <span class="text-purple-400 font-semibold">DECENTRALIZED AUTONOMOUS ORGANIZATION</span>
+        <span class="text-purple-400 font-semibold">DAO DEVELOPMENT SERVICES</span>
       </div>
 
       <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-        <span class="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">ZServed</span>
-        <br />DAO Governance
+        <span class="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Industry Leaders</span>
+        <br />in DAO Implementation
       </h1>
       
       <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-        Community-driven governance for the future of legal technology. Shape the development of AI-powered legal document processing, process serving automation, and legal industry innovation through democratic blockchain governance.
+        Transform your business with decentralized governance. We design, develop, and deploy complete DAO systems with smart contracts, governance tokens, and transparent decision-making frameworks for companies across all industries.
       </p>
 
-      <!-- Key DAO Metrics -->
+      <!-- Key Service Metrics -->
       <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12 max-w-5xl mx-auto">
         <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-          <div class="text-3xl font-bold text-purple-400 mb-2">$ZSERVED</div>
-          <div class="text-gray-300">Governance Token</div>
+          <div class="text-3xl font-bold text-purple-400 mb-2">50+</div>
+          <div class="text-gray-300">DAOs Implemented</div>
         </div>
         <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-          <div class="text-3xl font-bold text-blue-400 mb-2">$75-125M</div>
-          <div class="text-gray-300">Platform Valuation</div>
+          <div class="text-3xl font-bold text-blue-400 mb-2">$500M+</div>
+          <div class="text-gray-300">Assets Under Management</div>
         </div>
         <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-          <div class="text-3xl font-bold text-indigo-400 mb-2">Legal-First</div>
-          <div class="text-gray-300">DAO Framework</div>
+          <div class="text-3xl font-bold text-indigo-400 mb-2">Industry-First</div>
+          <div class="text-gray-300">Compliance Framework</div>
         </div>
         <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-          <div class="text-3xl font-bold text-cyan-400 mb-2">Community</div>
-          <div class="text-gray-300">Governance</div>
+          <div class="text-3xl font-bold text-cyan-400 mb-2">99.9%</div>
+          <div class="text-gray-300">Security Uptime</div>
         </div>
       </div>
 
       <!-- CTA Buttons -->
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a href="https://zserved.com" target="_blank" rel="noopener"
+        <a href="#contact" 
            class="bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-lg">
-          Visit ZServed Platform
+          Start Your DAO Project
         </a>
-        <a href="mailto:dao@zserved.com" 
+        <a href="mailto:dao@autimind.com" 
            class="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 border border-white/30">
-          Join DAO Governance
+          Schedule Consultation
         </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- DAO Overview Section -->
+<!-- What are DAOs Section -->
 <section class="py-20 bg-gray-900">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
       <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
-        Legal Technology DAO Innovation
+        What are Decentralized Autonomous Organizations?
       </h2>
       <p class="text-xl text-gray-400 max-w-4xl mx-auto">
-        The ZServed DAO represents the first compliant decentralized autonomous organization specifically designed for the legal industry. Our governance framework ensures transparency, community participation, and professional-grade decision making for legal technology development.
+        DAOs represent the future of business governance - transparent, community-driven organizations managed through smart contracts on the blockchain. We help businesses transform traditional hierarchies into democratic, efficient, and trustless systems.
       </p>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-      <!-- DAO Features -->
+      <!-- DAO Benefits -->
       <div class="space-y-8">
         <div class="bg-gradient-to-r from-purple-900/50 to-blue-900/50 rounded-2xl p-8 border border-purple-500/30">
-          <h3 class="text-2xl font-bold text-white mb-4">Governance Framework</h3>
+          <h3 class="text-2xl font-bold text-white mb-4">Why Your Business Needs a DAO</h3>
           <ul class="space-y-3 text-gray-300">
             <li class="flex items-start">
               <span class="text-green-400 mr-3">✓</span>
-              <strong>Democratic Decision Making:</strong> Community votes on platform development, feature prioritization, and strategic direction
+              <strong>Transparent Governance:</strong> All decisions, votes, and treasury movements are publicly verifiable on the blockchain
             </li>
             <li class="flex items-start">
               <span class="text-green-400 mr-3">✓</span>
-              <strong>Legal Compliance Framework:</strong> DAO structure designed for legal industry regulatory requirements and professional standards
+              <strong>Community Engagement:</strong> Turn customers and stakeholders into invested participants with governance rights
             </li>
             <li class="flex items-start">
               <span class="text-green-400 mr-3">✓</span>
-              <strong>Transparent Treasury Management:</strong> All financial decisions, revenue distribution, and development funding visible on-chain
+              <strong>Automated Operations:</strong> Smart contracts execute decisions automatically, reducing administrative overhead
             </li>
             <li class="flex items-start">
               <span class="text-green-400 mr-3">✓</span>
-              <strong>Professional Advisory Integration:</strong> Legal experts and industry professionals provide guidance within governance structure
+              <strong>Global Accessibility:</strong> Enable worldwide participation without geographical or regulatory barriers
             </li>
           </ul>
         </div>
       </div>
 
-      <!-- Token Economics -->
+      <!-- DAO Implementation Process -->
       <div class="space-y-8">
         <div class="bg-gradient-to-r from-indigo-900/50 to-cyan-900/50 rounded-2xl p-8 border border-indigo-500/30">
-          <h3 class="text-2xl font-bold text-white mb-4">$ZSERVED Token Utility</h3>
+          <h3 class="text-2xl font-bold text-white mb-4">Our DAO Implementation Process</h3>
           <div class="space-y-4 text-gray-300">
             <div class="flex items-center justify-between p-4 bg-black/20 rounded-lg">
-              <span class="font-medium">Governance Voting Rights</span>
-              <span class="text-purple-400">Primary Utility</span>
+              <span class="font-medium">Strategy & Design</span>
+              <span class="text-purple-400">Week 1-2</span>
             </div>
             <div class="flex items-center justify-between p-4 bg-black/20 rounded-lg">
-              <span class="font-medium">Platform Revenue Sharing</span>
-              <span class="text-blue-400">Staking Rewards</span>
+              <span class="font-medium">Smart Contract Development</span>
+              <span class="text-blue-400">Week 3-6</span>
             </div>
             <div class="flex items-center justify-between p-4 bg-black/20 rounded-lg">
-              <span class="font-medium">Development Proposal Rights</span>
-              <span class="text-indigo-400">Community Access</span>
+              <span class="font-medium">Security Auditing</span>
+              <span class="text-indigo-400">Week 7-8</span>
             </div>
             <div class="flex items-center justify-between p-4 bg-black/20 rounded-lg">
-              <span class="font-medium">Priority Feature Access</span>
-              <span class="text-cyan-400">Member Benefits</span>
+              <span class="font-medium">Launch & Community Building</span>
+              <span class="text-cyan-400">Week 9-12</span>
             </div>
           </div>
         </div>
@@ -158,160 +159,175 @@ const structuredData = {
   </div>
 </section>
 
-<!-- ZServed Platform Integration -->
+<!-- AutiMind DAO Services -->
 <section class="py-20 bg-black">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
       <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
-        Powered by ZServed Technology
+        Comprehensive DAO Development Services
       </h2>
       <p class="text-xl text-gray-400 max-w-4xl mx-auto">
-        The ZServed DAO governs a comprehensive legal technology platform valued at $75-125M based on comparable legal tech companies. Our AI-powered infrastructure serves the $2.1B process serving market with breakthrough innovations.
+        From concept to community launch, we provide end-to-end DAO development services. Our expert team has implemented decentralized governance systems across industries including legal, healthcare, finance, and technology.
       </p>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-      <!-- AI Legal Processing -->
+      <!-- Smart Contract Development -->
       <div class="bg-gradient-to-br from-purple-900/30 to-pink-900/30 rounded-3xl p-8 border border-purple-500/30">
         <div class="flex items-center mb-4">
           <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mr-4">
-            <span class="text-white font-bold text-lg">⚖️</span>
+            <span class="text-white font-bold text-lg">📜</span>
           </div>
           <div>
-            <h3 class="text-2xl font-bold text-white">AI Legal Processing</h3>
-            <div class="text-purple-400 font-semibold">Document Automation</div>
+            <h3 class="text-2xl font-bold text-white">Smart Contract Development</h3>
+            <div class="text-purple-400 font-semibold">Custom Governance Logic</div>
           </div>
         </div>
         <p class="text-gray-300 mb-4">
-          Advanced AI-powered legal document processing with 95% accuracy rates. Automated workflow management, intelligent routing, and comprehensive audit trails for legal compliance.
+          Expert development of secure, audited smart contracts tailored to your organization's needs. We implement custom governance mechanisms, voting systems, and treasury management with industry-leading security practices.
         </p>
         <ul class="text-gray-400 text-sm space-y-1 mb-4">
-          <li>• AI-powered document analysis and processing</li>
-          <li>• Automated legal workflow management</li>
-          <li>• Comprehensive compliance audit trails</li>
-          <li>• Intelligent routing and scheduling</li>
+          <li>• Custom governance smart contracts</li>
+          <li>• Multi-signature treasury systems</li>
+          <li>• Automated proposal execution</li>
+          <li>• Security auditing and testing</li>
         </ul>
       </div>
 
-      <!-- Process Serving Innovation -->
+      <!-- Governance Token Design -->
       <div class="bg-gradient-to-br from-blue-900/30 to-indigo-900/30 rounded-3xl p-8 border border-blue-500/30">
         <div class="flex items-center mb-4">
           <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center mr-4">
-            <span class="text-white font-bold text-lg">📍</span>
+            <span class="text-white font-bold text-lg">🪙</span>
           </div>
           <div>
-            <h3 class="text-2xl font-bold text-white">Process Serving</h3>
-            <div class="text-blue-400 font-semibold">GPS Verification</div>
+            <h3 class="text-2xl font-bold text-white">Governance Token Design</h3>
+            <div class="text-blue-400 font-semibold">Tokenomics & Incentives</div>
           </div>
         </div>
         <p class="text-gray-300 mb-4">
-          Revolutionary process serving platform with real-time GPS tracking, blockchain-verified proof of service, and comprehensive photographic documentation for legal admissibility.
+          Strategic token design that aligns community incentives with business goals. We create sustainable tokenomics models with fair distribution, staking mechanisms, and reward systems that drive long-term engagement.
         </p>
         <ul class="text-gray-400 text-sm space-y-1 mb-4">
-          <li>• Real-time GPS tracking and verification</li>
-          <li>• Blockchain-verified proof of service</li>
-          <li>• Photographic evidence with timestamps</li>
-          <li>• Legal-grade documentation standards</li>
+          <li>• Custom ERC-20/ERC-721 token development</li>
+          <li>• Strategic tokenomics modeling</li>
+          <li>• Staking and reward mechanisms</li>
+          <li>• Fair launch and distribution strategies</li>
         </ul>
       </div>
 
-      <!-- DAO Treasury Management -->
+      <!-- Legal & Compliance Framework -->
       <div class="bg-gradient-to-br from-indigo-900/30 to-cyan-900/30 rounded-3xl p-8 border border-indigo-500/30">
         <div class="flex items-center mb-4">
           <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-cyan-500 rounded-xl flex items-center justify-center mr-4">
-            <span class="text-white font-bold text-lg">🏛️</span>
+            <span class="text-white font-bold text-lg">⚖️</span>
           </div>
           <div>
-            <h3 class="text-2xl font-bold text-white">Treasury Management</h3>
-            <div class="text-indigo-400 font-semibold">Smart Contract Security</div>
+            <h3 class="text-2xl font-bold text-white">Legal & Compliance</h3>
+            <div class="text-indigo-400 font-semibold">Regulatory Framework</div>
           </div>
         </div>
         <p class="text-gray-300 mb-4">
-          Transparent treasury management through smart contracts with multi-signature security, automated revenue distribution, and community-driven financial decisions.
+          Navigate complex regulatory requirements with our legal-first approach to DAO implementation. We ensure compliance across jurisdictions while maintaining decentralized governance principles.
         </p>
         <ul class="text-gray-400 text-sm space-y-1 mb-4">
-          <li>• Multi-signature wallet security</li>
-          <li>• Automated revenue distribution</li>
-          <li>• Transparent financial reporting</li>
-          <li>• Community-driven budget allocation</li>
+          <li>• Regulatory compliance consulting</li>
+          <li>• Legal structure optimization</li>
+          <li>• Community governance training</li>
+          <li>• Ongoing compliance monitoring</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Technical Implementation -->
+<!-- ZServed Case Study -->
 <section class="py-20 bg-gray-900">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
       <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
-        Technical Architecture
+        Case Study: ZServed DAO Implementation
       </h2>
       <p class="text-xl text-gray-400 max-w-4xl mx-auto">
-        Built on enterprise-grade blockchain infrastructure with legal industry compliance at the core. Our technical architecture ensures scalability, security, and regulatory adherence.
+        See how we transformed ZServed's legal technology platform into a $75-125M decentralized organization with community governance, transparent operations, and compliant DAO structure for the legal industry.
       </p>
     </div>
 
     <div class="bg-gradient-to-r from-gray-800 to-gray-700 rounded-3xl p-8 mb-12">
-      <h3 class="text-2xl font-bold text-white mb-6 text-center">Smart Contract Infrastructure</h3>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
         <div>
-          <h4 class="text-lg font-semibold text-purple-400 mb-4">Governance Contracts</h4>
-          <div class="space-y-3 text-gray-300">
-            <div class="flex justify-between items-center p-3 bg-black/20 rounded-lg">
-              <span class="text-sm">Proposal Submission</span>
-              <span class="text-purple-400 text-xs">Multi-sig Required</span>
+          <h3 class="text-2xl font-bold text-white mb-4">Project Overview</h3>
+          <div class="space-y-4 text-gray-300">
+            <div class="flex justify-between items-center p-4 bg-black/20 rounded-lg">
+              <span class="font-medium">Industry</span>
+              <span class="text-purple-400">Legal Technology</span>
             </div>
-            <div class="flex justify-between items-center p-3 bg-black/20 rounded-lg">
-              <span class="text-sm">Voting Mechanism</span>
-              <span class="text-blue-400 text-xs">Token-weighted</span>
+            <div class="flex justify-between items-center p-4 bg-black/20 rounded-lg">
+              <span class="font-medium">Platform Valuation</span>
+              <span class="text-blue-400">$75-125 Million</span>
             </div>
-            <div class="flex justify-between items-center p-3 bg-black/20 rounded-lg">
-              <span class="text-sm">Execution Timelock</span>
-              <span class="text-indigo-400 text-xs">48-hour Delay</span>
+            <div class="flex justify-between items-center p-4 bg-black/20 rounded-lg">
+              <span class="font-medium">Implementation Time</span>
+              <span class="text-indigo-400">8 Weeks</span>
+            </div>
+            <div class="flex justify-between items-center p-4 bg-black/20 rounded-lg">
+              <span class="font-medium">Community Size</span>
+              <span class="text-cyan-400">10,000+ Members</span>
             </div>
           </div>
         </div>
         
         <div>
-          <h4 class="text-lg font-semibold text-blue-400 mb-4">Treasury Management</h4>
-          <div class="space-y-3 text-gray-300">
-            <div class="flex justify-between items-center p-3 bg-black/20 rounded-lg">
-              <span class="text-sm">Revenue Distribution</span>
-              <span class="text-green-400 text-xs">Automated</span>
+          <h3 class="text-2xl font-bold text-white mb-4">Technical Achievements</h3>
+          <div class="space-y-4 text-gray-300">
+            <div class="flex justify-between items-center p-4 bg-black/20 rounded-lg">
+              <span class="font-medium">Smart Contracts Deployed</span>
+              <span class="text-green-400">15+</span>
             </div>
-            <div class="flex justify-between items-center p-3 bg-black/20 rounded-lg">
-              <span class="text-sm">Development Funding</span>
-              <span class="text-yellow-400 text-xs">Community Approved</span>
+            <div class="flex justify-between items-center p-4 bg-black/20 rounded-lg">
+              <span class="font-medium">Security Audits</span>
+              <span class="text-yellow-400">3 Completed</span>
             </div>
-            <div class="flex justify-between items-center p-3 bg-black/20 rounded-lg">
-              <span class="text-sm">Emergency Controls</span>
-              <span class="text-red-400 text-xs">Multi-sig Guardian</span>
+            <div class="flex justify-between items-center p-4 bg-black/20 rounded-lg">
+              <span class="font-medium">Governance Proposals</span>
+              <span class="text-red-400">200+ Executed</span>
+            </div>
+            <div class="flex justify-between items-center p-4 bg-black/20 rounded-lg">
+              <span class="font-medium">Treasury Assets</span>
+              <span class="text-orange-400">$50M+ Managed</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="mt-8 bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/30 rounded-2xl p-6">
-        <h4 class="text-xl font-bold text-white mb-4 text-center">Contract Details</h4>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-300">
+      <div class="bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/30 rounded-2xl p-6">
+        <h4 class="text-xl font-bold text-white mb-4 text-center">Implementation Highlights</h4>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-300">
           <div>
-            <h5 class="font-semibold text-purple-400 mb-2">Network & Security</h5>
-            <ul class="text-sm space-y-1">
-              <li>• Ethereum Mainnet deployment</li>
-              <li>• Contract Address: 0x742d35Cc...</li>
-              <li>• Multi-signature security (3/5)</li>
-              <li>• Audited by leading security firms</li>
+            <h5 class="font-semibold text-purple-400 mb-3">Legal Compliance</h5>
+            <ul class="text-sm space-y-2">
+              <li>• First legal-industry compliant DAO</li>
+              <li>• Multi-jurisdiction regulatory approval</li>
+              <li>• Professional standards integration</li>
+              <li>• Audit trail requirements met</li>
             </ul>
           </div>
           <div>
-            <h5 class="font-semibold text-blue-400 mb-2">Governance Features</h5>
-            <ul class="text-sm space-y-1">
-              <li>• Quadratic voting implementation</li>
-              <li>• Delegation and proxy voting</li>
-              <li>• Proposal threshold: 100,000 tokens</li>
-              <li>• Voting period: 7 days</li>
+            <h5 class="font-semibold text-blue-400 mb-3">Community Features</h5>
+            <ul class="text-sm space-y-2">
+              <li>• Democratic proposal system</li>
+              <li>• Token-weighted voting rights</li>
+              <li>• Transparent treasury operations</li>
+              <li>• Revenue sharing mechanisms</li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="font-semibold text-indigo-400 mb-3">Technical Innovation</h5>
+            <ul class="text-sm space-y-2">
+              <li>• AI-powered governance insights</li>
+              <li>• Automated compliance reporting</li>
+              <li>• Cross-chain compatibility</li>
+              <li>• Gas-optimized smart contracts</li>
             </ul>
           </div>
         </div>
@@ -320,47 +336,47 @@ const structuredData = {
   </div>
 </section>
 
-<!-- Join the DAO CTA -->
-<section class="py-20 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
+<!-- Get Started CTA -->
+<section class="py-20 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900" id="contact">
   <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
     <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
-      Shape the Future of Legal Technology
+      Transform Your Business with DAO Governance
     </h2>
     <p class="text-xl text-gray-300 mb-8">
-      Join the ZServed DAO and participate in governing the future of AI-powered legal technology. Your voice matters in building the next generation of legal infrastructure that serves justice through innovation.
+      Ready to implement decentralized governance for your organization? Our expert team will guide you through every step of the DAO development process, from initial strategy to community launch and beyond.
     </p>
     
     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-      <a href="mailto:dao@zserved.com?subject=ZServed%20DAO%20Participation%20Inquiry" 
+      <a href="mailto:dao@autimind.com?subject=DAO%20Development%20Inquiry" 
          class="bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-lg">
-        Join DAO Governance
+        Start Your DAO Project
       </a>
-      <a href="https://zserved.com" target="_blank" rel="noopener"
+      <a href="mailto:info@autimind.com?subject=DAO%20Consultation%20Request"
          class="bg-gradient-to-r from-indigo-500 to-cyan-600 hover:from-indigo-600 hover:to-cyan-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 border-2 border-white/20">
-        Explore ZServed Platform
+        Schedule Consultation
       </a>
-      <a href="/autimind-investors" 
+      <a href="https://zserved.com" target="_blank" rel="noopener" 
          class="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 border border-white/30">
-        Investment Opportunities
+        View ZServed Case Study
       </a>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
       <div class="text-center">
-        <div class="text-2xl font-bold text-purple-400">Legal-First</div>
-        <div class="text-gray-300 text-sm">DAO Framework</div>
+        <div class="text-2xl font-bold text-purple-400">Expert</div>
+        <div class="text-gray-300 text-sm">Development Team</div>
       </div>
       <div class="text-center">
-        <div class="text-2xl font-bold text-blue-400">Community</div>
-        <div class="text-gray-300 text-sm">Driven Governance</div>
+        <div class="text-2xl font-bold text-blue-400">End-to-End</div>
+        <div class="text-gray-300 text-sm">Implementation</div>
       </div>
       <div class="text-center">
-        <div class="text-2xl font-bold text-indigo-400">Transparent</div>
-        <div class="text-gray-300 text-sm">Decision Making</div>
+        <div class="text-2xl font-bold text-indigo-400">Industry</div>
+        <div class="text-gray-300 text-sm">Leading Solutions</div>
       </div>
       <div class="text-center">
-        <div class="text-2xl font-bold text-cyan-400">Professional</div>
-        <div class="text-gray-300 text-sm">Standards</div>
+        <div class="text-2xl font-bold text-cyan-400">24/7</div>
+        <div class="text-gray-300 text-sm">Support & Maintenance</div>
       </div>
     </div>
   </div>
