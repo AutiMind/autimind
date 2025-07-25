@@ -1,0 +1,29 @@
+name = "autimind-website"
+compatibility_date = "2024-01-15"
+pages_build_output_dir = "./dist"
+
+[env.production]
+name = "autimind-website"
+
+# Database configuration temporarily removed for deployment
+# [[env.production.d1_databases]]
+# binding = "DB"
+# database_name = "autimind-contacts"
+# database_id = "TBD"  # Will be filled after database creation
+
+[vars]
+NODE_ENV = "production"
+
+# For local development - temporarily removed
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "autimind-contacts-dev"
+# database_id = "TBD"  # Will be filled after database creation
+
+# Environment variables (set via wrangler secret)
+# EMAIL_API_KEY - API key for sending email notifications (Resend, SendGrid, etc.)
+# WEBHOOK_URL - Slack/Discord webhook URL for instant notifications
+# 
+# Example setup commands:
+# wrangler secret put EMAIL_API_KEY
+# wrangler secret put WEBHOOK_URL
