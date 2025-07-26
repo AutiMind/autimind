@@ -12,7 +12,9 @@ const ContactForm = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!formData.name || !formData.email || !formData.subject || !formData.message) {
@@ -20,20 +22,38 @@ const ContactForm = () => {
       return;
     }
 
-    const emailBody = `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company || 'Not specified'}\nSubject: ${formData.subject}\n\nMessage:\n${formData.message}`;
-    
-    window.location.href = `mailto:andrea@autimind.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(emailBody)}`;
-    
-    toast.success('Opening email client...');
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      company: '',
-      subject: '',
-      message: ''
-    });
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast.success('Message sent successfully! We\'ll get back to you soon.');
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        toast.error(result.error || 'Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast.error('Network error. Please check your connection and try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -163,12 +183,26 @@ const ContactForm = () => {
       
       <motion.button
         type="submit"
-        className="w-full bg-gradient-to-r from-teal-500 to-cyan-500 text-white py-4 px-6 rounded-lg font-semibold text-lg hover:from-teal-600 hover:to-cyan-600 transition-all duration-300 flex items-center justify-center gap-2 group"
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.98 }}
+        disabled={isSubmitting}
+        className={`w-full py-4 px-6 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2 group ${
+          isSubmitting
+            ? 'bg-gray-600 cursor-not-allowed'
+            : 'bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600'
+        } text-white`}
+        whileHover={!isSubmitting ? { scale: 1.02 } : {}}
+        whileTap={!isSubmitting ? { scale: 0.98 } : {}}
       >
-        <Send className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-        Send Message
+        {isSubmitting ? (
+          <>
+            <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+            Sending...
+          </>
+        ) : (
+          <>
+            <Send className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+            Send Message
+          </>
+        )}
       </motion.button>
     </motion.form>
   );
