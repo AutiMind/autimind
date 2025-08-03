@@ -90,9 +90,10 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     const webhookSecret = env.BREAKCOLD_WEBHOOK_SECRET;
     const workspaceId = env.BREAKCOLD_WORKSPACE_ID;
     
-    if (!webhookSecret) {
-      console.error('BREAKCOLD_WEBHOOK_SECRET not configured for AutiMind');
-      return new Response('Webhook secret not configured', { status: 500 });
+    // If no webhook secret configured, skip verification (for development)
+    const skipVerification = !webhookSecret;
+    if (skipVerification) {
+      console.warn('BREAKCOLD_WEBHOOK_SECRET not configured for AutiMind - skipping verification (development mode)');
     }
 
     const body = await request.text();
@@ -111,8 +112,8 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       return new Response('Invalid payload structure', { status: 400 });
     }
 
-    // Verify webhook secret
-    if (!verifyWebhookSecret(payload.secret, webhookSecret)) {
+    // Verify webhook secret (only if configured)
+    if (!skipVerification && !verifyWebhookSecret(payload.secret, webhookSecret!)) {
       console.error('AutiMind webhook secret verification failed');
       return new Response('Unauthorized', { status: 401 });
     }

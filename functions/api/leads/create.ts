@@ -6,6 +6,7 @@
 interface Env {
   BREAKCOLD_API_KEY?: string;
   BREAKCOLD_SECRET_STORE_ID?: string;
+  BREAKCOLD_WEBHOOK_SECRET?: string;
 }
 
 interface CreateLeadRequest {
@@ -25,17 +26,20 @@ interface CreateLeadRequest {
   conversationHistory?: string[];
 }
 
-// Retrieve API key from environment
+// Retrieve API key from Cloudflare Pages environment
 const getBreakcoldApiKey = async (env: Env): Promise<string> => {
+  console.log('Checking for BREAKCOLD_API_KEY in environment...');
+  
+  // In Cloudflare Pages Functions, secrets are available directly on env
   if (env.BREAKCOLD_API_KEY) {
+    console.log('Found BREAKCOLD_API_KEY in environment');
     return env.BREAKCOLD_API_KEY;
   }
   
-  // In future, implement secret store retrieval
-  const secretStoreId = env.BREAKCOLD_SECRET_STORE_ID || '383e46b47c2749a1804ba0c434b80b47';
-  console.log(`API key not in environment, would retrieve from secret store: ${secretStoreId}`);
+  console.error('BREAKCOLD_API_KEY not found in environment');
+  console.log('Available env keys:', Object.keys(env));
   
-  throw new Error('Breakcold API key not available');
+  throw new Error('Breakcold API key not available - ensure BREAKCOLD_API_KEY is set in Cloudflare Pages secrets');
 };
 
 // Create lead in Breakcold via API
