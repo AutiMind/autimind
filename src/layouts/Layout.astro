@@ -24,6 +24,7 @@ const fullCanonicalUrl = canonicalUrl || currentUrl.href;
 
 import '../styles/global.css';
 import CookieBanner from '../components/CookieBanner.astro';
+import AIAssistant from '../components/AIAssistant.tsx';
 ---
 
 <!DOCTYPE html>
@@ -341,5 +342,12 @@ import CookieBanner from '../components/CookieBanner.astro';
     </div>
     <slot />
     <CookieBanner />
+    
+    <!-- AI Assistant for AI Development Lead Capture -->
+    <AIAssistant 
+      context="sales" 
+      enableLeadCapture={true}
+      client:load 
+    />
   </body>
 </html>
