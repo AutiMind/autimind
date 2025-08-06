@@ -364,25 +364,43 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
 
   if (!isOpen) {
     return (
-      <button
-        onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50"
-        aria-label="Open AI Assistant"
-      >
-        <MessageCircle className="w-6 h-6" />
-      </button>
+      <div className="fixed bottom-6 right-6 z-50">
+        <button
+          onClick={() => setIsOpen(true)}
+          className="group bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white p-4 rounded-full shadow-xl transition-all duration-300 hover:scale-110 animate-pulse focus:outline-none focus:ring-4 focus:ring-teal-300"
+          aria-label="Open AutiMind AI Assistant chatbot for business inquiries and AI development information"
+          title="Chat with AutiMind AI - Get instant answers about our AI development services"
+        >
+          <MessageCircle className="w-7 h-7" />
+        </button>
+        <div className="absolute bottom-full right-0 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="bg-gray-900 text-white text-sm px-3 py-2 rounded-lg whitespace-nowrap">
+            💬 Chat with AutiMind AI
+            <div className="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent border-t-gray-900"></div>
+          </div>
+        </div>
+      </div>
     );
   }
 
   return (
-    <div className="fixed bottom-6 right-6 w-96 max-w-[calc(100vw-2rem)] bg-white rounded-lg shadow-2xl border border-gray-200 z-50">
+    <div 
+      className="fixed bottom-6 right-6 w-[480px] max-w-[calc(100vw-2rem)] bg-white rounded-xl shadow-2xl border border-gray-200 z-50 transition-all duration-300 ease-in-out"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="chatbot-title"
+      aria-describedby="chatbot-description"
+    >
       {/* Header */}
       <div className="bg-gradient-to-r from-teal-500 to-cyan-500 text-white p-4 rounded-t-lg flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Bot className="w-5 h-5" />
           <div className="flex items-center gap-2">
             <DollarSign className="w-4 h-4" />
-            <h3 className="font-semibold">AutiMind Business AI</h3>
+            <h3 id="chatbot-title" className="font-semibold">AutiMind Business AI</h3>
+          </div>
+          <div id="chatbot-description" className="sr-only">
+            AI-powered chatbot for AutiMind business inquiries and AI development services information
           </div>
           {enableLeadCapture && leadScore > 0 && (
             <div className="flex items-center gap-1 bg-white/20 px-2 py-1 rounded-full text-xs">
@@ -393,14 +411,21 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
         </div>
         <button
           onClick={() => setIsOpen(false)}
-          className="text-white/80 hover:text-white transition-colors"
+          className="text-white/80 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 rounded p-1"
+          aria-label="Close AutiMind AI Assistant chatbot"
+          title="Close chatbot"
         >
           <X className="w-5 h-5" />
         </button>
       </div>
 
       {/* Messages */}
-      <div className="h-96 overflow-y-auto p-4 space-y-4">
+      <div 
+        className="h-[500px] overflow-y-auto p-6 space-y-4 bg-gray-50/30"
+        role="log"
+        aria-live="polite"
+        aria-label="AI chatbot conversation history"
+      >
         {messages.map((message) => (
           <div
             key={message.id}
@@ -412,14 +437,16 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
               </div>
             )}
             <div
-              className={`max-w-[80%] p-3 rounded-lg ${
+              className={`max-w-[85%] p-4 rounded-xl shadow-sm ${
                 message.isBot
-                  ? 'bg-gray-100 text-gray-800'
+                  ? 'bg-white border border-gray-200 text-gray-800'
                   : 'bg-gradient-to-r from-teal-500 to-cyan-500 text-white ml-auto'
               }`}
+              role="article"
+              aria-label={`${message.isBot ? 'AI Assistant' : 'User'} message`}
             >
-              <p className="text-sm leading-relaxed whitespace-pre-wrap">{message.content}</p>
-              <span className="text-xs opacity-70 mt-1 block">
+              <p className="text-base leading-relaxed whitespace-pre-wrap">{message.content}</p>
+              <span className="text-xs opacity-60 mt-2 block font-medium" aria-label={`Sent at ${message.timestamp.toLocaleTimeString()}`}>
                 {message.timestamp.toLocaleTimeString()}
               </span>
             </div>
@@ -436,11 +463,12 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
             <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0">
               <Bot className="w-4 h-4 text-teal-600" />
             </div>
-            <div className="bg-gray-100 text-gray-800 p-3 rounded-lg">
-              <div className="flex gap-1">
-                <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
-                <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+            <div className="bg-white border border-gray-200 text-gray-800 p-4 rounded-xl shadow-sm">
+              <div className="flex gap-1 items-center">
+                <div className="w-3 h-3 bg-teal-400 rounded-full animate-bounce"></div>
+                <div className="w-3 h-3 bg-teal-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                <div className="w-3 h-3 bg-teal-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                <span className="ml-2 text-sm text-gray-600">AutiMind AI is thinking...</span>
               </div>
             </div>
           </div>
@@ -450,9 +478,9 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
 
       {/* Quick Actions */}
       {messages.length === 1 && !showLeadForm && (
-        <div className="px-4 pb-2">
-          <p className="text-xs text-gray-500 mb-2">Quick actions:</p>
-          <div className="grid grid-cols-2 gap-2">
+        <div className="px-6 pb-4 border-t border-gray-100 bg-white">
+          <p className="text-sm font-medium text-gray-700 mb-3 pt-4">💡 Popular topics:</p>
+          <div className="grid grid-cols-1 gap-2">
             {quickActions.map((action, index) => (
               <button
                 key={index}
@@ -460,7 +488,7 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
                   setInputValue(action.action);
                   sendMessage();
                 }}
-                className="text-xs bg-gray-50 hover:bg-gray-100 text-gray-700 p-2 rounded border transition-colors text-left"
+                className="text-sm bg-gradient-to-r from-teal-50 to-cyan-50 hover:from-teal-100 hover:to-cyan-100 text-gray-800 p-3 rounded-lg border border-teal-100 transition-all duration-200 text-left font-medium shadow-sm hover:shadow-md"
               >
                 {action.label}
               </button>
@@ -547,28 +575,33 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
       )}
 
       {/* Input */}
-      <div className="p-4 border-t border-gray-200">
-        <div className="flex gap-2">
+      <div className="p-6 border-t border-gray-200 bg-white rounded-b-xl">
+        <div className="flex gap-3">
           <textarea
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             onKeyPress={handleKeyPress}
             placeholder="How can AI drive revenue for your business? Ask about ROI, costs, or custom development..."
-            className="flex-1 px-3 py-2 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+            className="flex-1 px-4 py-3 border border-gray-300 rounded-xl resize-none focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-300 transition-all duration-200 text-base"
             rows={1}
             disabled={isLoading}
+            aria-label="Type your message about AI development services"
+            aria-describedby="input-help"
           />
           <button
             onClick={sendMessage}
             disabled={!inputValue.trim() || isLoading}
-            className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 disabled:bg-gray-300 disabled:cursor-not-allowed text-white p-2 rounded-lg transition-colors"
+            className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 disabled:bg-gray-300 disabled:cursor-not-allowed text-white px-4 py-3 rounded-xl transition-all duration-200 font-medium shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+            aria-label={isLoading ? "Sending message..." : "Send message to AutiMind AI"}
+            title="Send message"
           >
             <Send className="w-4 h-4" />
           </button>
         </div>
-        <p className="text-xs text-gray-500 mt-2">
-          Press Enter to send, Shift+Enter for new line
-        </p>
+        <div className="flex items-center justify-between mt-3 text-xs text-gray-500" id="input-help">
+          <span>Press Enter to send • Shift+Enter for new line</span>
+          <span className="text-teal-600 font-medium">Powered by AutiMind AI</span>
+        </div>
       </div>
     </div>
   );

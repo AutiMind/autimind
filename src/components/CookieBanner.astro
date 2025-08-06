@@ -11,8 +11,9 @@
     <div class="flex-1">
       <h3 class="text-white font-semibold mb-2">Cookie Preferences</h3>
       <p class="text-gray-300 text-sm leading-relaxed">
-        We use cookies to enhance your browsing experience, analyze site performance, and provide personalized content. 
-        By continuing to use our site, you consent to our use of cookies as described in our 
+        We use cookies to enhance your browsing experience, analyze site performance, power our AI chatbot, and provide personalized content. 
+        Our AI chatbot collects conversation data to provide intelligent responses about our AI development services. 
+        By continuing to use our site, you consent to our use of cookies and AI data processing as described in our 
         <a href="/privacy" class="text-teal-400 hover:text-teal-300 underline">Privacy Policy</a>.
       </p>
     </div>
@@ -75,7 +76,21 @@
             <span class="text-xs text-gray-400 bg-gray-800 px-2 py-1 rounded">Always Active</span>
           </div>
           <p class="text-gray-300 text-sm">
-            These cookies are necessary for the website to function properly. They enable core functionality such as security, network management, and accessibility.
+            These cookies are necessary for the website to function properly. They enable core functionality such as security, network management, accessibility, and AI chatbot operation.
+          </p>
+        </div>
+        
+        <!-- AI Chatbot -->
+        <div class="border border-gray-700 rounded-lg p-4">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="font-medium text-white">AI Chatbot Data</h3>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" id="chatbot-data" class="sr-only peer" checked>
+              <div class="w-11 h-6 bg-gray-600 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-teal-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-600"></div>
+            </label>
+          </div>
+          <p class="text-gray-300 text-sm">
+            Our AI chatbot collects conversation data to provide intelligent responses about AI development services and qualify business leads. Data is processed securely and routed to our sales team.
           </p>
         </div>
         
@@ -191,9 +206,11 @@
     showModal() {
       if (this.modal) {
         // Update toggles based on current preferences
+        const chatbotToggle = document.getElementById('chatbot-data');
         const analyticsToggle = document.getElementById('analytics-cookies');
         const marketingToggle = document.getElementById('marketing-cookies');
         
+        if (chatbotToggle) chatbotToggle.checked = this.cookieData.chatbot;
         if (analyticsToggle) analyticsToggle.checked = this.cookieData.analytics;
         if (marketingToggle) marketingToggle.checked = this.cookieData.marketing;
         
@@ -213,6 +230,7 @@
       this.cookieData = {
         consentGiven: true,
         essential: true,
+        chatbot: true,
         analytics: true,
         marketing: true,
         timestamp: Date.now()
@@ -227,6 +245,7 @@
       this.cookieData = {
         consentGiven: true,
         essential: true,
+        chatbot: false,
         analytics: false,
         marketing: false,
         timestamp: Date.now()
@@ -243,12 +262,14 @@
     }
     
     savePreferences() {
+      const chatbotToggle = document.getElementById('chatbot-data');
       const analyticsToggle = document.getElementById('analytics-cookies');
       const marketingToggle = document.getElementById('marketing-cookies');
       
       this.cookieData = {
         consentGiven: true,
         essential: true,
+        chatbot: chatbotToggle?.checked || false,
         analytics: analyticsToggle?.checked || false,
         marketing: marketingToggle?.checked || false,
         timestamp: Date.now()
