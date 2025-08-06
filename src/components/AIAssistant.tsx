@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { MessageCircle, Send, X, Bot, User, Users } from 'lucide-react';
+import { MessageCircle, Send, X, Bot, User, Users, DollarSign } from 'lucide-react';
 import { breakcoldAPI, CreateLeadRequest } from '../lib/breakcold-api';
+import { AUTIMIND_SALES_KNOWLEDGE, getRelevantKnowledge, getPricingInfo, getComplianceGuidance } from '../lib/autimind-sales-knowledge';
 
 interface Message {
   id: string;
@@ -8,6 +9,15 @@ interface Message {
   isBot: boolean;
   timestamp: Date;
   leadCapture?: boolean;
+}
+
+interface AIResponse {
+  message: string;
+  leadScore: number;
+  shouldCaptureInfo: boolean;
+  suggestedActions: string[];
+  followUpQuestions: string[];
+  businessContext: string;
 }
 
 interface LeadData {
@@ -66,64 +76,49 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
   }, [isOpen, context]);
 
   const getWelcomeMessage = (context: string): string => {
+    const stats = AUTIMIND_SALES_KNOWLEDGE.companyOverview.keyStats;
     switch (context) {
-      case 'onboarding':
-        return "👋 Hi! I'm your AI assistant here to help you get started with AutiMind's AI development services. I can guide you through our AI solutions, custom software development, and hardware integration offerings. What would you like to learn about first?";
-      case 'technical':
-        return "🔧 Hi there! I'm your technical support assistant for AutiMind. I can help with AI integration questions, development support, and technical documentation. What technical challenge can I help you with?";
       case 'sales':
-        return "🚀 Hello! I'm here to help you discover how AutiMind's AI software development expertise can transform your business. We specialize in AI integration, custom AI solutions, machine learning systems, and intelligent hardware development. Whether you need AI for healthcare, finance, manufacturing, retail, or any other industry, we can help. What brings you here today?";
+        return `🚀 Hello! I'm here to help you discover how AutiMind's AI development services can drive revenue for your business. We're an AI software development company led by co-CEOs with ${stats['Team Experience']} who deliver solutions ${stats['Development Speed']} faster than traditional methods. We specialize in custom AI development, machine learning systems, and intelligent automation across healthcare, finance, manufacturing, and more. What business challenges could AI help you solve?`;
+      case 'technical':
+        return "🔧 Hi! I'm your technical AI consultant for AutiMind. Our engineering team has built scalable AI systems with sub-50ms global performance and 60% lower infrastructure costs. What technical AI challenges can we help you solve?";
       default:
-        return "👋 Hello! I'm your AI assistant for AutiMind. We're an AI software development company that builds custom AI solutions, integrates AI into existing systems, and develops intelligent hardware. How can I help you today?";
+        return `💡 Welcome! I'm AutiMind's AI business consultant. We help companies increase revenue through custom AI development, with clients typically seeing ROI within 6-12 months. Our team has ${stats['Team Experience']} building AI solutions that deliver measurable business results. What brings you here today?`;
     }
   };
 
-  // Lead qualification scoring
-  const calculateLeadScore = (message: string, history: Message[]): number => {
+  // Revenue-focused lead qualification scoring
+  const calculateRevenueLeadScore = (message: string, history: Message[]): number => {
     let score = 0;
     const lowerMessage = message.toLowerCase();
+
+    // High-value business indicators
+    if (lowerMessage.includes('budget') || lowerMessage.includes('cost') || lowerMessage.includes('investment')) score += 25;
+    if (lowerMessage.includes('enterprise') || lowerMessage.includes('company') || lowerMessage.includes('business')) score += 20;
+    if (lowerMessage.includes('timeline') || lowerMessage.includes('when') || lowerMessage.includes('how soon')) score += 20;
+    if (lowerMessage.includes('roi') || lowerMessage.includes('return') || lowerMessage.includes('save money')) score += 25;
+
+    // AI development indicators (high-value services)
+    if (lowerMessage.includes('custom ai') || lowerMessage.includes('ai development') || lowerMessage.includes('machine learning')) score += 20;
+    if (lowerMessage.includes('integration') || lowerMessage.includes('api') || lowerMessage.includes('system')) score += 15;
+    if (lowerMessage.includes('automation') || lowerMessage.includes('intelligent') || lowerMessage.includes('predictive')) score += 18;
     
-    // Interest indicators for AI development services
-    if (lowerMessage.includes('price') || lowerMessage.includes('cost') || lowerMessage.includes('budget')) score += 15;
-    if (lowerMessage.includes('quote') || lowerMessage.includes('estimate') || lowerMessage.includes('proposal')) score += 20;
-    if (lowerMessage.includes('when can') || lowerMessage.includes('timeline') || lowerMessage.includes('how soon')) score += 15;
+    // Industry-specific high-value terms
+    if (lowerMessage.includes('healthcare') || lowerMessage.includes('medical') || lowerMessage.includes('fintech')) score += 20;
+    if (lowerMessage.includes('manufacturing') || lowerMessage.includes('retail') || lowerMessage.includes('enterprise')) score += 15;
     
-    // AI-specific high-value terms
-    if (lowerMessage.includes('ai') || lowerMessage.includes('artificial intelligence') || lowerMessage.includes('machine learning')) score += 20;
-    if (lowerMessage.includes('neural network') || lowerMessage.includes('deep learning') || lowerMessage.includes('computer vision')) score += 25;
-    if (lowerMessage.includes('natural language processing') || lowerMessage.includes('nlp') || lowerMessage.includes('chatbot')) score += 20;
-    if (lowerMessage.includes('automation') || lowerMessage.includes('intelligent systems') || lowerMessage.includes('predictive analytics')) score += 18;
+    // Urgency and decision-making authority
+    if (lowerMessage.includes('urgent') || lowerMessage.includes('immediate') || lowerMessage.includes('asap')) score += 25;
+    if (lowerMessage.includes('decision') || lowerMessage.includes('approve') || lowerMessage.includes('ceo') || lowerMessage.includes('cto')) score += 20;
     
-    // Development and integration terms
-    if (lowerMessage.includes('custom software') || lowerMessage.includes('development') || lowerMessage.includes('integration')) score += 15;
-    if (lowerMessage.includes('api') || lowerMessage.includes('sdk') || lowerMessage.includes('platform')) score += 12;
-    if (lowerMessage.includes('hardware') || lowerMessage.includes('embedded') || lowerMessage.includes('iot')) score += 15;
-    
-    // Industry-specific terms
-    if (lowerMessage.includes('healthcare') || lowerMessage.includes('medical') || lowerMessage.includes('fintech')) score += 15;
-    if (lowerMessage.includes('manufacturing') || lowerMessage.includes('retail') || lowerMessage.includes('logistics')) score += 15;
-    if (lowerMessage.includes('security') || lowerMessage.includes('fraud detection') || lowerMessage.includes('cybersecurity')) score += 18;
-    if (lowerMessage.includes('education') || lowerMessage.includes('edtech') || lowerMessage.includes('learning')) score += 12;
-    
-    // Business context
-    if (lowerMessage.includes('business') || lowerMessage.includes('company') || lowerMessage.includes('organization')) score += 10;
-    if (lowerMessage.includes('enterprise') || lowerMessage.includes('startup') || lowerMessage.includes('corporation')) score += 12;
-    if (lowerMessage.includes('need help') || lowerMessage.includes('looking for') || lowerMessage.includes('interested in')) score += 10;
-    
-    // Urgency indicators
-    if (lowerMessage.includes('urgent') || lowerMessage.includes('asap') || lowerMessage.includes('immediately')) score += 25;
-    if (lowerMessage.includes('deadline') || lowerMessage.includes('launch') || lowerMessage.includes('go live')) score += 20;
-    if (lowerMessage.includes('proof of concept') || lowerMessage.includes('poc') || lowerMessage.includes('pilot')) score += 15;
-    
-    // Technology stack mentions
-    if (lowerMessage.includes('python') || lowerMessage.includes('tensorflow') || lowerMessage.includes('pytorch')) score += 10;
-    if (lowerMessage.includes('aws') || lowerMessage.includes('azure') || lowerMessage.includes('cloud')) score += 10;
-    if (lowerMessage.includes('data science') || lowerMessage.includes('big data') || lowerMessage.includes('analytics')) score += 15;
-    
-    // Engagement indicators
-    if (history.length > 5) score += 10;
+    // Project scale indicators
+    if (lowerMessage.includes('large scale') || lowerMessage.includes('multiple') || lowerMessage.includes('comprehensive')) score += 15;
+    if (lowerMessage.includes('million') || lowerMessage.includes('thousand')) score += 20;
+
+    // Engagement level
+    if (history.length > 3) score += 10;
     if (lowerMessage.length > 100) score += 5;
-    
+
     return Math.min(score, 100);
   };
 
@@ -165,8 +160,8 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
     return extracted;
   };
 
-  // Create lead in Breakcold CRM
-  const createLeadInCRM = async (data: LeadData, conversationContext: string) => {
+  // Create revenue-focused lead in Breakcold CRM
+  const createLeadInCRM = async (data: LeadData, conversationContext: string, businessContext?: string) => {
     if (!enableLeadCapture || !data.email) return;
 
     try {
@@ -178,12 +173,13 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
         company: data.company,
         website: data.website,
         title: data.title,
-        source: `AutiMind AI Development - ${context}`,
+        source: `AutiMind AI Development - Revenue Chatbot`,
         tags: [
           'AutiMind Lead',
-          'AI Development',
-          context.charAt(0).toUpperCase() + context.slice(1),
-          data.interest || 'AI Consultation'
+          'AI Development Services',
+          'Revenue Qualified',
+          businessContext || 'Business Interest',
+          data.interest || 'Custom AI Solutions'
         ].filter(Boolean),
         customAttributes: {
           leadScore: leadScore,
@@ -191,27 +187,79 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
           budget: data.budget,
           timeline: data.timeline,
           conversationContext: conversationContext,
+          businessContext: businessContext,
           capturedAt: new Date().toISOString(),
-          source: 'AutiMind AI Chatbot'
+          source: 'AutiMind Revenue AI Chatbot',
+          contactEmail: 'andrea@autimind.com'
         },
-        notes: `Lead captured via AutiMind AI chatbot. Interest: ${data.interest || 'AI Development'}. Lead score: ${leadScore}/100. Context: ${conversationContext}`
+        notes: `REVENUE LEAD captured via AutiMind AI chatbot. Business Context: ${businessContext || 'AI Interest'}. Lead Score: ${leadScore}/100. Interest: ${data.interest || 'Custom AI Development'}. Forward to andrea@autimind.com for immediate follow-up. Conversation: ${conversationContext}`
       };
 
       const result = await breakcoldAPI.upsertLead(leadRequest);
       
       if (result.success) {
-        console.log('Lead created/updated in Breakcold:', result.data);
+        console.log('Revenue lead created in Breakcold:', result.data);
         
         const successMessage: Message = {
           id: Date.now().toString(),
-          content: "Thanks for your information! I've noted your details and someone from our AutiMind AI development team will reach out to you soon to discuss how we can help with your AI project. Is there anything else I can help you with right now?",
+          content: "Perfect! I've captured your information and Andrea from our AutiMind team (andrea@autimind.com) will reach out within 24 hours with detailed information about how our AI development services can drive revenue for your business. She'll also schedule a consultation to discuss your specific needs and provide a customized proposal. Is there anything else about our AI capabilities I can help clarify right now?",
           isBot: true,
           timestamp: new Date()
         };
         setMessages(prev => [...prev, successMessage]);
       }
     } catch (error) {
-      console.error('Failed to create lead in CRM:', error);
+      console.error('Failed to create revenue lead in CRM:', error);
+      
+      // Fallback message with direct contact
+      const fallbackMessage: Message = {
+        id: Date.now().toString(),
+        content: "I want to make sure you connect with our team! Please reach out directly to Andrea at andrea@autimind.com and mention your interest in AutiMind's AI development services. She'll get back to you immediately with detailed information and can schedule a consultation to discuss your specific needs.",
+        isBot: true,
+        timestamp: new Date()
+      };
+      setMessages(prev => [...prev, fallbackMessage]);
+    }
+  };
+
+  // Call our Cloudflare Workers AI for real AI responses
+  const callAutiMindAI = async (message: string, conversationHistory: Message[]): Promise<AIResponse> => {
+    try {
+      const response = await fetch('/api/ai/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          message,
+          conversationHistory: conversationHistory.map(msg => ({
+            role: msg.isBot ? 'assistant' : 'user',
+            content: msg.content,
+            timestamp: msg.timestamp.toISOString()
+          })),
+          context,
+          leadData
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error(`AI API error: ${response.status}`);
+      }
+
+      return await response.json();
+    } catch (error) {
+      console.error('AI API call failed:', error);
+      
+      // Fallback to sales-focused response
+      const fallbackScore = calculateRevenueLeadScore(message, conversationHistory);
+      return {
+        message: "I'd love to discuss how AutiMind's AI development services can drive revenue for your business. Our team has helped companies reduce costs by 30-60% through intelligent automation. Could you share more about your specific business challenges so I can connect you with the right solutions?",
+        leadScore: fallbackScore,
+        shouldCaptureInfo: fallbackScore >= 40,
+        suggestedActions: ['capture_contact_info'],
+        followUpQuestions: ["What industry is your business in?", "What's your biggest operational challenge?"],
+        businessContext: 'AI Interest - Direct Contact Recommended'
+      };
     }
   };
 
@@ -226,54 +274,56 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
     };
 
     setMessages(prev => [...prev, userMessage]);
+    const currentInput = inputValue;
     setInputValue('');
     setIsLoading(true);
 
-    // Calculate lead score and extract information
-    const messageScore = calculateLeadScore(inputValue, messages);
-    const newLeadScore = Math.max(leadScore, messageScore);
-    setLeadScore(newLeadScore);
-
     // Extract lead information from message
-    const extractedInfo = extractLeadInfo(inputValue);
+    const extractedInfo = extractLeadInfo(currentInput);
     const updatedLeadData = { ...leadData, ...extractedInfo };
     setLeadData(updatedLeadData);
 
     try {
-      // Simulate AI response (in production, this would call your AI service)
-      await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 2000));
-
-      // Generate contextual response based on message content
-      let botResponse = generateContextualResponse(inputValue, context, newLeadScore);
+      // Call real AI for revenue-focused response
+      const aiResponse = await callAutiMindAI(currentInput, messages);
+      
+      // Update lead score with AI's assessment
+      const newLeadScore = Math.max(leadScore, aiResponse.leadScore);
+      setLeadScore(newLeadScore);
 
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
-        content: botResponse,
+        content: aiResponse.message,
         isBot: true,
         timestamp: new Date()
       };
       setMessages(prev => [...prev, botMessage]);
 
-      // Check if we should capture the lead
-      if (enableLeadCapture && newLeadScore >= 30 && updatedLeadData.email) {
-        const conversationSummary = messages.slice(-5).map(m => `${m.isBot ? 'Bot' : 'User'}: ${m.content}`).join('\n');
-        await createLeadInCRM(updatedLeadData, conversationSummary);
-      } else if (enableLeadCapture && newLeadScore >= 50 && !updatedLeadData.email) {
-        setShowLeadForm(true);
-        const promptMessage: Message = {
-          id: (Date.now() + 2).toString(),
-          content: "I'd love to help you further with your AI project! Could you share your email so I can send you some detailed information about our AI development services and have our team follow up with a personalized consultation?",
-          isBot: true,
-          timestamp: new Date(),
-          leadCapture: true
-        };
-        setMessages(prev => [...prev, promptMessage]);
+      // Handle lead capture based on AI assessment
+      if (enableLeadCapture && aiResponse.shouldCaptureInfo) {
+        if (updatedLeadData.email) {
+          // Create lead with conversation context
+          const conversationSummary = [...messages, userMessage, botMessage]
+            .slice(-6).map(m => `${m.isBot ? 'Bot' : 'User'}: ${m.content}`).join('\n');
+          await createLeadInCRM(updatedLeadData, conversationSummary, aiResponse.businessContext);
+        } else {
+          // Prompt for contact information
+          setShowLeadForm(true);
+          const leadCaptureMessage: Message = {
+            id: (Date.now() + 2).toString(),
+            content: "I'd love to help you further! Our team at AutiMind specializes in exactly these types of AI challenges. Could you share your contact information so Andrea (andrea@autimind.com) can follow up with a personalized consultation and detailed information about how we can solve your specific needs?",
+            isBot: true,
+            timestamp: new Date(),
+            leadCapture: true
+          };
+          setMessages(prev => [...prev, leadCaptureMessage]);
+        }
       }
     } catch (error) {
       console.error('AI Assistant error:', error);
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
-        content: "I apologize, but I'm having trouble connecting right now. Please try again in a moment, or contact our team directly at info@autimind.com for immediate assistance.",
+        content: "I'm having a brief technical issue, but I don't want you to miss out on learning about AutiMind's AI development services! Please reach out to Andrea directly at andrea@autimind.com and mention your interest in AI solutions. Our team will get back to you immediately with detailed information about how we can help your business.",
         isBot: true,
         timestamp: new Date()
       };
@@ -283,68 +333,6 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
     }
   };
 
-  const generateContextualResponse = (userMessage: string, context: string, score: number): string => {
-    const lowerMessage = userMessage.toLowerCase();
-    
-    // High-intent responses
-    if (lowerMessage.includes('price') || lowerMessage.includes('cost')) {
-      return "Our AI development pricing varies based on project complexity and scope. Simple AI integrations start around $15,000, while comprehensive AI systems range from $50,000 to $500,000+. Enterprise AI solutions with custom hardware can exceed $1M. We'd be happy to provide a detailed quote based on your specific requirements. What type of AI solution are you considering?";
-    }
-    
-    if (lowerMessage.includes('machine learning') || lowerMessage.includes('ml')) {
-      return "Excellent! Machine learning is one of our core specialties. We develop custom ML models for predictive analytics, recommendation systems, fraud detection, demand forecasting, and more. Whether you need supervised, unsupervised, or reinforcement learning solutions, we can help. What specific business problem are you looking to solve with ML?";
-    }
-    
-    if (lowerMessage.includes('computer vision') || lowerMessage.includes('image recognition')) {
-      return "Computer vision is a fascinating area! We build CV solutions for quality control in manufacturing, medical image analysis, autonomous systems, security and surveillance, retail analytics, and more. Our team works with the latest deep learning frameworks and can handle everything from object detection to facial recognition. What's your use case?";
-    }
-    
-    if (lowerMessage.includes('nlp') || lowerMessage.includes('natural language')) {
-      return "Natural Language Processing is incredibly powerful for business applications. We develop chatbots, sentiment analysis systems, document processing automation, language translation services, and content generation tools. Our NLP solutions can process structured and unstructured text data at scale. What language processing challenges are you facing?";
-    }
-    
-    if (lowerMessage.includes('hardware') || lowerMessage.includes('embedded') || lowerMessage.includes('iot')) {
-      return "We love working on AI hardware and IoT projects! Our team develops intelligent embedded systems, edge AI devices, smart sensors, and IoT platforms with AI capabilities. We work with various hardware platforms including ARM, NVIDIA Jetson, and custom silicon. Are you looking to add intelligence to existing hardware or develop new AI-powered devices?";
-    }
-    
-    if (lowerMessage.includes('healthcare') || lowerMessage.includes('medical')) {
-      return "Healthcare AI is one of our most impactful areas. We develop diagnostic AI systems, medical image analysis, patient monitoring solutions, drug discovery algorithms, and clinical decision support tools. All our healthcare AI solutions are designed with HIPAA compliance and FDA requirements in mind. What healthcare challenge are you looking to address?";
-    }
-    
-    if (lowerMessage.includes('fintech') || lowerMessage.includes('financial')) {
-      return "Financial AI is a rapidly growing field! We build fraud detection systems, algorithmic trading platforms, credit scoring models, risk assessment tools, and automated financial advisors. Our solutions help financial institutions improve efficiency while maintaining regulatory compliance. What financial processes are you looking to enhance with AI?";
-    }
-    
-    if (lowerMessage.includes('automation') || lowerMessage.includes('process automation')) {
-      return "AI-powered automation can transform business operations! We develop intelligent process automation (IPA) solutions that combine RPA with AI for document processing, workflow optimization, predictive maintenance, and intelligent decision-making. Our automation solutions can handle complex, variable processes that traditional RPA cannot. What processes are you looking to automate?";
-    }
-    
-    if (lowerMessage.includes('timeline') || lowerMessage.includes('when')) {
-      return "AI project timelines vary significantly based on complexity: Proof of concepts typically take 4-8 weeks, basic AI integrations 2-4 months, custom AI systems 6-12 months, and enterprise AI platforms with hardware can take 12-24 months. We always start with a detailed project assessment to provide accurate timelines. What's your target deployment date?";
-    }
-    
-    // Medium-intent responses
-    if (lowerMessage.includes('chatbot') || lowerMessage.includes('conversational ai')) {
-      return "Conversational AI is incredibly versatile! We build sophisticated chatbots and virtual assistants for customer service, sales support, internal operations, and specialized industry applications. Our solutions use advanced NLP and can integrate with existing systems and knowledge bases. Are you looking to improve customer engagement or internal efficiency?";
-    }
-    
-    if (lowerMessage.includes('custom') || lowerMessage.includes('development')) {
-      return "Custom AI development is our specialty! We build tailored AI solutions from the ground up, including custom neural networks, specialized algorithms, industry-specific AI platforms, and complete AI-powered applications. Our team has expertise across all major AI technologies and frameworks. What specific AI capabilities do you need developed?";
-    }
-    
-    if (lowerMessage.includes('integration') || lowerMessage.includes('api')) {
-      return "AI integration is crucial for maximizing ROI from existing systems. We specialize in integrating AI capabilities into existing platforms, developing AI APIs and microservices, creating AI-powered plugins, and building hybrid systems that combine traditional software with AI. What systems are you looking to enhance with AI?";
-    }
-    
-    // General responses based on score
-    if (score > 60) {
-      return "It sounds like you have a compelling AI use case! AutiMind has extensive experience across industries including healthcare, finance, manufacturing, retail, and more. We'd love to discuss how our AI expertise can solve your specific challenges. What's the best way to reach you for a detailed consultation?";
-    } else if (score > 30) {
-      return "That's interesting! AutiMind develops custom AI solutions across many industries and use cases. From machine learning and computer vision to NLP and AI hardware, we can help organizations leverage AI for competitive advantage. What's your biggest challenge that AI might be able to solve?";
-    } else {
-      return "Thanks for your interest in AutiMind! We're an AI software development company that builds custom AI solutions, integrates AI into existing systems, and develops intelligent hardware. Our expertise spans machine learning, computer vision, NLP, and AI automation across industries. How can AI help transform your business?";
-    }
-  };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
@@ -354,15 +342,15 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
   };
 
   const quickActions = context === 'sales' ? [
-    { label: 'Machine Learning', action: 'I need machine learning solutions for my business' },
-    { label: 'AI Integration', action: 'How can you integrate AI into our existing systems?' },
-    { label: 'Custom AI Development', action: 'Can you develop custom AI solutions for our industry?' },
-    { label: 'Get Quote', action: 'What would AI development cost for our project?' }
+    { label: '💰 ROI Calculator', action: 'How much money could AI save my business annually?' },
+    { label: '🚀 Custom AI Dev', action: 'I need custom AI development for competitive advantage' },
+    { label: '⚡ Quick Integration', action: 'How fast can you integrate AI into our existing systems?' },
+    { label: '📊 Get Pricing', action: 'What would custom AI development cost for our business?' }
   ] : [
-    { label: 'AI Platform Help', action: 'How do I get started with AI integration?' },
-    { label: 'Technical Issues', action: 'I need help with AI technical integration' },
-    { label: 'Documentation', action: 'Where can I find your AI development documentation?' },
-    { label: 'API Support', action: 'I have questions about your AI API integration' }
+    { label: '💡 AI Strategy', action: 'How can AI transform my business operations?' },
+    { label: '🔧 Technical Consulting', action: 'I need technical consultation for AI implementation' },
+    { label: '🏭 Industry Solutions', action: 'What AI solutions work best for my industry?' },
+    { label: '📞 Schedule Call', action: 'I want to schedule a consultation with your team' }
   ];
 
   const handleLeadFormSubmit = async (formData: LeadData) => {
@@ -392,7 +380,10 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
       <div className="bg-gradient-to-r from-teal-500 to-cyan-500 text-white p-4 rounded-t-lg flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Bot className="w-5 h-5" />
-          <h3 className="font-semibold">AutiMind AI Assistant</h3>
+          <div className="flex items-center gap-2">
+            <DollarSign className="w-4 h-4" />
+            <h3 className="font-semibold">AutiMind Business AI</h3>
+          </div>
           {enableLeadCapture && leadScore > 0 && (
             <div className="flex items-center gap-1 bg-white/20 px-2 py-1 rounded-full text-xs">
               <Users className="w-3 h-3" />
@@ -562,7 +553,7 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             onKeyPress={handleKeyPress}
-            placeholder="Ask me about AI development, machine learning, or custom AI solutions..."
+            placeholder="How can AI drive revenue for your business? Ask about ROI, costs, or custom development..."
             className="flex-1 px-3 py-2 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
             rows={1}
             disabled={isLoading}

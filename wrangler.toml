@@ -2,8 +2,16 @@ name = "autimind-website"
 compatibility_date = "2024-01-15"
 pages_build_output_dir = "./dist"
 
+# Workers AI binding for revenue-focused chatbot
+[[ai]]
+binding = "AI"
+
 [env.production]
 name = "autimind-website"
+
+# Workers AI binding for production environment
+[[env.production.ai]]
+binding = "AI"
 
 # Database configuration temporarily removed for deployment
 # [[env.production.d1_databases]]
@@ -13,6 +21,7 @@ name = "autimind-website"
 
 [vars]
 NODE_ENV = "production"
+AUTIMIND_SALES_EMAIL = "andrea@autimind.com"
 
 # For local development - temporarily removed
 # [[d1_databases]]
@@ -21,9 +30,16 @@ NODE_ENV = "production"
 # database_id = "TBD"  # Will be filled after database creation
 
 # Environment variables (set via wrangler secret)
+# BREAKCOLD_API_KEY - Breakcold CRM API key for lead management
 # EMAIL_API_KEY - API key for sending email notifications (Resend, SendGrid, etc.)
 # WEBHOOK_URL - Slack/Discord webhook URL for instant notifications
 # 
 # Example setup commands:
+# wrangler secret put BREAKCOLD_API_KEY
 # wrangler secret put EMAIL_API_KEY
 # wrangler secret put WEBHOOK_URL
+
+# Revenue-focused AI chatbot setup:
+# The AI binding provides access to Cloudflare Workers AI models
+# Cost-effective solution: ~$0.01 per 1000 requests
+# Model used: @cf/meta/llama-3.1-8b-instruct for fast, business-focused responses
