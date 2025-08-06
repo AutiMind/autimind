@@ -3,14 +3,14 @@ compatibility_date = "2024-01-15"
 pages_build_output_dir = "./dist"
 
 # Workers AI binding for revenue-focused chatbot
-[[ai]]
+[ai]
 binding = "AI"
 
 [env.production]
 name = "autimind-website"
 
 # Workers AI binding for production environment
-[[env.production.ai]]
+[env.production.ai]
 binding = "AI"
 
 # Database configuration temporarily removed for deployment
